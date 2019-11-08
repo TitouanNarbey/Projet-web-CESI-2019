@@ -22,6 +22,10 @@ run: ## Lance le server
 
 #dev
 configure: ## Configure project
+	#cp .env.example .env
+	#create database
+	# modif .env pour bdd
+	composer install
 	php artisan key:generate
 
 migrate: ## Migrate bdd

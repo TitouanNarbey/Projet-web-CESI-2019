@@ -10,7 +10,7 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
         <!-- Styles -->
-        <style>
+        <!--<style>
             html, body {
                 background-color: #fff;
                 color: #636b6f;
@@ -61,7 +61,7 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
-        </style>
+        </style>-->
     </head>
     <body>
         <div class="flex-center position-ref full-height">
@@ -84,7 +84,7 @@
                     Laravel
                 </div>
 
-                <div class="links">
+                <div class="links jumbotron">
                     <a href="https://laravel.com/docs">Docs</a>
                     <a href="https://laracasts.com">Laracasts</a>
                     <a href="https://laravel-news.com">News</a>
