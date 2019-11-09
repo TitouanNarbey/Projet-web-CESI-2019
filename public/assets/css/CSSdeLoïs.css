@@ -1,0 +1,36 @@
+.headerCardEvent {
+    height: 150px;
+    display: flex;
+    align-items: flex-end;
+    border-radius: 10px 10px 0 0;
+
+}
+.sizeBanner {
+	height: 100%;
+	width : 100%;
+}
+
+.eventCardDescription{
+
+	font-size: 15px;
+	font-family: "nunito";
+	font-style: italic;
+}
+
+.eventCardFooter{
+
+	font-size: 13px;	
+}
+
+a.nounderline:link
+{
+text-decoration:none;
+color : black;
+}
+.tri{
+	background-color: #F5F5F5;
+}
+.btn-cesi{
+	background-color: #5A87DD;
+	color : white;
+}
