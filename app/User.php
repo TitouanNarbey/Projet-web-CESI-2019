@@ -19,6 +19,14 @@ class User extends Authenticatable
     return $this->belongsTo('App\Campus', 'id_campus', 'id');
     }
 
+    public function role(){
+        return $this->belongsTo('App\Role', 'id_roles', 'id');
+    }
+
+    public function image(){
+        return $this->belongsTo('App\Image', 'id_images', 'id');
+    }
+
     //use Notifiable;
     /**
      * The attributes that are mass assignable.
