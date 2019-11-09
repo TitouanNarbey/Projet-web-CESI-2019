@@ -11,7 +11,7 @@ class Illustrateeventsmulti extends Model
     public $timestamps = false;
 
     public function event(){
-        return $this->belongsTo('App\Event', 'id_event', 'id');
+        return $this->belongsTo('App\Event', 'id_events', 'id');
     }
 
     public function image(){

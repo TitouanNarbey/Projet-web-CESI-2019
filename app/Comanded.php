@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Comanded extends Model
 {
-    protected $table = 'comand';
+    protected $table = 'comanded';
     //protected $primaryKey = 'id';
     public $timestamps = false;
 

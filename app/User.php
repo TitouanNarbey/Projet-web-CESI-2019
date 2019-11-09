@@ -27,6 +27,44 @@ class User extends Authenticatable
         return $this->belongsTo('App\Image', 'id_images', 'id');
     }
 
+    public function orders(){
+        return $this->HasMany('App\Order', 'id_users', 'id');
+    }
+
+    public function commented(){
+        return $this->HasMany('App\Commented', 'id_users', 'id');
+    }
+
+    public function posts(){
+        return $this->HasMany('App\Post', 'id_users', 'id');
+    }
+
+    public function illustrateeventsmulti(){
+        return $this->HasMany('App\Illustrateeventsmulti', 'id_users', 'id');
+    }
+
+    public function events(){
+        return $this->HasMany('App\Event', 'id_users', 'id');
+    }
+
+    public function liked(){
+        return $this->belongsToMany('App\Post', 'liked', 'id_users', 'id_posts');
+    }
+
+    public function participate(){
+        return $this->belongsToMany('App\Event', 'participate', 'id_users', 'id_events');
+    }
+
+    public function voted(){
+        return $this->belongsToMany('App\Event', 'voted', 'id_users', 'id_events');
+    }
+
+
+
+
+
+
+    ///   THIS IS DEFAULT class User CONTENT (// by Titouan)   ///
     //use Notifiable;
     /**
      * The attributes that are mass assignable.

@@ -12,7 +12,7 @@ class Post extends Model
 
 
     public function event(){
-        return $this->belongsTo('App\Event', 'id_event', 'id');
+        return $this->belongsTo('App\Event', 'id_events', 'id');
     }
 
     public function user(){

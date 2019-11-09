@@ -250,3 +250,126 @@ Route::get('testDiplayArticles', function () {
     }
 });
 
+Route::get('testCurrent', function () {
+
+    $sss = App\User::all();
+    foreach ($sss as $aaa)
+    {
+        echo $aaa->id;
+        echo '<br>';
+        echo $aaa->email;
+        echo '<br>';
+        echo $aaa->campus->name;
+        echo '<br>';
+        echo $aaa->role->name;
+        echo '<br>';
+        echo $aaa->image->path;
+        echo '<br>';
+        
+        echo "<br>A--:<br>";
+        foreach($aaa->orders as $bbb)
+        {
+            echo '| ';
+            echo $bbb;
+            echo '<br>';
+        }
+
+        echo "<br>Z--:<br>";
+        foreach($aaa->commented as $bbb)
+        {
+            echo '| ';
+            echo $bbb;
+            echo '<br>';
+        }
+
+        echo "<br>E--:<br>";
+        foreach($aaa->posts as $bbb)
+        {
+            echo '| ';
+            echo $bbb;
+            echo '<br>';
+        }
+
+        echo "<br>R--:<br>";
+        foreach($aaa->illustrateeventsmulti as $bbb)
+        {
+            echo '| ';
+            echo $bbb;
+            echo '<br>';
+        }
+
+        echo "<br>T--:<br>";
+        foreach($aaa->events as $bbb)
+        {
+            echo '| ';
+            echo $bbb;
+            echo '<br>';
+        }
+
+        echo "<br>Y-------:<br>";
+        foreach($aaa->liked as $bbb)
+        {
+            echo '| ';
+            echo $bbb;
+            echo '<br>';
+        }
+
+        echo "<br>U--:<br>";
+        foreach($aaa->participate as $bbb)
+        {
+            echo '| ';
+            echo $bbb;
+            echo '<br>';
+        }
+
+        echo "<br>I--:<br>";
+        foreach($aaa->voted as $bbb)
+        {
+            echo '| ';
+            echo $bbb;
+            echo '<br>';
+        }
+
+
+
+
+        echo "<br>--------------------------------<br>";
+        echo '<br>';
+    }
+});
+
+
+
+
+/*Route::get('testCurrent', function () {
+
+    $sss = App\Illustrateeventsmulti::all();
+    foreach ($sss as $aaa)
+    {
+        echo $aaa->id;
+        echo '<br>';
+        echo $aaa->text;
+        echo '<br>';
+        echo $aaa->date;
+        echo '<br>';
+        echo $aaa->user;
+        echo '<br>';
+        echo $aaa->event;
+        echo '<br>';
+
+        echo "<br>--:<br>";
+        foreach($aaa->liked as $bbb)
+        {
+            echo '| ';
+            echo $bbb->email;
+            /*echo ' : ';
+            echo $bbb->stock;
+            echo ' : ';
+            echo $bbb->article->image->path;*//*
+            echo '<br>';
+        }
+        
+        echo "<br>--------------------------------<br>";
+        echo '<br>';
+    }
+});*/

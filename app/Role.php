@@ -10,4 +10,7 @@ class Role extends Model
     //protected $primaryKey = 'id';
     public $timestamps = false;
 
+    public function users(){
+        return $this->HasMany('App\User', 'id_roles', 'id');
+    }
 }
