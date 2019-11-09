@@ -190,3 +190,63 @@ Route::get('testDiplayEvents', function () {
     }
 });
 
+Route::get('testDiplayArticles', function () {
+
+    $articles = App\Article::all();
+    foreach ($articles as $article)
+    {
+        echo $article->id;
+        echo '<br>';
+        echo $article->name;
+        echo '<br>';
+        echo $article->description;
+        echo '<br>';
+        echo $article->image->path;
+        echo '<br>';
+        echo $article->category->name;
+        echo '<br>';
+        /*echo "<br>PARTICIPATE:<br>";
+        foreach($event->participate as $user)
+        {
+            echo '| ';
+            echo $user->email;
+            echo '<br>';
+        }
+        echo "<br>VOTED:<br>";
+        foreach($event->voted as $user)
+        {
+            echo '| ';
+            echo $user->email;
+            echo '<br>';
+        }
+        echo "<br>LOCALISATION:<br>";
+        foreach($event->localisation as $campus)
+        {
+            echo '| ';
+            echo $campus->name;
+            echo '<br>';
+        }
+        echo "<br>POSTS:<br>";
+        foreach($event->posts as $post)
+        {
+            echo '| ';
+            echo $post->text;
+            echo ' : ';
+            echo $post->user->email;
+            echo '<br>';
+        }*/
+        echo "<br>IMAGES:<br>";
+        foreach($article->illustratearticlesmulti as $illustrate)
+        {
+            echo '| ';
+            echo $illustrate->path;
+            echo ' : ';
+            echo $illustrate->alt;
+            echo '<br>';
+        }
+        
+        echo "<br>--------------------------------<br>";
+        echo '<br>';
+    }
+});
+
