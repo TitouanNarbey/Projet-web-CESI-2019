@@ -27,7 +27,7 @@ class FillDataUsers extends Migration
         $obj = App\User::create(['last_name'=>'Simon', 'first_name'=>'Steve', 'email'=>'aaa.imon@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'11']);
         $obj = App\User::create(['last_name'=>'Michel', 'first_name'=>'Steve', 'email'=>'aaa.ichel@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'12']);
         $obj = App\User::create(['last_name'=>'Lefebvre', 'first_name'=>'Steve', 'email'=>'aaa.efebvre@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'13']);
-        $obj = App\User::create(['last_name'=>'Leeroy', 'first_name'=>'Jenkins', 'email'=>'Jenkins.Leeroy@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'14']);
+        $obj = App\User::create(['last_name'=>'Leeroy', 'first_name'=>'Jenkins', 'email'=>'Jenkins.leeroy@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'14']);
         $obj = App\User::create(['last_name'=>'Roux', 'first_name'=>'Steve', 'email'=>'aaa.oux@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'15']);
         $obj = App\User::create(['last_name'=>'David', 'first_name'=>'Steve', 'email'=>'aaa.avid@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'16']);
         $obj = App\User::create(['last_name'=>'Bertrand', 'first_name'=>'Steve', 'email'=>'aaa.ertrand@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'17']);
@@ -117,7 +117,7 @@ class FillDataUsers extends Migration
         $obj = App\User::create(['last_name'=>'Lopez', 'first_name'=>'Steve', 'email'=>'bbb.opez@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'101']);
         $obj = App\User::create(['last_name'=>'Jean', 'first_name'=>'Steve', 'email'=>'bbb.ean@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'102']);
         $obj = App\User::create(['last_name'=>'Dupuy', 'first_name'=>'Steve', 'email'=>'bbb.upuy@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'103']);
-        $obj = App\User::create(['last_name'=>'Guillot', 'first_name'=>'Steve', 'email'=>'bbb.uillot@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'7', 'id_roles'=>'1', 'id_images'=>'104']);
+        $obj = App\User::create(['last_name'=>'Guillot', 'first_name'=>'Steve', 'email'=>'bbb.uillot@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'104']);
         $obj = App\User::create(['last_name'=>'Hubert', 'first_name'=>'Steve', 'email'=>'bbb.ubert@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'10', 'id_roles'=>'1', 'id_images'=>'105']);
         $obj = App\User::create(['last_name'=>'Berger', 'first_name'=>'Steve', 'email'=>'bbb.erger@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'2', 'id_images'=>'106']);
         $obj = App\User::create(['last_name'=>'Carpentier', 'first_name'=>'Steve', 'email'=>'bbb.arpentier@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'107']);
@@ -127,8 +127,8 @@ class FillDataUsers extends Migration
         $obj = App\User::create(['last_name'=>'Louis', 'first_name'=>'Steve', 'email'=>'bbb.ouis@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'111']);
         $obj = App\User::create(['last_name'=>'Deschamps', 'first_name'=>'Steve', 'email'=>'bbb.eschamps@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'112']);
         $obj = App\User::create(['last_name'=>'Huet', 'first_name'=>'Steve', 'email'=>'bbb.uet@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'113']);
-        $obj = App\User::create(['last_name'=>'Vasseur', 'first_name'=>'Steve', 'email'=>'bbb.asseur@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'7', 'id_roles'=>'2', 'id_images'=>'114']);
-        $obj = App\User::create(['last_name'=>'Perez', 'first_name'=>'Steve', 'email'=>'bbb.erez@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'2', 'id_images'=>'115']);
+        $obj = App\User::create(['last_name'=>'Vasseur', 'first_name'=>'Steve', 'email'=>'bbb.asseur@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'114']);
+        $obj = App\User::create(['last_name'=>'Perez', 'first_name'=>'Steve', 'email'=>'bbb.erez@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'115']);
         $obj = App\User::create(['last_name'=>'Boucher', 'first_name'=>'Steve', 'email'=>'bbb.oucher@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'116']);
         $obj = App\User::create(['last_name'=>'Fleury', 'first_name'=>'Steve', 'email'=>'bbb.leury@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'117']);
         $obj = App\User::create(['last_name'=>'Royer', 'first_name'=>'Steve', 'email'=>'bbb.oyer@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'118']);
@@ -144,8 +144,8 @@ class FillDataUsers extends Migration
         $obj = App\User::create(['last_name'=>'Charles', 'first_name'=>'Steve', 'email'=>'bbb.harles@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'128']);
         $obj = App\User::create(['last_name'=>'Renault', 'first_name'=>'Steve', 'email'=>'bbb.enault@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'129']);
         $obj = App\User::create(['last_name'=>'Charpentier', 'first_name'=>'Steve', 'email'=>'bbb.harpentier@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'130']);
-        $obj = App\User::create(['last_name'=>'Menard', 'first_name'=>'Steve', 'email'=>'bbb.enard@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'5', 'id_roles'=>'3', 'id_images'=>'131']);
-        $obj = App\User::create(['last_name'=>'Maillard', 'first_name'=>'Steve', 'email'=>'bbb.aillard@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'2', 'id_images'=>'132']);
+        $obj = App\User::create(['last_name'=>'Menard', 'first_name'=>'Steve', 'email'=>'bbb.enard@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'131']);
+        $obj = App\User::create(['last_name'=>'Maillard', 'first_name'=>'Steve', 'email'=>'bbb.aillard@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'132']);
         $obj = App\User::create(['last_name'=>'Baron', 'first_name'=>'Steve', 'email'=>'bbb.aron@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'133']);
         $obj = App\User::create(['last_name'=>'Bertin', 'first_name'=>'Steve', 'email'=>'bbb.ertin@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'134']);
         $obj = App\User::create(['last_name'=>'Bailly', 'first_name'=>'Steve', 'email'=>'bbb.ailly@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'135']);
@@ -160,7 +160,7 @@ class FillDataUsers extends Migration
         $obj = App\User::create(['last_name'=>'Millet', 'first_name'=>'Steve', 'email'=>'bbb.illet@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'144']);
         $obj = App\User::create(['last_name'=>'Perrot', 'first_name'=>'Steve', 'email'=>'bbb.errot@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'145']);
         $obj = App\User::create(['last_name'=>'Daniel', 'first_name'=>'Steve', 'email'=>'bbb.aniel@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'146']);
-        $obj = App\User::create(['last_name'=>'Cousin', 'first_name'=>'Steve', 'email'=>'bbb.ousin@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'2', 'id_images'=>'147']);
+        $obj = App\User::create(['last_name'=>'Cousin', 'first_name'=>'Steve', 'email'=>'bbb.ousin@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'147']);
         $obj = App\User::create(['last_name'=>'Germain', 'first_name'=>'Steve', 'email'=>'bbb.ermain@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'148']);
         $obj = App\User::create(['last_name'=>'Breton', 'first_name'=>'Steve', 'email'=>'bbb.reton@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'149']);
         $obj = App\User::create(['last_name'=>'Besson', 'first_name'=>'Steve', 'email'=>'bbb.esson@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'150']);
@@ -169,7 +169,7 @@ class FillDataUsers extends Migration
         $obj = App\User::create(['last_name'=>'Pelletier', 'first_name'=>'Steve', 'email'=>'bbb.elletier@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'153']);
         $obj = App\User::create(['last_name'=>'Leveque', 'first_name'=>'Steve', 'email'=>'bbb.eveque@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'154']);
         $obj = App\User::create(['last_name'=>'Perrier', 'first_name'=>'Steve', 'email'=>'bbb.errier@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'155']);
-        $obj = App\User::create(['last_name'=>'Leblanc', 'first_name'=>'Steve', 'email'=>'bbb.eblanc@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'2', 'id_images'=>'156']);
+        $obj = App\User::create(['last_name'=>'Leblanc', 'first_name'=>'Steve', 'email'=>'bbb.eblanc@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'156']);
         $obj = App\User::create(['last_name'=>'Barre', 'first_name'=>'Steve', 'email'=>'bbb.arre@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'157']);
         $obj = App\User::create(['last_name'=>'Lebrun', 'first_name'=>'Steve', 'email'=>'bbb.ebrun@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'158']);
         $obj = App\User::create(['last_name'=>'Marchal', 'first_name'=>'Steve', 'email'=>'bbb.archal@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'159']);
@@ -184,13 +184,13 @@ class FillDataUsers extends Migration
         $obj = App\User::create(['last_name'=>'Guichard', 'first_name'=>'Steve', 'email'=>'bbb.uichard@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'168']);
         $obj = App\User::create(['last_name'=>'Gillet', 'first_name'=>'Steve', 'email'=>'bbb.illet@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'169']);
         $obj = App\User::create(['last_name'=>'Etienne', 'first_name'=>'Steve', 'email'=>'bbb.tienne@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'170']);
-        $obj = App\User::create(['last_name'=>'Grondin', 'first_name'=>'Steve', 'email'=>'bbb.rondin@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'2', 'id_images'=>'171']);
+        $obj = App\User::create(['last_name'=>'Grondin', 'first_name'=>'Steve', 'email'=>'bbb.rondin@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'171']);
         $obj = App\User::create(['last_name'=>'Poulain', 'first_name'=>'Steve', 'email'=>'bbb.oulain@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'172']);
         $obj = App\User::create(['last_name'=>'Tessier', 'first_name'=>'Steve', 'email'=>'bbb.essier@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'173']);
         $obj = App\User::create(['last_name'=>'Chevallier', 'first_name'=>'Steve', 'email'=>'bbb.hevallier@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'174']);
         $obj = App\User::create(['last_name'=>'Collin', 'first_name'=>'Steve', 'email'=>'bbb.ollin@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'175']);
         $obj = App\User::create(['last_name'=>'Chauvin', 'first_name'=>'Steve', 'email'=>'bbb.hauvin@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'176']);
-        $obj = App\User::create(['last_name'=>'Bouchet', 'first_name'=>'Steve', 'email'=>'bbb.ouchet@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'1', 'id_roles'=>'1', 'id_images'=>'178']);
+        $obj = App\User::create(['last_name'=>'Bouchet', 'first_name'=>'Steve', 'email'=>'bbb.ouchet@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'178']);
         $obj = App\User::create(['last_name'=>'Gay', 'first_name'=>'Steve', 'email'=>'bbb.ay@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'179']);
         $obj = App\User::create(['last_name'=>'Lemaitre', 'first_name'=>'Steve', 'email'=>'bbb.emaitre@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'180']);
         $obj = App\User::create(['last_name'=>'Benard', 'first_name'=>'Steve', 'email'=>'bbb.enard@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'181']);
@@ -203,7 +203,7 @@ class FillDataUsers extends Migration
         $obj = App\User::create(['last_name'=>'Barthelemy', 'first_name'=>'Steve', 'email'=>'bbb.arthelemy@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'188']);
         $obj = App\User::create(['last_name'=>'Cordier', 'first_name'=>'Steve', 'email'=>'bbb.ordier@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'189']);
         $obj = App\User::create(['last_name'=>'Pichon', 'first_name'=>'Steve', 'email'=>'bbb.ichon@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'190']);
-        $obj = App\User::create(['last_name'=>'Lejeune', 'first_name'=>'Steve', 'email'=>'bbb.ejeune@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'3', 'id_images'=>'191']);
+        $obj = App\User::create(['last_name'=>'Lejeune', 'first_name'=>'Steve', 'email'=>'bbb.ejeune@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'191']);
         $obj = App\User::create(['last_name'=>'Gilbert', 'first_name'=>'Steve', 'email'=>'bbb.ilbert@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'192']);
         $obj = App\User::create(['last_name'=>'Lamy', 'first_name'=>'Steve', 'email'=>'bbb.amy@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'193']);
         $obj = App\User::create(['last_name'=>'Delaunay', 'first_name'=>'Steve', 'email'=>'bbb.elaunay@fakecesi.fr', 'password'=>bcrypt('cesi'), 'id_campus'=>'22', 'id_roles'=>'1', 'id_images'=>'194']);
