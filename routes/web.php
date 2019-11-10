@@ -44,6 +44,7 @@ Route::get('shop', function () {
 Route::get('shop/{id}', function () {
     return view('article');
 });
+
 Route::get('events', function () {
     return view('events');
 });
