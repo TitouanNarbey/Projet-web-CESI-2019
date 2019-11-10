@@ -3,7 +3,6 @@
     display: flex;
     align-items: flex-end;
     border-radius: 10px 10px 0 0;
-
 }
 .sizeBanner {
 	height: 100%;
@@ -47,4 +46,15 @@ font-weight: bold;
 }
 .shadow-textarea textarea.form-control {
     padding-left: 0.8rem;
+}
+textarea {
+   resize: none;
+
+}
+.description{
+		background-color: #F5F5F5;
+		font-size: 25px;
+	color: black;
+	
+
 }

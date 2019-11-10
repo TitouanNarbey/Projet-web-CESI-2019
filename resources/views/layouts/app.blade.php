@@ -12,6 +12,7 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link href="{{ asset('assets/vendor/bootstrap-4.3.1-dist/css/bootstrap.css') }}" rel="stylesheet">
         <link href="{{ asset('assets/css/CSSdeLoïs.css') }}" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f20d59caba.js" crossorigin="anonymous"></script>
 
 
 </head>

@@ -6,7 +6,7 @@
 
 
 
-<div class="container">
+<div class="container col-11">
 
 	  <!-- Carousel -->
 
@@ -75,7 +75,7 @@
   </div>
   </div>
 
-<div class="container">
+<div class="container col-11">
 	<div class="row mx-auto">
 		<div class="col-xl-3 mt-5">
   				<div class="card"><a href="Hello" class="nounderline">

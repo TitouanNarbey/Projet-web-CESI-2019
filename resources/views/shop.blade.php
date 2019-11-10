@@ -4,7 +4,7 @@
 
 
 
-<div class="container">
+<div class="container col-11">
 
 	  <!-- Carousel -->
 
