@@ -39,58 +39,22 @@
 				</div>
 				<div class="col-lg-5 offset-lg-1 ">
 					<div class="info_article tri">
-						<h3>Nom de l'article</h3>
-						<h2><span class="badge badge-dark ">15 €</span></h2>
+						<h3>{{$article->name}}</h3>
+            @foreach($article->offer as $local)
+						<h2>{{$local->campus->name}}</h2>
+            <h2><span class="badge badge-dark ">{{$local->price}} €</span></h2>
+            <h2><span class="badge badge-dark ">{{$local->stock}}</span></h2>
+            @endforeach
 						<div class="information mt-3 mb-3">
-							<div>Catégorie : <div class="badge badge-dark ">Pull de qualité</div> </div>
-							<div>Disponibilité : <div class="badge badge-success ">En stock</div> </div>
+							<div>Catégorie : <div class="badge badge-dark ">{{$article->category->name}}</div> </div>
+							<div>Disponibilité : <div class="badge badge-success ">En stock</div> </div> <!-- a voir l'affichage-->
 						</div>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						<p>{{$article->description}}</p>
 						<button type="button" class="btn btn-cesi btn-block">Ajouter au panier</button>
 						</div>
 				</div>
 
-				<div class="media mt-5">
-  <img class="d-flex rounded-circle avatar z-depth-1-half mr-3" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.jpg"
-    alt="Avatar">
-  <div class="media-body">
-        <h5 class="mt-0 font-weight-bold blue-text">Danny Tatuum</h5>
-        <div class="form-group basic-textarea rounded-corners">
-          <textarea class="form-control z-depth-1" id="exampleFormControlTextarea345" rows="3" cols="132" placeholder="Write your comment..."></textarea>
-          <button type="button" class="btn btn-cesi float-right mt-1 ">Ajouter un commentaire</button>
-						</div>
-</div>
-  </div>
-</div>
-<div class="media mt-2">
-  <img class="d-flex rounded-circle avatar z-depth-1-half mr-3" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.jpg"
-    alt="Avatar">
-  <div class="media-body">
-    <h5 class="mt-0 font-weight-bold blue-text">Anna Smith</h5>
-    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus
-    odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
-    fringilla. Donec lacinia congue felis in faucibus.
 
-    
-  </div>
-</div>
-<div class="media mt-2">
-  <img class="d-flex rounded-circle avatar z-depth-1-half mr-3" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-10.jpg"
-    alt="Avatar">
-  <div class="media-body">
-    <h5 class="mt-0 font-weight-bold blue-text">Caroline Horwitz</h5>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis odit minima eaque dignissimos recusandae
-    officiis commodi nulla est, tempore atque voluptas non quod maxime, iusto, debitis aliquid? Iure ipsum,
-    itaque.
-  </div>
-</div>
-				</div>
-			</div>
 		
 
 @endsection

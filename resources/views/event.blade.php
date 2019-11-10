@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container col-11">
-<h1>Titre de l'activité</h1>
+<h1>{{$event->name}}</h1>
 <div id="demo" class="carousel slide" data-ride="carousel">
 
   <!-- Indicators -->
@@ -34,29 +34,16 @@
     <span class="carousel-control-next-icon"></span>
   </a>
 
-<div class="text-center mt-2 mb-2"><h2>Organisée par le BDE le 28/08/12 </h2>
+<div class="text-center mt-2 mb-2"><h2>Organisée par {{$event->creator->last_name}} {{$event->creator->first_name}} le {{$event->start_date}} </h2>
 
 	<div class="description ">
 		<h2>Description</h2>
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  {{$event->description}}
 
 <h2>Quelques infos pratiques</h2>
 <div class="text-left ml-3">
-  <i class="fas fa-euro-sign"> :</i> <span class="badge btn-cesi ">15 €</span><br>
-  <i class="fas fa-map-marker-alt"> :</i> <span class="badge btn-cesi ">Stade de Gerland</span><br>
-  <i class="fas fa-clock"> :</i> <span class="badge btn-cesi ">18h</span><br>
-<i class="fas fa-sync-alt"> :</i> <span class="badge btn-cesi ">Unique</span><br>
+  <i class="fas fa-euro-sign"> :</i> <span class="badge btn-cesi "><?php if($event->price == 0){echo 'Gratuit';} else {echo $event->price.'€';} ?></span><br> <!-- Mettre un if pour gratuit-->
+  <i class="fas fa-sync-alt"> :</i> <span class="badge btn-cesi "><?php if($event->recurrent == 0){echo 'Unique';} else {echo'Recurrent';} ?></span><br>
   </div>
   <h2>Tu as pris de belles photos pendant l'événement ?</h2>
   <h5>Envoie nous les !!!!</h5>
@@ -76,7 +63,7 @@
           <textarea class="form-control z-depth-1" id="exampleFormControlTextarea345" rows="3" cols="132" placeholder="Write your comment..."></textarea>
 
            <button type="button" class="btn btn-cesi float-right mt-1 "> Ajouter un commentaire</button>
-            </div>
+      </div>
 </div>
   </div>
 

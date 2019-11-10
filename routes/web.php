@@ -44,13 +44,14 @@ Route::get('shop', function () {
 Route::get('shop/{id}', function () {
     return view('article');
 });
+Route::get('shop', 'ShopController@shops');
 
-Route::get('events', function () {
-    return view('events');
-});
-Route::get('events/{id}', function () {
-    return view('event');
-});
+Route::get('shop/{id}', 'ShopController@shop');
+
+Route::get('events', 'EventsController@events');
+
+Route::get('events/{id}', 'EventsController@event');
+
 Route::get('temp', function () {
     return controller('temp');
 });

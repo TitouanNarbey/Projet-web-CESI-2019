@@ -26,6 +26,16 @@ a.nounderline:link
 text-decoration:none;
 color : black;
 }
+a.nounderline:visited
+{
+text-decoration:none;
+color : black;
+}
+a.nounderline:hover
+{
+text-decoration:none;
+color : black;
+}
 .tri{
 	background-color: #F5F5F5;
 }
