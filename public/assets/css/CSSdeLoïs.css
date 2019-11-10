@@ -34,3 +34,17 @@ color : black;
 	background-color: #5A87DD;
 	color : white;
 }
+.information {
+	
+font-weight: bold;
+}
+
+.media .avatar {
+    width: 64px;
+}
+.shadow-textarea textarea.form-control::placeholder {
+    font-weight: 300;
+}
+.shadow-textarea textarea.form-control {
+    padding-left: 0.8rem;
+}
