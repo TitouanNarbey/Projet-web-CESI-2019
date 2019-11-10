@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('welcome');
 });
 //Route de Test
 Route::get('blade', function () {
@@ -27,19 +27,17 @@ Route::get('register', function () {
 Route::get('profile', function () {
     return view('profile');
 });
-Route::get('cart', function () {
-    return view('cart');
-});
-Route::get('legal', function () {
-    return view('legal');
-});
-//Benjamin, n'hésite pas à modifier les routes en fonction de ce que tu as besoin pour la partie légal
+Route::get('cart', 'CartsController@showCart');
+
+Route::get('checkout', 'CartsController@showCheckout');
+
+Route::get('legal', 'LegalsController@showLegalNotices');
+
 Route::get('legal/cookies', function () {
     return view('legalcookies');
 });
-Route::get('legal/CGV', function () {
-    return view('legalcgv');
-});
+Route::get('legal/CGV', 'LegalsController@showCGV');
+
 Route::get('shop', function () {
     return view('shop');
 });
@@ -51,6 +49,9 @@ Route::get('events', function () {
 });
 Route::get('events/{id}', function () {
     return view('event');
+});
+Route::get('temp', function () {
+    return controller('temp');
 });
 
 
