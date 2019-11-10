@@ -9,6 +9,7 @@ class Article extends Model
     protected $table = 'articles';
     //protected $primaryKey = 'id';
     public $timestamps = false;
+    protected $fillable = ['name', 'description', 'id_category', 'id_images'];
 
     public function category(){
         return $this->belongsTo('App\Category', 'id_category', 'id');

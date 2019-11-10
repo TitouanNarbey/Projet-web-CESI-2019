@@ -9,6 +9,7 @@ class Campus extends Model
     protected $table = 'campus';
     //protected $primaryKey = 'id';
     public $timestamps = false;
+    protected $fillable = ['name', 'address', 'city'];
 
     public function users(){
         return $this->hasMany('App\User', 'id_campus', 'id');

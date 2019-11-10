@@ -13,7 +13,7 @@ class User extends Authenticatable
     protected $table = 'users';
     //protected $primaryKey = 'id';
     //public $timestamps = false;
-
+    protected $fillable = ['last_name', 'first_name', 'email', 'password', 'created_at', 'updated_at', 'id_campus', 'id_roles', 'id_images'];
 
     public function campus(){
     return $this->belongsTo('App\Campus', 'id_campus', 'id');

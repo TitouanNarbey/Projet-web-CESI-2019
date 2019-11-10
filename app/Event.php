@@ -9,6 +9,7 @@ class Event extends Model
     protected $table = 'events';
     //protected $primaryKey = 'id';
     public $timestamps = false;
+    protected $fillable = ['name', 'description', 'start_date', 'end_date', 'price', 'recurrent', 'validate', 'id_images', 'id_users'];
 
     public function image(){
         return $this->belongsTo('App\Image', 'id_images', 'id');

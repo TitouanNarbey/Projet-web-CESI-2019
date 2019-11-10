@@ -9,7 +9,7 @@ class Post extends Model
     protected $table = 'posts';
     //protected $primaryKey = 'id';
     public $timestamps = false;
-
+    protected $fillable = ['text', 'date', 'id_users', 'id_events'];
 
     public function event(){
         return $this->belongsTo('App\Event', 'id_events', 'id');

@@ -9,6 +9,7 @@ class Image extends Model
     protected $table = 'images';
     //protected $primaryKey = 'id';
     public $timestamps = false;
+    protected $fillable = ['path', 'alt'];
 
     public function articles(){
         return $this->HasMany('App\Article', 'id_images', 'id');
