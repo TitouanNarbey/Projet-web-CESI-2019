@@ -11,7 +11,7 @@
                 {{-- title --}}
                 <div class="col-md-12 col-sm-12 col-xs-12" align="center">
                     <div class="titleprofile-container rounded">
-                      <h1>Prénom N.</h1>
+                    <h1>{{$user->last_name}} {{$user->first_name}}</h1>
                     </div>
                 </div>
 
@@ -67,7 +67,7 @@
                     <div class="form-group">
                         <div class="col-md-7 col-sm-9 col-xs-12">
                             <label for="inputEmail">Mail</label>
-                            <input type="email" class="form-control" id="inputEmail" placeholder="exemple@mail.com">
+                            <input type="email" class="form-control" id="inputEmail" placeholder="{{$user->email}}">
                         </div>
                     </div>
 

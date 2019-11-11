@@ -21,12 +21,11 @@ Route::get('blade', function () {
 Route::get('login', function () {
     return view('login');
 });
-Route::get('register', function () {
-    return view('register');
-});
-Route::get('profile', function () {
-    return view('profile');
-});
+
+Route::get('register', 'UsersController@register');
+
+Route::get('profile', 'UsersController@profile');
+
 Route::get('cart', 'CartsController@showCart');
 
 Route::get('checkout', 'CartsController@showCheckout');

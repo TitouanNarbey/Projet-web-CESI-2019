@@ -40,13 +40,11 @@
           <div class="col-md-4 col-sm-6 col-xs-10">
               <label for="inputCenter">Centre</label>
               <select id="inputCenter" class="form-control">
-                      <option selected>Choose...</option>
-                      <option>Lyon</option>
-                      <option>Nice</option>
-                      <option>Aix-en-provence</option>
-                      <option>Rouen</option>
-                      <option>Toulouse</option>
-                      <option>La Rochelle</option>
+                      @foreach($campuss as $campus)
+                      
+                      <option>{{$campus->name}}</option>
+
+                      @endforeach
               </select>
           </div>
           </div>
