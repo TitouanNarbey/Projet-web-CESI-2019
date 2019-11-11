@@ -8,6 +8,6 @@ class ConnexionIllustratearticlesmulti extends Model
 {
     protected $table = 'illustratearticlesmulti';
     //protected $primaryKey = 'id';
-    //public $timestamps = false;
+    public $timestamps = false;
     protected $fillable = ['id_images', 'id_articles'];
 }
