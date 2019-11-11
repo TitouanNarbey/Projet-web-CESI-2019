@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class FillDataLiked extends Migration
+class FillDataEventsofthemonth extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,9 @@ class FillDataLiked extends Migration
      */
     public function up()
     {
-        //$obj = App\ConnexionLocalisation::create(['id_events'=>'13', 'id_campus'=>'22']);
+        $obj = App\EventOfTheMonth::create(['id_events'=>'2']);
+        $obj = App\EventOfTheMonth::create(['id_events'=>'1']);
+        $obj = App\EventOfTheMonth::create(['id_events'=>'10']);
     }
 
     /**

@@ -147,6 +147,8 @@ Route::get('testDiplayEvents', function () {
         echo $event->id_users;
         echo ':';
         echo $event->creator->email;
+        echo '<br>EOTM ?';
+        echo $event->isEventofthemonth;
         echo '<br>';
         echo "<br>PARTICIPATE:<br>";
         foreach($event->participate as $user)

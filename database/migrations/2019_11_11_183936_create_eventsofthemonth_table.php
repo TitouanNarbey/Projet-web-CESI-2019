@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class FillDataLiked extends Migration
+class CreateEventsofthemonthTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,10 @@ class FillDataLiked extends Migration
      */
     public function up()
     {
-        //$obj = App\ConnexionLocalisation::create(['id_events'=>'13', 'id_campus'=>'22']);
+        Schema::create('eventsofthemonth', function (Blueprint $table) {
+            $table->unsignedBigInteger('id_events');
+            $table->foreign('id_events')->references('id')->on('events');
+        });
     }
 
     /**
@@ -23,6 +26,6 @@ class FillDataLiked extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('eventsofthemonth');
     }
 }
