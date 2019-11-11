@@ -13,7 +13,7 @@ class FillDataLiked extends Migration
      */
     public function up()
     {
-        $obj = App\ConnexionLocalisation::create(['id_events'=>'13', 'id_campus'=>'22']);
+        //$obj = App\ConnexionLocalisation::create(['id_events'=>'13', 'id_campus'=>'22']);
     }
 
     /**
