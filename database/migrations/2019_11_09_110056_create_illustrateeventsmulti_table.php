@@ -14,7 +14,8 @@ class CreateIllustrateeventsmultiTable extends Migration
     public function up()
     {
         Schema::create('illustrateeventsmulti', function (Blueprint $table) {
-            
+            $table->bigIncrements('id');
+
             $table->unsignedBigInteger('id_images');
             $table->foreign('id_images')->references('id')->on('images');
 

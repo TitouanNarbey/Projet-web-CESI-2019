@@ -22,4 +22,8 @@ class Illustrateeventsmulti extends Model
     public function user(){
         return $this->belongsTo('App\User', 'id_users', 'id');
     }
+
+    public function comments(){
+        return $this->hasMany('App\Commented', 'id_illustrateeventsmulti', 'id');
+    }
 }

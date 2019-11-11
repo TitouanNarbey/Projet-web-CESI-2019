@@ -9,10 +9,10 @@ class Commented extends Model
     protected $table = 'commented';
     //protected $primaryKey = 'id';
     public $timestamps = false;
-    protected $fillable = ['id_users', 'id_images', 'text'];
+    protected $fillable = ['id_users', 'id_illustrateeventsmulti', 'text'];
 
-    public function image(){
-        return $this->belongsTo('App\Image', 'id_images', 'id');
+    public function illustrate(){
+        return $this->belongsTo('App\Illustrateeventsmulti', 'id_illustrateeventsmulti', 'id');
     }
 
     public function user(){
