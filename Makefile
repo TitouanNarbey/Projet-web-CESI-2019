@@ -1,4 +1,4 @@
-.PHONY: help run configure
+.PHONY: help run configure migrate
 
 .DEFAULT_GOAL = help
 
@@ -29,4 +29,5 @@ configure: ## Configure project
 	php artisan key:generate
 
 migrate: ## Migrate bdd
-	php artisan migrate
+	cd .. && sudo chmod -R 777 www && cd www
+	php artisan migrate:fresh
