@@ -1,0 +1,70 @@
+.headerCardEvent {
+    height: 150px;
+    display: flex;
+    align-items: flex-end;
+    border-radius: 10px 10px 0 0;
+}
+.sizeBanner {
+	height: 100%;
+	width : 100%;
+}
+
+.eventCardDescription{
+
+	font-size: 15px;
+	font-family: "nunito";
+	font-style: italic;
+}
+
+.eventCardFooter{
+
+	font-size: 13px;	
+}
+
+a.nounderline:link
+{
+text-decoration:none;
+color : black;
+}
+a.nounderline:visited
+{
+text-decoration:none;
+color : black;
+}
+a.nounderline:hover
+{
+text-decoration:none;
+color : black;
+}
+.tri{
+	background-color: #F5F5F5;
+}
+.btn-cesi{
+	background-color: #5A87DD;
+	color : white;
+}
+.information {
+	
+font-weight: bold;
+}
+
+.media .avatar {
+    width: 64px;
+}
+.shadow-textarea textarea.form-control::placeholder {
+    font-weight: 300;
+}
+.shadow-textarea textarea.form-control {
+    padding-left: 0.8rem;
+}
+textarea {
+   resize: none;
+
+}
+.description{
+		background-color: #F5F5F5;
+		font-size: 25px;
+	color: black;
+	
+
+}

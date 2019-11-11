@@ -39,4 +39,9 @@ class Event extends Model
         return $this->HasMany('App\Illustrateeventsmulti', 'id_events', 'id');
     }
 
+
+    public function isEventofthemonth(){
+        return $this->HasMany('App\EventOfTheMonth', 'id_events', 'id');
+    }
+
 }

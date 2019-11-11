@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateIllustrateeventsmultiTable extends Migration
+class CreateEventsofthemonthTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,9 @@ class CreateIllustrateeventsmultiTable extends Migration
      */
     public function up()
     {
-        Schema::create('illustrateeventsmulti', function (Blueprint $table) {
-            $table->bigIncrements('id');
-
-            $table->unsignedBigInteger('id_images');
-            $table->foreign('id_images')->references('id')->on('images');
-
+        Schema::create('eventsofthemonth', function (Blueprint $table) {
             $table->unsignedBigInteger('id_events');
             $table->foreign('id_events')->references('id')->on('events');
-
-            $table->unsignedBigInteger('id_users');
-            $table->foreign('id_users')->references('id')->on('users');
         });
     }
 
@@ -34,6 +26,6 @@ class CreateIllustrateeventsmultiTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('illustrateeventsmulti');
+        Schema::dropIfExists('eventsofthemonth');
     }
 }

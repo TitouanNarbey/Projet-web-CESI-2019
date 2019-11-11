@@ -44,12 +44,14 @@ Route::get('shop', function () {
 Route::get('shop/{id}', function () {
     return view('article');
 });
-Route::get('events', function () {
-    return view('events');
-});
-Route::get('events/{id}', function () {
-    return view('event');
-});
+Route::get('shop', 'ShopController@shops');
+
+Route::get('shop/{id}', 'ShopController@shop');
+
+Route::get('events', 'EventsController@events');
+
+Route::get('events/{id}', 'EventsController@event');
+
 Route::get('temp', function () {
     return controller('temp');
 });
@@ -145,6 +147,8 @@ Route::get('testDiplayEvents', function () {
         echo $event->id_users;
         echo ':';
         echo $event->creator->email;
+        echo '<br>EOTM ?';
+        echo $event->isEventofthemonth;
         echo '<br>';
         echo "<br>PARTICIPATE:<br>";
         foreach($event->participate as $user)
