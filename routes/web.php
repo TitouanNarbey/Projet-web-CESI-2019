@@ -41,6 +41,7 @@ Route::get('legal/CGV', 'LegalsController@showCGV');
 Route::get('shop', 'ShopController@shops');
 
 Route::get('shop/{id}', 'ShopController@shop');
+Route::post('shop/{id}', 'ShopController@addToCard');
 
 Route::get('events', 'EventsController@events');
 
