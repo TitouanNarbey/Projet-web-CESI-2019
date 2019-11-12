@@ -65,17 +65,13 @@ Réparer le carousel-->
                     name}}
                   </h3>
                   <div class="eventCardDescription">
-                    {{$article->
-                    description}}
+                    {{$article->description}}
                   </div>
                 </div>
                 <div class="card-footer">
                   <div class="text-right eventCardFooter">
-                     @foreach($article->
-                    offer as $local)
-                    <h2><span class="badge badge-dark ">{{$local->price}} €</span></h2>
-                    <h2><span class="badge badge-dark ">{{$local->stock}} en stock</span></h2>
-                    @endforeach
+                    <h2><span class="badge badge-dark ">{{$article->price}} €</span></h2>
+                    <h2><span class="badge badge-dark ">{{$article->stock}} en stock</span></h2>
                   </div>
                 </div>
               </a>
