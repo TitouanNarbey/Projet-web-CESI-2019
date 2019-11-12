@@ -9,7 +9,16 @@ class ShopController extends Controller
 {
     public function shops()
     {
-    	$shop = Article::all();
+       
+        if ( !isset($_GET['search'])) {
+            $shop = Article::all();
+        }
+        else {
+            $var = "%".$_GET['search']."%";
+            $shop = Article::where('name', 'like', $var)->get();
+
+        }
+    
 		return view('shop',compact('shop'));
     	
     }
