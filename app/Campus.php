@@ -15,8 +15,8 @@ class Campus extends Model
         return $this->hasMany('App\User', 'id_campus', 'id');
     }
 
-    public function offers(){
-        return $this->hasMany('App\Offer', 'id_campus', 'id');
+    public function articles(){
+        return $this->hasMany('App\Article', 'id_campus', 'id');
     }
 
     public function events(){

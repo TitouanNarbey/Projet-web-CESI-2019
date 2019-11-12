@@ -15,7 +15,4 @@ class Offer extends Model
         return $this->belongsTo('App\Article', 'id_articles', 'id');
     }
 
-    public function campus(){
-        return $this->belongsTo('App\Campus', 'id_campus', 'id');
-    }
 }

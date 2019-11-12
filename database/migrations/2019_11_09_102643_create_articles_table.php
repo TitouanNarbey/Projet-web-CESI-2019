@@ -23,6 +23,12 @@ class CreateArticlesTable extends Migration
 
             $table->unsignedBigInteger('id_images');
             $table->foreign('id_images')->references('id')->on('images');
+
+            $table->unsignedBigInteger('id_campus');
+            $table->foreign('id_campus')->references('id')->on('campus');
+
+            $table->integer('stock');
+            $table->float('price', 11, 2);
         });
     }
 
