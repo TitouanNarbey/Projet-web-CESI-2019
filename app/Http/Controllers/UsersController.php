@@ -88,12 +88,12 @@ class UsersController extends Controller
         $email = request('inputEmail');
         $password = request('inputPassword');	
 
-        if (Auth::attempt(['email' => $email, 'password' => $password])) 
-        {
-            // Authentication passed...
-            return redirect()->intended('login');
-        }
-
+        // if (Auth::attempt(['email' => $email, 'password' => $password])) 
+        // {
+        //     // Authentication passed...
+        //     return redirect()->intended('login');
+        // }
+        return view('login');
 
     }
 }
