@@ -32,16 +32,42 @@ Ajouter un bouton de signalement en récupérent $_SESSION et en regardant le r�
 		</div>
 	</div>
 </div>
-<div class="text-center mt-5 tri">
-	<h1>Rejoins des gens de ton campus pour t'amuser le jeudi après-midi !!!</h1>
-	<div class=" dropdown mt-2">
-		<button onclick="showDropdownPrice()" class=" btn btn-cesi">Trier par Date</button>
-		<div id="price" class="dropdown-content">
-			<a href="#about">
-				<button class="btn btn-cesi btn-block">Passés</button>
-				<a href="#about"><button class="btn btn-cesi btn-block">A venir</button></div>
-			</div>
-		</div>
+
+	<div class="description text-center mt-5">
+    <h2>Viens t'amuser le jeudi après-midi !!!</h2>
+    <form class="example" action="#">
+    	@csrf
+      <input type="text" placeholder="Search.." name="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+    <div class=" dropdown mt-2">
+      <button onclick="showDropdownPrice()" class=" btn btn-cesi">Trier par prix</button>
+      <div id="price" class="dropdown-content">
+       
+          <form class="example" action="#">
+    	@csrf
+      <input class ="btn btn-cesi btn-block mt-1" type="submit" name="croissant" value="Croissant">
+  </form>
+          <form class="example" action="#">
+    	@csrf
+      <input class ="btn btn-cesi btn-block mt-1" type="submit" name="decroissant" value="Décroissant">
+  </form>
+</div>
+       
+        <button onclick="showDropdownFrequency()" class=" btn btn-cesi">Fréquence</button>
+      <div id="frequency" class="dropdown-content">
+        <form class="example" action="#">
+    	@csrf
+      <input class ="btn btn-cesi btn-block mt-1" type="submit" name="recurrent" value="Récurrent">
+      
+    </form>
+          <form class="example" action="#">
+    	@csrf
+      <input class ="btn btn-cesi btn-block mt-1" type="submit" name="unique" value="Unique">
+  </form>
+        </div>
+ </div>
+    </div>
 		<!-- Affichage des différentes événements -->
 		<div class="container col-11">
 			<div class="row mx-auto">

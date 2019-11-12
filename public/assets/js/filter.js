@@ -8,3 +8,6 @@ function showDropdownPrice() {
 function showDropdownCategory() {
   document.getElementById("category").classList.toggle("show");
 }
+function showDropdownFrequency() {
+  document.getElementById("frequency").classList.toggle("show");
+}

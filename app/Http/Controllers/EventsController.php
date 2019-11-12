@@ -9,7 +9,34 @@ class EventsController extends Controller
 {
     public function events()
     {
-    	$events = Event::all();
+    	if ( !isset($_GET['search'])) {
+            $events = Event::all();
+        }
+        else {
+            $var = "%".$_GET['search']."%";
+            $events = Event::where('name', 'like', $var)->get();
+        }
+        if ( isset($_GET['recurrent'])) {
+            $events = Event::where('recurrent', '=', 1)->get();
+        }
+        else {
+        }
+        if ( isset($_GET['unique'])) {
+            $events = Event::where('recurrent', '<>', 1)->get();
+        }
+        else {
+        }
+        if ( isset($_GET['decroissant'])) {
+            $events = Event::where('id', '<>', 0)->orderBy('price','DESC')->get();
+        }
+        else {
+        }
+        if ( isset($_GET['croissant'])) {
+            $events = Event::where('id', '<>', 0)->orderBy('price','ASC')->get();
+        }
+        else {
+        }
+       
 		return view('events',compact('events'));	
     }
     public function event($id){
