@@ -15,18 +15,30 @@
         {{-- Name --}}      
         <form class="form-container rounded" action="/Projet-web-CESI-2019/public/register" method="POST">
           @csrf
+          <div class="parts">
+              <a href="{{action('UsersController@showlogin')}}"> Déjà inscrit ?</a>
+            </div>
           <div class="form-row">
             <div class="name-container">
               <div class="col-md-10 col-sm-12 col-xs-12">
                 <label for="inputName">Nom</label>
-                <input type="text" class="form-control" id="inputName" placeholder="Nom" name="inputName">
+
+                {{-- The lign below is going to add the is-invalid class if there's an error --}}
+                <input type="text" class="form-control @error('inputName') is-invalid @enderror" id="inputName" placeholder="Nom" name="inputName">
               </div>
             </div>
+
+            {{-- The display message in case of error --}}
+            @error('inputName')
+            <div class="invalid-feedback">
+                Please choose a username.
+            </div>
+            @enderror
             {{-- Firstname --}}            
             <div class="name-container">
               <div class="col-md-10 col-sm-12 col-xs-12">
                 <label for="inputFirstname">Prénom</label>
-                <input type="text" class="form-control" id="inputFirstname" placeholder="Prénom" name="inputFirstname">
+                <input type="text" class="form-control form-control @error('inputFirstname') is-invalid @enderror" id="inputFirstname" placeholder="Prénom" name="inputFirstname">
               </div>
             </div>
           </div>
