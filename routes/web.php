@@ -37,12 +37,6 @@ Route::get('legal/cookies', function () {
 });
 Route::get('legal/CGV', 'LegalsController@showCGV');
 
-Route::get('shop', function () {
-    return view('shop');
-});
-Route::get('shop/{id}', function () {
-    return view('article');
-});
 Route::get('shop', 'ShopController@shops');
 
 Route::get('shop/{id}', 'ShopController@shop');
@@ -53,6 +47,17 @@ Route::get('events/{id}', 'EventsController@event');
 
 Route::get('temp', function () {
     return controller('temp');
+});
+
+//Penser à appliquer le middleware Auth dessus
+Route::prefix('admin')->group(function () {
+    Route::get('/', 'AdminController@dashboard');
+    Route::get('shop', 'AdminController@shopAdmin');
+    Route::get('events', 'AdminController@eventsAdmin');
+    Route::get('shop/{id}', 'AdminController@articleAdmin');
+    Route::get('events/{id}', 'AdminController@eventAdmin');
+    Route::get('new-article', 'AdminController@createArticle');
+    Route::get('new-event', 'AdminController@createEvent');
 });
 
 
