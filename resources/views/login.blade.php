@@ -32,6 +32,7 @@
                         <button type="submit" class="btn btn-warning btn-block text-dark">Se connecter</button>
                         <h3>Mot de passe oublié ?</h3>
                         <h3>Pas encore inscrit ?</h3>
+                        {{-- <a ref ="/Projet-web-CESI-2019/public/register"> Pas encore inscrit ?</a> --}}
             </form>
             {{-- form end --}}
 
