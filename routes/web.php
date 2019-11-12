@@ -28,6 +28,7 @@ Route::post('register', 'UsersController@postregister');
 Route::get('profile', 'UsersController@profile');
 
 Route::get('cart', 'CartsController@showCart');
+Route::post('changequantity', 'CartsController@changequantity');
 
 Route::get('checkout', 'CartsController@showCheckout');
 
