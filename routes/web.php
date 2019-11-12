@@ -12,15 +12,17 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
+});
+
+Route::get('home', function () {
+    return view('home');
 });
 //Route de Test
 Route::get('blade', function () {
     return view('child');
 });
-Route::get('login', function () {
-    return view('login');
-});
+
 
 Route::get('register', 'UsersController@register');
 Route::post('register', 'UsersController@postregister');
