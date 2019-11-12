@@ -88,9 +88,9 @@ class UsersController extends Controller
         $email = request('inputEmail');
         $password = request('inputPassword');	
 
-        //return view('login');
+        return view('login');
        
-        if (Auth::attempt(['email' => $email, 'password' => $password])) 
+        /*if (Auth::attempt(['email' => $email, 'password' => $password])) 
         {
             // Authentication passed...
             $json = file_get_contents("http://localhost:3000/api/users");
@@ -98,6 +98,7 @@ class UsersController extends Controller
             var_dump($parse);
         } else {
             return view('login');
-        }
+        }*/
+
     }
 }
