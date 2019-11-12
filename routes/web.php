@@ -23,6 +23,7 @@ Route::get('login', function () {
 });
 
 Route::get('register', 'UsersController@register');
+Route::post('register', 'UsersController@postregister');
 
 Route::get('profile', 'UsersController@profile');
 
