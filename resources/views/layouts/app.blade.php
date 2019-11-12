@@ -43,9 +43,8 @@
   <div class="topnav">
       <div class="login-container">
         <form action="/login">
-          <input type="text" placeholder="Mail" name="inputEmail">
-          <input type="text" placeholder="Mot de passe" name="inputPassword">
-          <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Se connecter</button>
+          <button class="btn btn-danger my-2 my-sm-0" href="register">S'inscrire</button>
+          <button class="btn btn-outline-primary my-2 my-sm-0" href="login">Se connecter</button>
         </form>
       </div>
     </div>
@@ -54,14 +53,14 @@
 
         @section('content')
         @show
-        <div class="footer">
+        <footer>
           <br>
           <p>BDE Cesi Lyon - 19 Avenue Guy de Collongue - 04.72.18.89.89 </p>
           <p><a class="nav-link" href="legal"><div class="colortext2">Mentions légales et CGUs.</div></a></p>
           <br>
           <br>
           
-        </div>
+        </footer>
     </body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
