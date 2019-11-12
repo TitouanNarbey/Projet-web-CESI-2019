@@ -88,12 +88,16 @@ class UsersController extends Controller
         $email = request('inputEmail');
         $password = request('inputPassword');	
 
+        //return view('login');
+       
         if (Auth::attempt(['email' => $email, 'password' => $password])) 
         {
             // Authentication passed...
-            return redirect()->intended('login');
+            $json = file_get_contents("http://localhost:3000/api/users");
+            $parse = json_decode($json, true);
+            var_dump($parse);
+        } else {
+            return view('login');
         }
-
-
     }
 }

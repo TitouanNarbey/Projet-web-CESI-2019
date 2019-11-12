@@ -15,7 +15,7 @@
                           </div>
             </div>
                       {{-- End of title --}}
-            <form class="form-container rounded" method="POST" action="/Projet-web-CESI-2019/public/login">
+            <form class="form-container rounded" method="POST">
                 @csrf
                         <div class="form-group">
                             <label for="exampleInputEmail1">Adresse mail</label>
