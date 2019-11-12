@@ -25,6 +25,9 @@ Route::get('login', function () {
 Route::get('register', 'UsersController@register');
 Route::post('register', 'UsersController@postregister');
 
+Route::get('login', 'UsersController@showlogin');
+Route::post('login', 'UsersController@postlogin');
+
 Route::get('profile', 'UsersController@profile');
 
 Route::get('cart', 'CartsController@showCart');
