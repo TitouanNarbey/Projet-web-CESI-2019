@@ -6,7 +6,6 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
 </head>
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -81,10 +80,14 @@
         <div class="col mb-2">
             <div class="row">
                 <div class="col-sm-12  col-md-6">
+                	<a href="shop" target="_self">
                     <button class="btn btn-block btn-light">Continue Shopping</button>
+                </a>
                 </div>
                 <div class="col-sm-12 col-md-6 text-right">
+                	<a href="checkout" target="_self">
                     <button class="btn btn-lg btn-block btn-success text-uppercase">Checkout</button>
+                </a>
                 </div>
             </div>
         </div>
