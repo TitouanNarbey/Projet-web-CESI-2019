@@ -70,11 +70,11 @@ class ShopController extends Controller
         if($dejaArticle == null)
         {
             $dejaArticle = Comanded::create(['id_orders'=>$cart->id, 'id_articles'=>$id, 'quantity'=>$quantity]);
-            return view('');
+            return redirect('shop/'.$id)->with('messageGreen', 'Article ajouté au panier');
         }
         else
         {
-            return view('cart');
+            return redirect('cart');
         }
         
     	//return view('article',compact('article'));

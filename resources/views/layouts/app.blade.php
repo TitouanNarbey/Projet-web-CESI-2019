@@ -50,8 +50,15 @@
         </form>
       </div>
     </nav>
+
+    @if(session()->has('messageGreen'))
+    <div class="alert alert-success text-center" role="alert">
+        {{session()->get('messageGreen')}}
+      </div>
+    @endif
     @section('content')
     @show
+
     <h2>Footer</h2>
   </body>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
