@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 @extends('layouts.app')@section('content')
 <div class="container col-11">
 	<div class="row">

@@ -15,24 +15,46 @@
                           </div>
             </div>
                       {{-- End of title --}}
-            <form class="form-container rounded">
+<<<<<<< HEAD
+            <form class="form-container rounded" method="POST">
+=======
+            <form class="form-container rounded" method="POST" action="/login">
+>>>>>>> UsersController
+                @csrf
                         <div class="form-group">
                             <label for="exampleInputEmail1">Adresse mail</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                            <input type="email" class="form-control @error('inputEmail') is-invalid @enderror" id="exampleInputEmail1" placeholder="Enter email" name="inputEmail">
                                 {{-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> --}}
                         </div>
                         <div class="form-group">
                           <label for="exampleInputPassword1">Mot de passe</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="inputPassword">
                         </div>
                         <div class="form-group form-check">
                           <input type="checkbox" class="form-check-input" id="exampleCheck1">
                           <label class="form-check-label" for="exampleCheck1">Me garder connecté.</label>
                         </div>
-                        <button type="submit" class="btn btn-warning btn-block text-dark">Se connecter</button>
-                        <h3>Mot de passe oublié ?</h3>
-                        <h3>Pas encore inscrit ?</h3>
-                        {{-- <a ref ="/Projet-web-CESI-2019/public/register"> Pas encore inscrit ?</a> --}}
+                        <button type="submit" class="btn btn-primary btn-block text-dark">Se connecter</button>
+                        <div class="parts">
+                          Mot de passe oublié ?
+                        </div>
+                        <div class="parts">
+                          <a href="{{action('UsersController@register')}}"> Pas encore inscrit ?</a>
+                        </div>
+                        {{-- <a ref ="/Projet-web-
+                        CESI-2019/public/register"> Pas encore inscrit ?</a> --}}
+
+                        @if (session('status'))
+                          <div class="alert alert-success" role)="alert">
+                              {{ session('status')}}
+                          </div>
+                        @endif
+
+                        @error('inputEmail')
+                        <div class="invalid-feedback">
+                            The email is not correct
+                        </div>
+                        @enderror
             </form>
             {{-- form end --}}
 

@@ -25,9 +25,13 @@ Route::get('login', function () {
 Route::get('register', 'UsersController@register');
 Route::post('register', 'UsersController@postregister');
 
+Route::get('login', 'UsersController@showlogin');
+Route::post('login', 'UsersController@postlogin');
+
 Route::get('profile', 'UsersController@profile');
 
 Route::get('cart', 'CartsController@showCart');
+Route::post('changequantity', 'CartsController@changequantity');
 
 Route::get('checkout', 'CartsController@showCheckout');
 
@@ -41,6 +45,7 @@ Route::get('legal/CGV', 'LegalsController@showCGV');
 Route::get('shop', 'ShopController@shops');
 
 Route::get('shop/{id}', 'ShopController@shop');
+Route::post('shop/{id}', 'ShopController@addToCard');
 
 Route::get('events', 'EventsController@events');
 
