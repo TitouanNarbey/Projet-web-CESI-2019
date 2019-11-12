@@ -42,10 +42,18 @@
         <!-- a voir l'affichage-->
       </div>
     <p>
-      {{$article->
-      description}}
+      {{$article->description}}
     </p>
-    <button type="button" class="btn btn-cesi btn-block">Ajouter au panier</button>
+  <form class="formquantity" action="/shop/{{$id}}" method="POST">
+    @csrf
+        <label for="inputQuantity">Quantité : </label>
+        <input type="number" min ="1" class="form-control" id="inputQuantity" placeholder="Quantité" name="inputQuantity" value="1">
+        <button type="submit" class="btn btn-cesi btn-block">Ajouter au panier</button>
+  </form>
+  @if(session()->has('articleAdd'))
+
+  @endif
+
   </div>
 </div>
 
