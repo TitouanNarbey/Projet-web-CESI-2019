@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use App\User;
 use App\Campus;
 use Auth;
@@ -89,15 +90,33 @@ class UsersController extends Controller
         $password = request('inputPassword');	
 
         //return view('login');
-       
-        if (Auth::attempt(['email' => $email, 'password' => $password])) 
+        $urlToRequest = "http://10.169.129.14:3000/api/login/";
+        $urlToRequest .= $email;
+
+        $json = file_get_contents($urlToRequest);
+        $parse = json_decode($json, true);
+
+        $mdp = $parse[0]["password"];
+
+        if(Hash::check($password, $mdp))
+        {
+            echo ("yes !");
+        }
+        else
+        {
+            echo ("nop :(");
+        }
+
+
+        /*if (Auth::attempt(['email' => $email, 'password' => $password])) 
         {
             // Authentication passed...
-            $json = file_get_contents("http://localhost:3000/api/users");
+
+            $json = file_get_contents("http://10.169.129.14:3000/api/users");
             $parse = json_decode($json, true);
             var_dump($parse);
         } else {
             return view('login');
-        }
+        }*/
     }
 }

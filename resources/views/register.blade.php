@@ -13,7 +13,7 @@
         </div>
         {{-- form start --}}  
         {{-- Name --}}      
-        <form class="form-container rounded" action="/Projet-web-CESI-2019/public/register" method="POST">
+        <form class="form-container rounded" action="/register" method="POST">
           @csrf
           <div class="parts">
               <a href="{{action('UsersController@showlogin')}}"> Déjà inscrit ?</a>
