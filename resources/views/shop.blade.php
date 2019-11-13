@@ -7,6 +7,8 @@ Réparer le carousel-->
 
 
 @extends('layouts.app')@section('content')
+<br>
+<br>
 <div class="container col-11">
   <!-- Carousel -->
   <div id="demo" class="carousel slide" data-ride="carousel">

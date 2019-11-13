@@ -15,11 +15,10 @@
                           </div>
             </div>
                       {{-- End of title --}}
-<<<<<<< HEAD
-            <form class="form-container rounded" method="POST">
-=======
-            <form class="form-container rounded" method="POST" action="/login">
->>>>>>> UsersController
+
+
+            <form class="form-container rounded center_div" method="POST" action="/login">
+
                 @csrf
                         <div class="form-group">
                             <label for="exampleInputEmail1">Adresse mail</label>
@@ -45,7 +44,7 @@
                         CESI-2019/public/register"> Pas encore inscrit ?</a> --}}
 
                         @if (session('status'))
-                          <div class="alert alert-success" role)="alert">
+                          <div class="alert alert-success" role="alert">
                               {{ session('status')}}
                           </div>
                         @endif
