@@ -13,12 +13,8 @@
     <link href="{{ asset('assets/css/cssdeBen.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/CSSdeLoïs.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/navbar.css') }}" rel="stylesheet">
-
-    
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   </head>
-
-    
-
     <body>
         <nav class="navbar navbar-expand-lg">
           {{-- Logo --}}
@@ -36,6 +32,7 @@
 
         <li class="nav-item">
             <a class="nav-link" href="events"><div class="colortext">Evénements</div></a>
+>>>>>>> cec6b58006d1664d92d98e2ab31cb7d74fb2ff82
           </li>
 
     </ul>
