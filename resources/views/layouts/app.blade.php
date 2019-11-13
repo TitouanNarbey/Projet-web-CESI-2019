@@ -32,7 +32,6 @@
 
         <li class="nav-item">
             <a class="nav-link" href="events"><div class="colortext">Evénements</div></a>
->>>>>>> cec6b58006d1664d92d98e2ab31cb7d74fb2ff82
           </li>
 
           <li class="nav-item">
