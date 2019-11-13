@@ -110,6 +110,8 @@ class UsersController extends Controller
             Session::put('id_roles', $parse["user"][0]["id_roles"]);
             Session::put('id_images', $parse["user"][0]["id_images"]);
             Session::put('token', $parse["token"]);
+
+            return view('/home');
         }
         else
         {
