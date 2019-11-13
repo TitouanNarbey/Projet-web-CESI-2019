@@ -24,6 +24,7 @@ Route::get('blade', function () {
 });
 
 
+
 Route::get('register', 'UsersController@register');
 Route::post('register', 'UsersController@postregister');
 

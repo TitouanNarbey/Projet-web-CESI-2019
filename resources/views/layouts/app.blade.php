@@ -20,15 +20,15 @@
     
 
     <body>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg">
           {{-- Logo --}}
-  <div class="navbar-brand navbar-brand-left"><a class="navbar-brand" href="\"><img src="{{asset('assets/img/logo.png')}} " alt="LogoCesiLyon" width="80"></a></div>
+  <div class="navbar-brand navbar-brand-left"><a class="navbar-brand" href="\"><img src="{{asset('assets/img/logo.png')}} " alt="LogoCesiLyon" width="70"></a></div>
 
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="\"><div class="colortext">Home</div> <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="\"><div class="colortext"><i class="fa fa-fw fa-home"></i> Accueil</div> <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
           <a class="nav-link" href="shop"><div class="colortext">Boutique</div></a>
@@ -54,14 +54,92 @@
 
         @section('content')
         @show
-        <footer>
-          <br>
-          <p>BDE Cesi Lyon - 19 Avenue Guy de Collongue - 04.72.18.89.89 </p>
-          <p><a class="nav-link" href="legal"><div class="colortext2">Mentions légales et CGUs.</div></a></p>
-          <br>
-          <br>
-          
-        </footer>
+
+<!-- Footer -->
+<footer class="page-footer font-small blue pt-4">
+
+    <!-- Footer Links -->
+    <div class="container-fluid text-center text-md-left">
+  
+      <!-- Grid row -->
+      <div class="row">
+  
+        <!-- Grid column -->
+        <div class="col-md-6 mt-md-0 mt-3">
+  
+          <!-- Content -->
+          <h5 class="text-uppercase">BDE Cesi Lyon</h5>
+          <p>19 Avenue Guy de Collongue - 04.72.18.89.89
+              
+          </p>
+  
+        </div>
+        <!-- Grid column -->
+  
+        <hr class="clearfix w-100 d-md-none pb-3">
+  
+        <!-- Grid column -->
+        <div class="col-md-3 mb-md-0 mb-3">
+  
+          <!-- Links -->
+          <h5 class="text-uppercase">Liens</h5>
+  
+          <ul class="list-unstyled">
+            <li>
+              <a href="/">Accueil</a>
+            </li>
+            <li>
+              <a href="shop">La boutique</a>
+            </li>
+            <li>
+              <a href="events">Les événements</a>
+            </li>
+            <li>
+              <a href="legal">Mentions légales et CGUs</a>
+            </li>
+          </ul>
+  
+        </div>
+        <!-- Grid column -->
+  
+        <!-- Grid column -->
+        <div class="col-md-3 mb-md-0 mb-3">
+  
+          <!-- Links -->
+          <h5 class="text-uppercase"><br></h5>
+  
+          <ul class="list-unstyled">
+            <li>
+              <a href="https://www.cesi.fr/">Cesi.fr</a>
+            </li>
+
+          </ul>
+  
+        </div>
+        <!-- Grid column -->
+  
+      </div>
+      <!-- Grid row -->
+  
+    </div>
+    <!-- Footer Links -->
+  
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">
+        • 
+        <a href="https://www.facebook.com/BDECesiLyon/"><i class="fab fa-facebook-f"></i></a>      •    
+        <a href="https://twitter.com/Bdecesilyon"><i class="fab fa-twitter"></i></a>  • 
+        <a href="https://discord.gg/GeMteh7"><i class="fab fa-discord"></i></a>   • 
+        <br>
+        <br>
+      © 2019 Copyright:
+      <a href="/"> Bureau Des Etudiants du Cesi Lyon</a>
+    </div>
+    <!-- Copyright -->
+  
+  </footer>
+  <!-- Footer -->
+  
     </body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

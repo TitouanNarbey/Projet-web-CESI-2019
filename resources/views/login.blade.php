@@ -17,7 +17,7 @@
                       {{-- End of title --}}
 
 
-            <form class="form-container rounded" method="POST" action="/login">
+            <form class="form-container rounded center_div" method="POST" action="/login">
 
                 @csrf
                         <div class="form-group">

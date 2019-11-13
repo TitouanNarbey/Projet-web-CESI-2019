@@ -32,14 +32,30 @@
     box-shadow: 0px 0px 15px 4px rgba(140,140,140,1);
     color:white;
 }
+
+.profileform
+{
+    font-size:25px;
+    /* border:1px solid; */
+}
+
+.profileformname
+{
+    font-size:45px;
+    font-style: oblique;
+}
+
 .titleprofile-container
 {
     /* border:1px solid; */
-    padding:10px 60px; 
+    padding:px 60px; 
     margin-top:2vh;
-    margin-bottom:10vh;
-    background-color:RGB(102, 132, 189);
-    /* text-align:center; */
+    font-size: 50px;
+    margin-bottom:2vh;
+    background-color:RGB(043, 074, 123);
+    color:white;
+    text-align:center; 
+    font-style:courier;
 }
 
 .name-container
@@ -87,3 +103,11 @@ footer
     font-size:12px;
     font-style:sans-serif;
 }
+
+.title-container-home
+{
+    color:RGB(043, 074, 123);
+    font-size:35px;
+    font-style:sans-serif;
+}
+
