@@ -13,7 +13,6 @@
     <link href="{{ asset('assets/css/cssdeBen.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/CSSdeLoïs.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/navbar.css') }}" rel="stylesheet">
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   </head>
     <body>
         <nav class="navbar navbar-expand-lg">
