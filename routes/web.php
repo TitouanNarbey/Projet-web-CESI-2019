@@ -33,7 +33,7 @@ Route::post('login', 'UsersController@postlogin');
 
 Route::get('profile', 'UsersController@profile');
 
-Route::get('cart', 'CartsController@showCart');
+Route::get('cart', 'CartsController@showCart')->middleware('auth');
 Route::post('changequantity', 'CartsController@changequantity');
 
 Route::get('checkout', 'CartsController@showCheckout');

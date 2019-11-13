@@ -3,7 +3,7 @@
   }
   .navbar .navbar-brand {
 	color: #ecf0f1;
-	height: 78px;
+	height: 85px;
   }
   .navbar .navbar-brand:hover,
   .navbar .navbar-brand:focus {
@@ -21,8 +21,8 @@
   }
   .navbar .navbar-nav .nav-link {
 	color: #ecf0f1;
-	border-radius: .25rem;
-	margin: 0 0.25em;
+	border-radius: 0.8rem;
+	margin: 0 0.60em;
   }
   .navbar .navbar-nav .nav-link:not(.disabled):hover,
   .navbar .navbar-nav .nav-link:not(.disabled):focus {
@@ -125,4 +125,3 @@
 	color: #ffffff;
 	background-color: #2b4a7b;
   }
-  @navbar-height: 2

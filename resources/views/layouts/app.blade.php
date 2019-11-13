@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     <link href="{{ asset('assets/vendor/bootstrap-4.3.1-dist/css/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/cssdenoan.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/profile.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/cssdeBen.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/CSSdeLoïs.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/navbar.css') }}" rel="stylesheet">
@@ -22,20 +23,21 @@
     <body>
         <nav class="navbar navbar-expand-lg">
           {{-- Logo --}}
-  <div class="navbar-brand navbar-brand-left"><a class="navbar-brand" href="\"><img src="{{asset('assets/img/logo.png')}} " alt="LogoCesiLyon" width="70"></a></div>
+  <div class="navbar-brand navbar-brand-left"><a class="navbar-brand" href="\"><img src="{{asset('assets/img/logo.png')}}" class="img-responsive" alt="LogoCesiLyon" width="75"></a></div>
 
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="\"><div class="colortext"><i class="fa fa-fw fa-home"></i> Accueil</div> <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="\"><div class="colortext"><i class="fa fa-fw fa-home"></i> Accueil </div> <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="shop"><div class="colortext">Boutique</div></a>
+          <a class="nav-link" href="shop"><div class="colortext"><i class="fas fa-shopping-cart"></i> Boutique </div></a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="events"><div class="colortext">Evénements</div></a>
+            <a class="nav-link" href="events"><div class="colortext"><i class="far fa-calendar-star"></i>
+              Evénements</div></a>
           </li>
 
           <li class="nav-item">
@@ -51,7 +53,7 @@
   </div>
   <div class="topnav">
       <div class="login-container">
-        <form action="/login">
+        <form >
           <button class="btn btn-danger my-2 my-sm-0" href="register">S'inscrire</button>
           <button class="btn btn-outline-primary my-2 my-sm-0" href="login">Se connecter</button>
         </form>
@@ -64,7 +66,7 @@
         @show
 
 <!-- Footer -->
-<footer class="page-footer font-small blue pt-4">
+<footer class="page-footer font-small blue pt-4" id="sticky-footer" >
 
     <!-- Footer Links -->
     <div class="container-fluid text-center text-md-left">
