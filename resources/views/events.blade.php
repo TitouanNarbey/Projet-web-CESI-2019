@@ -8,7 +8,8 @@ Ajouter un bouton de signalement en récupérent $_SESSION et en regardant le r�
 
 @extends('layouts.app')@section('content')
 
-
+<br>
+<br>
 <div class="container col-11">
 	<!-- Carousel -->
 	<div id="demo" class="carousel slide" data-ride="carousel">

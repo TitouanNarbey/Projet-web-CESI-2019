@@ -118,7 +118,6 @@ class UsersController extends Controller
             echo ("mauvais password :(");
         }
 
-
         /*if (Auth::attempt(['email' => $email, 'password' => $password])) 
         {
             // Authentication passed...
@@ -129,5 +128,6 @@ class UsersController extends Controller
         } else {
             return view('login');
         }*/
+
     }
 }

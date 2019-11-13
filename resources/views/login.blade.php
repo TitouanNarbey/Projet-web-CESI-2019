@@ -15,7 +15,10 @@
                           </div>
             </div>
                       {{-- End of title --}}
-            <form class="form-container rounded" method="POST">
+
+
+            <form class="form-container rounded center_div" method="POST" action="/login">
+
                 @csrf
                         <div class="form-group">
                             <label for="exampleInputEmail1">Adresse mail</label>
@@ -30,7 +33,7 @@
                           <input type="checkbox" class="form-check-input" id="exampleCheck1">
                           <label class="form-check-label" for="exampleCheck1">Me garder connecté.</label>
                         </div>
-                        <button type="submit" class="btn btn-warning btn-block text-dark">Se connecter</button>
+                        <button type="submit" class="btn btn-primary btn-block text-dark">Se connecter</button>
                         <div class="parts">
                           Mot de passe oublié ?
                         </div>

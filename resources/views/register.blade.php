@@ -79,10 +79,10 @@
           <div class="form-group">
             <div class="form-check">
               <input class="form-check-input" type="checkbox" id="checkbox" name="inputCheckbox">
-              <label class="form-check-label" for="gridCheck">                J'accepte les mentions légales.              </label>
+              <label class="form-check-label" for="gridCheck">                J'accepte les <a href="legal">mentions légales et les conditions d'utilisiation.       </a>       </label>
             </div>
           </div>
-          <button type="submit" class="btn btn-warning btn-block text-dark">S'inscrire</button>
+          <button type="submit" class="btn btn-primary btn-block text-dark">S'inscrire</button>
         </form>
         {{-- form end --}}      
       </div>
