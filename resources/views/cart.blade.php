@@ -46,13 +46,13 @@
 								quantity}} €
 							</td>
 							<td class="text-right">
-								<form>
-									<!-- 
-									<input type="button" onclick='CartsController@deleteComand'>
-									 -->
-									<button class="btn btn-sm btn-danger" onclick="CartsController@deleteComand"><i class="fa fa-trash"></i></button>
-								</td>
-							</form>
+								<form class="deleteComand" action="/deleteComande" method="post">
+									@csrf
+									<button class="btn btn-sm btn-danger" type="submit">
+										<i class="fa fa-trash"></i>
+									</button>
+								
+								</form>
 						</tr>
 						@endforeach
 						<tr>

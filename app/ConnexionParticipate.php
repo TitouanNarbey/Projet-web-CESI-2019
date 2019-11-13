@@ -10,4 +10,7 @@ class ConnexionParticipate extends Model
     //protected $primaryKey = 'id';
     public $timestamps = false;
     protected $fillable = ['id_events', 'id_users'];
+
+
+ 	
 }
