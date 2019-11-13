@@ -71,12 +71,21 @@ class CartsController extends Controller
         return redirect()->action('CartsController@showCart');
     }
     
-    public function deleteComand()
+    public function deleteComande()
     {
         // $id_order = request('id_order');
         // $id_article = request('id_article');
-        // $quantity = request('quantity');
-        return view('checkout');
+        // $quantity = request('quantityChanger');
+
+        // $order = Order::find($id_order);
+
+        // $haveComand = 0;
+
+        // $obj = Comanded::where('id_orders', $id_order)->where('id_articles', $id_article)->where('quantity', $quantity);
+
+        // return $obj->delete();
+        return redirect()->action('CartsController@showCheckout');
+
     }
 
     public function showCheckout()
