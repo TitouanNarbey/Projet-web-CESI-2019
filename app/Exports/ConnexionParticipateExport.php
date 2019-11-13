@@ -2,7 +2,7 @@
 
 namespace App\Exports;
 
-use App\ConnexionParticipate;
+use App\User;
 use Maatwebsite\Excel\Concerns\FromCollection;
 
 class ConnexionParticipateExport implements FromCollection
@@ -12,6 +12,7 @@ class ConnexionParticipateExport implements FromCollection
     */
     public function collection()
     {
-        return ConnexionParticipate::all();
+
+        return User::all()->where('id_events','<>','0');
     }
 }

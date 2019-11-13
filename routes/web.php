@@ -389,9 +389,4 @@ Route::get('testCurrent', function () {
     }
 });*/
 
-
-
-Route::get('participate', 'ParticipateController@create')->name('participate.create');
-Route::post('participate', 'ParticipateController@store')->name('participate.store');
-Route::get('participate/list', 'ParticipateController@index')->name('participate.index');
 Route::get('export', 'ParticipateController@export');

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Article;
 use App\Order;
 use App\Comanded;
+use App\Category;
 
 class ShopController extends Controller
 {
@@ -20,8 +21,38 @@ class ShopController extends Controller
             $shop = Article::where('name', 'like', $var)->get();
 
         }
-    
-		return view('shop',compact('shop'));
+        if ( isset($_GET['recurrent'])) {
+            $shop = Article::where('recurrent', '=', 1)->get();
+        }
+        else {
+        }
+        if ( isset($_GET['unique'])) {
+            $shop = Article::where('recurrent', '<>', 1)->get();
+        }
+        else {
+        }
+        if ( isset($_GET['decroissant'])) {
+            $shop = Article::where('id', '<>', 0)->orderBy('price','DESC')->get();
+        }
+        else {
+        }
+        if ( isset($_GET['croissant'])) {
+            $shop = Article::where('id', '<>', 0)->orderBy('price','ASC')->get();
+        }
+        else {
+        }
+        if ( isset($_GET['id_category'])) {
+            
+            $categories = Category::all();
+            $shop = Article::where('id_category', '=', $_GET['id_category'])->get();
+        }
+        else {
+                    $categories = Category::all();
+
+        }
+
+
+        return view('shop',compact('shop'),compact('categories'));
     	
     }
 

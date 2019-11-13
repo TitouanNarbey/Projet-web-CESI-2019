@@ -39,15 +39,24 @@ Réparer le carousel-->
     <div class=" dropdown mt-2">
       <button onclick="showDropdownPrice()" class=" btn btn-cesi">Trier par prix</button>
       <div id="price" class="dropdown-content">
-        <a href="#about">
-          <button class="btn btn-cesi btn-block">Croissant</button>
-          <a href="#about"><button class="btn btn-cesi btn-block">Décroissant</button></div>
+        <form class="example" action="#">
+      @csrf
+      <input class ="btn btn-cesi btn-block mt-1" type="submit" name="croissant" value="Croissant">
+  </form>
+          <form class="example" action="#">
+      @csrf
+      <input class ="btn btn-cesi btn-block mt-1" type="submit" name="decroissant" value="Décroissant">
+  </form>
         </div>
         <div class=" dropdown ">
           <button onclick="showDropdownCategory()" class=" btn btn-cesi">Catégorie</button>
           <div id="category" class="dropdown-content">
-            @foreach($shop as $article)
-            <a href="#about"><button class="btn btn-cesi btn-block"> {{$article->category->name}}</button>  @endforeach</div>
+            @foreach($categories as $category)
+            <form class="example" action="#">
+      @csrf
+      <input class ="btn btn-cesi btn-block mt-1" type="submit" name="category" value="{{$category->name}}"> 
+      <input type="hidden" name="id_category" value="{{$category->id}}" />
+  </form>  @endforeach</div>
           </div>
         </div>
         <!-- Affichage des articles correspondants aux critères de recherches -->
