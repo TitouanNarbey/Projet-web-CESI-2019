@@ -18,7 +18,8 @@
           <button onclick="showDropdownCategory()" class=" btn btn-cesi">Catégorie</button>
           <div id="category" class="dropdown-content">
             @foreach($shop as $article)
-            <a href="#about"><button class="btn btn-cesi btn-block"> {{$article->category->name}}</button>  @endforeach</div>
+            <a href="#about"><button class="btn btn-cesi btn-block"> {{$article->category->name}}</button>  </a>
+          @endforeach</div>
           </div>
         </div>
         <!-- Affichage de la liste des articles -->
@@ -26,7 +27,6 @@
             @foreach($shop as $article)
           <div class="col-xl-3 mt-5">
             <div class="card {{$article->category}}">
-              <a href="shop/{{$article->id}}" class="nounderline">
                 <div class="headerCardEvent">
                   <img src="{{$article->image->path}}" class="img-fluid sizeBanner" alt="{{$article->image->alt}}">
                 </div>
@@ -42,9 +42,9 @@
                 </div>
                 <div class="card-footer">
                   <div class="text-right eventCardFooter">
-                    <a href="#about"><button class="btn btn-danger btn-block"> Supprimer l'article</button></div>
+                    <a href="#about"><button class="btn btn-danger btn-block"> Supprimer l'article</button></a></div>
                   </div>
-                </a>
+                
               </div>
             </div>
             @endforeach

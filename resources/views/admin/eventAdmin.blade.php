@@ -66,7 +66,8 @@
       <br>
     </div>
     <h2>Télécharger la liste des participants</h2>
-    <button type="button" class="btn btn-cesi  mt-1 mb-3 "><i class="fas fa-download"></i> Récupérer la liste </button>
+
+    <a href="{{action('ParticipateController@export')}}"><button type="button" class="btn btn-cesi  mt-1 mb-3 "><i class="fas fa-download"></i> Récupérer la liste </button></a>
   </div>
 </div>
 

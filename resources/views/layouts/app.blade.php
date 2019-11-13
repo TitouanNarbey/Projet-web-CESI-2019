@@ -14,12 +14,7 @@
     <link href="{{ asset('assets/css/cssdeBen.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/CSSdeLoïs.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/navbar.css') }}" rel="stylesheet">
-
-    
   </head>
-
-    
-
     <body>
         <nav class="navbar navbar-expand-lg">
           {{-- Logo --}}

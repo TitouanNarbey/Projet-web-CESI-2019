@@ -1,7 +1,3 @@
-<!-- Mieux gérer l'affichage des stocks
-  Rendre fonctionnel le bouton ajout au panier -->
-
-
 @extends('layouts.app')@section('content')
 <!--Création de la zone de produit-->
 <div class="product_area ">
@@ -44,16 +40,12 @@
     <p>
       {{$article->description}}
     </p>
-  <form class="formquantity" action="/shop/{{$id}}" method="POST">
-    @csrf
-        <label for="inputQuantity">Quantité : </label>
-        <input type="number" min ="1" class="form-control" id="inputQuantity" placeholder="Quantité" name="inputQuantity" value="1">
-        <button type="submit" class="btn btn-cesi btn-block">Ajouter au panier</button>
-  </form>
-  @if(session()->has('articleAdd'))
-
-  @endif
-
+    <form class="formquantity" action="/shop/{{$id}}" method="POST">
+      @csrf
+          <label for="inputQuantity">Quantité : </label>
+          <input type="number" min ="1" class="form-control" id="inputQuantity" placeholder="Quantité" name="inputQuantity" value="1">
+          <button type="submit" class="btn btn-cesi btn-block">Ajouter au panier</button>
+    </form>
   </div>
 </div>
 

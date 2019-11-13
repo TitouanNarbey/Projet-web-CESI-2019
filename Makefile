@@ -1,4 +1,4 @@
-.PHONY: help run configure migrate
+.PHONY: help run configure migrate clearSession
 
 .DEFAULT_GOAL = help
 
@@ -31,3 +31,7 @@ configure: ## Configure project
 migrate: ## Migrate bdd
 	cd .. && sudo chmod -R 777 www && cd www
 	php artisan migrate:fresh
+
+clearSession:
+	php artisan make:command FlushSessions
+

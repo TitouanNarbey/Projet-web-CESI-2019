@@ -71,10 +71,57 @@ class CartsController extends Controller
         return redirect()->action('CartsController@showCart');
     }
     
+    public function deleteComande()
+    {
+        // $id_order = request('id_order');
+        // $id_article = request('id_article');
+        // $quantity = request('quantityChanger');
 
+        // $order = Order::find($id_order);
+
+        // $haveComand = 0;
+
+        // $obj = Comanded::where('id_orders', $id_order)->where('id_articles', $id_article)->where('quantity', $quantity);
+
+        // return $obj->delete();
+        return redirect()->action('CartsController@showCheckout');
+
+    }
 
     public function showCheckout()
     {
-    	return view('checkout');
+        $temp_id_user = 1;
+
+        /////     Cart     /////
+        //cherche cart
+        $haveCart = 0;
+
+        $orders = Order::where('id_users', '=', $temp_id_user)->get();
+
+        foreach($orders as $order)
+        {
+            if(!$order->paid)
+            { $haveCart = $order->id; }
+        }
+
+        //creation of cart if needed
+        if($haveCart == 0)
+        {
+            $cartData = Order::create(['paid'=>'0', 'delivered'=>'0', 'id_users'=>$temp_id_user]);
+            $haveCart = $cart->id;
+        }
+
+        $cartData = Order::find($haveCart);
+        ////////////////////////
+
+
+        //calculate total
+        $total = 0;
+        foreach($cartData->comanded as $comand)
+        {
+            $total += $comand->article->price * $comand->quantity;
+        }
+
+    	return view('checkout', compact('cartData'), compact('total'));
     }
 }

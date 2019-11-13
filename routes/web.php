@@ -35,6 +35,7 @@ Route::get('profile', 'UsersController@profile');
 
 Route::get('cart', 'CartsController@showCart')->middleware('auth');
 Route::post('changequantity', 'CartsController@changequantity');
+Route::post('deleteComande', 'CartsController@deleteComande');
 
 Route::get('checkout', 'CartsController@showCheckout');
 
@@ -270,90 +271,15 @@ Route::get('testDiplayArticles', function () {
 
 Route::get('testCurrent', function () {
 
-    $sss = App\User::all();
-    foreach ($sss as $aaa)
-    {
-        echo $aaa->id;
-        echo '<br>';
-        echo $aaa->email;
-        echo '<br>';
-        echo $aaa->campus->name;
-        echo '<br>';
-        echo $aaa->role->name;
-        echo '<br>';
-        echo $aaa->image->path;
-        echo '<br>';
-        
-        echo "<br>A--:<br>";
-        foreach($aaa->orders as $bbb)
-        {
-            echo '| ';
-            echo $bbb;
-            echo '<br>';
-        }
-
-        echo "<br>Z--:<br>";
-        foreach($aaa->commented as $bbb)
-        {
-            echo '| ';
-            echo $bbb;
-            echo '<br>';
-        }
-
-        echo "<br>E--:<br>";
-        foreach($aaa->posts as $bbb)
-        {
-            echo '| ';
-            echo $bbb;
-            echo '<br>';
-        }
-
-        echo "<br>R--:<br>";
-        foreach($aaa->illustrateeventsmulti as $bbb)
-        {
-            echo '| ';
-            echo $bbb;
-            echo '<br>';
-        }
-
-        echo "<br>T--:<br>";
-        foreach($aaa->events as $bbb)
-        {
-            echo '| ';
-            echo $bbb;
-            echo '<br>';
-        }
-
-        echo "<br>Y-------:<br>";
-        foreach($aaa->liked as $bbb)
-        {
-            echo '| ';
-            echo $bbb;
-            echo '<br>';
-        }
-
-        echo "<br>U--:<br>";
-        foreach($aaa->participate as $bbb)
-        {
-            echo '| ';
-            echo $bbb;
-            echo '<br>';
-        }
-
-        echo "<br>I--:<br>";
-        foreach($aaa->voted as $bbb)
-        {
-            echo '| ';
-            echo $bbb;
-            echo '<br>';
-        }
-
-
-
-
+    echo (Hash::check('cesi', '$2y$10$AT04bAPXkIJAxgwV033JZuX4YK1JlfmkYNdT2.l1DGnu3ZttZQFzi'));
+    
+    echo '<br>';
+    echo ('$2y$10$AT04bAPXkIJAxgwV033JZuX4YK1JlfmkYNdT2.l1DGnu3ZttZQFzi');
+    
+    echo '<br>';
+    echo (bcrypt("cesi"));
         echo "<br>--------------------------------<br>";
         echo '<br>';
-    }
 });
 
 
@@ -391,3 +317,5 @@ Route::get('testCurrent', function () {
         echo '<br>';
     }
 });*/
+
+Route::get('export', 'ParticipateController@export');
