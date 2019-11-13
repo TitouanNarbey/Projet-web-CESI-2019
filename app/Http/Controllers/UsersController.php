@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Session;
 use App\User;
 use App\Campus;
 use Auth;
@@ -96,15 +97,23 @@ class UsersController extends Controller
         $json = file_get_contents($urlToRequest);
         $parse = json_decode($json, true);
 
-        $mdp = $parse[0]["password"];
+        $mdp = $parse["user"][0]["password"];
 
         if(Hash::check($password, $mdp))
         {
-            echo ("yes !");
+            //Session::push('user.token', $parse["token"][0]);
+            Session::put('id', $parse["user"][0]["id"]);
+            Session::put('last_name', $parse["user"][0]["last_name"]);
+            Session::put('first_name', $parse["user"][0]["first_name"]);
+            Session::put('email', $parse["user"][0]["email"]);
+            Session::put('id_campus', $parse["user"][0]["id_campus"]);
+            Session::put('id_roles', $parse["user"][0]["id_roles"]);
+            Session::put('id_images', $parse["user"][0]["id_images"]);
+            Session::put('token', $parse["token"]);
         }
         else
         {
-            echo ("nop :(");
+            echo ("mauvais password :(");
         }
 
 

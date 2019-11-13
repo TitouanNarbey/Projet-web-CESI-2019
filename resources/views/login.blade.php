@@ -40,12 +40,6 @@
                         {{-- <a ref ="/Projet-web-
                         CESI-2019/public/register"> Pas encore inscrit ?</a> --}}
 
-                        @if (session('status'))
-                          <div class="alert alert-success" role)="alert">
-                              {{ session('status')}}
-                          </div>
-                        @endif
-
                         @error('inputEmail')
                         <div class="invalid-feedback">
                             The email is not correct
