@@ -58,7 +58,14 @@ class EventsController extends Controller
             if(Auth::user()->id_roles != 3)
             {
                 $obj = ConnexionParticipate::create(['id_events'=>$id, 'id_users'=>Auth::user()->id]);
-                return redirect('events/'.$id)->with('messageGreen', 'Vous participez désormais à cette activité.')->with('participate', '1');
+                if(isset($obj[0]))
+                {
+                    return redirect('events/'.$id)->with('messageGreen', 'Vous participez désormais à cette activité.')->with('participate', '1');
+                }
+                else
+                {
+                    return redirect('events/'.$id)->with('messageGreen', 'Vous participez désormais à cette activité.')->with('participate', '0');
+                }
             }
             else
             {
