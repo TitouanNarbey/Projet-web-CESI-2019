@@ -2,17 +2,30 @@
 
 namespace App\Exports;
 
-use App\User;
-use Maatwebsite\Excel\Concerns\FromCollection;
+use App\Participate;
+use App\Event;
 
-class ConnexionParticipateExport implements FromCollection
+use Maatwebsite\Excel\Concerns\FromCollection;
+use Maatwebsite\Excel\Concerns\WithHeadings;
+
+class ConnexionParticipateExport implements FromCollection, WithHeadings
 {
     /**
     * @return \Illuminate\Support\Collection
     */
     public function collection()
     {
-
-        return User::all()->where('id_events','<>','0');
+        return Participate::all()->where('id_events','=','8');
     }
+    /**
+     * @return array
+     */
+    public function headings(): array
+    {
+        return [
+            'id_events',
+            'id_user',
+          ];
+    }
+    
 }

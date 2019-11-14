@@ -28,8 +28,8 @@ Route::get('blade', function () {
 Route::get('register', 'UsersController@register');
 Route::post('register', 'UsersController@postregister');
 
-Route::get('login', 'UsersController@showlogin');
-Route::post('login', 'UsersController@postlogin');
+Route::get('login', 'UsersController@showlogin')->name('login');
+Route::post('login', 'UsersController@postlogin')->name('login');
 
 Route::get('profile', 'UsersController@profile');
 
@@ -61,7 +61,7 @@ Route::get('temp', function () {
 });
 
 //Penser à appliquer le middleware Auth dessus
-Route::prefix('admin')->group(function () {
+Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
     Route::get('/', 'AdminController@dashboard');
     Route::get('shop', 'AdminController@shopAdmin');
     Route::get('events', 'AdminController@eventsAdmin');
