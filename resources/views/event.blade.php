@@ -67,7 +67,7 @@ Ajouter la fonction télécharger une image et cacher le bouton en fonction du r
     Envoie nous les !!!!
 </h5>
 <button type="button" class="btn btn-cesi  mt-1 mb-3 "><i class="fas fa-upload"></i> Ajouter une image</button>
-     <form class="example" action="/events/{{$event->id}}">
+     <form class="example" action="/events/{{$event->id}}" method="post">
        @csrf
        <input class ="btn btn-success mt-1 mb-1" type="submit" value="Participer">
      </form>
