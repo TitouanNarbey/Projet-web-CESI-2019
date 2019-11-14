@@ -52,6 +52,21 @@
     </div>
     
 </nav>
+@if(session()->has('messageRed'))
+<div class="alert alert-danger text-center" role="alert">
+    {{session()->get('messageRed')}}
+  </div>
+@endif
+@if(session()->has('messageGreen'))
+<div class="alert alert-success text-center" role="alert">
+    {{session()->get('messageGreen')}}
+  </div>
+@endif
+@if(session()->has('messageCesi'))
+<div class="alert alert-success btn-cesi text-center" role="alert">
+    {{session()->get('messageGreen')}}
+  </div>
+@endif
 
         @section('content')
         @show
