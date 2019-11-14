@@ -51,13 +51,14 @@ class EventsController extends Controller
     public function eventAction($id){
         
         $event = Event::find($id);
+        $participate = ConnexionParticipate::where('id_events', $id)->where('id_users', Auth::user()->id);
 
         if(Auth::user() !== null)
         {
             if(Auth::user()->id_roles != 3)
             {
                 $obj = ConnexionParticipate::create(['id_events'=>$id, 'id_users'=>Auth::user()->id]);
-                return redirect('events/'.$id)->with('messageGreen', 'Vous participez désormais à cette activité.');
+                return redirect('events/'.$id)->with('messageGreen', 'Vous participez désormais à cette activité.')->with('participate', '1');
             }
             else
             {
