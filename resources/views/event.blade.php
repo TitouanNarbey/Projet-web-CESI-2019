@@ -66,18 +66,21 @@ Ajouter la fonction télécharger une image et cacher le bouton en fonction du r
 <h5>
     Envoie nous les !!!!
 </h5>
-
+     
  
 <button type="button" class="btn btn-cesi  mt-1 mb-3 "><i class="fas fa-upload"></i> Ajouter une image</button>
-@if(session()->has('participate'))
-@if(session('participate') == 1)
+@if(isset($sub))
+
+@if($sub == 1)
   <form class="example" action="/events/{{$event->id}}" method="post">
     @csrf
+    <input type="hidden" name="inscription" value="-1" />
     <input class ="btn btn-danger mt-1 mb-1" type="submit" value="Ne plus participer">
   </form>
 @else
   <form class="example" action="/events/{{$event->id}}" method="post">
     @csrf
+    <input type="hidden" name="inscription" value="1" />
     <input class ="btn btn-success mt-1 mb-1" type="submit" value="Participer">
   </form>
 @endif
