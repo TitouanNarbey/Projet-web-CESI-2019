@@ -60,12 +60,12 @@ class UsersController extends Controller
                     $user->password = bcrypt($password);
                     $user->save();
 
-                    return view('login');
+                    return view('login')->with('messageGreen', 'Vous avez bien été enregistré.');
 
                 }
                 else
                 {
-                    
+                    return redirect('register')->with('messageRed', 'Le mot de passe doit contenir au moins une majuscule et un chiffre.');
                 }
             }
         }
