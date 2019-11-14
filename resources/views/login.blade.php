@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="bg">
+<div class="bg4">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4 col-sm-12 col-xs-12"></div>
@@ -28,7 +28,7 @@
 						<input type="checkbox" class="form-check-input" id="exampleCheck1">
 						<label class="form-check-label" for="exampleCheck1">Me garder connecté.</label>
 					</div>
-					<button type="submit" class="btn btn-primary btn-block text-dark">Se connecter</button>
+					<button type="submit" class="btn btn-primary btn-block text-white">Se connecter</button>
 					<div class="parts">
 						Mot de passe oublié ?                        
 					</div>
