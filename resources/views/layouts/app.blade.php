@@ -37,20 +37,23 @@
           <li class="nav-item">
               <a class="nav-link" href="/cart"><div class="colortext">Panier</div></a>
             </li>
-            
-            <li class="nav-item">
-                <a class="nav-link" href="/checkout"><div class="colortext">Checkout</div></a>
-              </li>
-
     </ul>
- 
   </div>
-  <div class="topnav">
-      <div class="login-container">
-        <a href="/register"><button class="btn btn-danger my-2 my-sm-0">S'inscrire</button></a>
-        <a href="/login"><button class="btn btn-outline-primary my-2 my-sm-0">Se connecter</button></a>
-      </div>
+@if(Auth::user() === null)
+<div class="topnav">
+    <div class="login-container">
+      <a href="/register"><button class="btn btn-danger my-2 my-sm-0">S'inscrire</button></a>
+      <a href="/login"><button class="btn btn-outline-primary my-2 my-sm-0">Se connecter</button></a>
+    </div>
+</div>
+@else
+<div class="topnav">
+  <div class="login-container">
+    <a href="/profile"><button class="btn btn-danger my-2 my-sm-0"> <i class="fas fa-user"></i> Mon compte</button></a>
   </div>
+</div>
+@endif
+
 </nav>
 
   @if(session()->has('messageRed'))
