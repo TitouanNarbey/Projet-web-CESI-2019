@@ -39,10 +39,17 @@ class EventsController extends Controller
        
 		return view('events',compact('events'));	
     }
+
     public function event($id){
 
     	$event = Event::find($id);
     	return view('event',compact('event'));
     }
 
+    public function eventAction($id){
+        
+        $event = Event::find($id);
+        
+        return redirect('event/'.$id)->with('messageGreen', 'Vous participez désormais à cette activité.');
+    }
 }
