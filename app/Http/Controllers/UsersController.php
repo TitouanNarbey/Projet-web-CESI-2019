@@ -13,7 +13,7 @@ class UsersController extends Controller
 {
     public function profile()
     {
-        $id=Session::get('id');
+        $id = Auth::user()->id;
     	$user = User::find($id);
 		return view('profile',compact('user'));	
     }
@@ -102,14 +102,18 @@ class UsersController extends Controller
         if($parse["reqError"] == '' && Hash::check($password, $parse["user"][0]["password"]))
         {
             //Session::push('user.token', $parse["token"][0]);
-            Session::put('id', $parse["user"][0]["id"]);
+            /*Session::put('id', $parse["user"][0]["id"]);
             Session::put('last_name', $parse["user"][0]["last_name"]);
             Session::put('first_name', $parse["user"][0]["first_name"]);
             Session::put('email', $parse["user"][0]["email"]);
             Session::put('id_campus', $parse["user"][0]["id_campus"]);
             Session::put('id_roles', $parse["user"][0]["id_roles"]);
             Session::put('id_images', $parse["user"][0]["id_images"]);
-            Session::put('token', $parse["token"]);
+            Session::put('token', $parse["token"]);*/
+
+            $user= User::find($parse["user"][0]["id"]);
+
+            Auth::login($user);
 
             return view('/home');
         }
