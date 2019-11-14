@@ -91,7 +91,7 @@ class UsersController extends Controller
         $password = request('inputPassword');	
 
         //return view('login');
-        $urlToRequest = "http://10.169.129.14:3000/api/login/";
+        $urlToRequest = "http://localhost:3000/api/login/";
         $urlToRequest .= $email;
 
         $json = file_get_contents($urlToRequest);

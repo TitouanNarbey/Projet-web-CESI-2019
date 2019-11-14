@@ -24,23 +24,22 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="\"><div class="colortext"><i class="fa fa-fw fa-home"></i> Accueil </div> <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/"><div class="colortext"><i class="fa fa-fw fa-home"></i> Accueil</div> <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="shop"><div class="colortext"><i class="fas fa-shopping-cart"></i> Boutique </div></a>
+          <a class="nav-link" href="/shop"><div class="colortext">Boutique</div></a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="events"><div class="colortext"><i class="far fa-calendar-star"></i>
-              Evénements</div></a>
+            <a class="nav-link" href="/events"><div class="colortext">Evénements</div></a>
           </li>
 
           <li class="nav-item">
-              <a class="nav-link" href="cart"><div class="colortext">Panier</div></a>
+              <a class="nav-link" href="/cart"><div class="colortext">Panier</div></a>
             </li>
             
             <li class="nav-item">
-                <a class="nav-link" href="checkout"><div class="colortext">Checkout</div></a>
+                <a class="nav-link" href="/checkout"><div class="colortext">Checkout</div></a>
               </li>
 
     </ul>
@@ -48,10 +47,8 @@
   </div>
   <div class="topnav">
       <div class="login-container">
-        <form >
-          <button class="btn btn-danger my-2 my-sm-0" href="register">S'inscrire</button>
-          <button class="btn btn-outline-primary my-2 my-sm-0" href="login">Se connecter</button>
-        </form>
+        <a href="/register"><button class="btn btn-danger my-2 my-sm-0">S'inscrire</button></a>
+        <a href="/login"><button class="btn btn-outline-primary my-2 my-sm-0">Se connecter</button></a>
       </div>
     </div>
     
