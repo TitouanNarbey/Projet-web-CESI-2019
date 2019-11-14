@@ -106,7 +106,7 @@ class ShopController extends Controller
         }
         else
         {
-            return redirect('cart');
+            return redirect('cart')->with('messageRed', 'Article déja dans le panier. Vous pouvez modifier la quantité.');
         }
         
     	//return view('article',compact('article'));

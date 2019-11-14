@@ -81,7 +81,7 @@ class CartsController extends Controller
         $obj = Comanded::where('id_orders', $id_order)->where('id_articles', $id_article);
 
         $obj->delete();
-        return redirect()->action('CartsController@showCart');
+        return redirect()->action('CartsController@showCart')->with('messageGreen', 'Article supprimé');
 
     }
 
