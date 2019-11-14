@@ -66,51 +66,58 @@ class ShopController extends Controller
 
     public function addToCard($id){
         
-        $temp_id_user = Auth::user()->id;
-
-        $quantity = request('inputQuantity');
-        
-        $orders = Order::where('id_users', '=', $temp_id_user)->get();
-        
-        /////     Cart     /////
-        //cherche cart
-        $haveCart = 0;
-        foreach($orders as $order)
+        if(Auth::user() !== null)
         {
-            if(!$order->paid)
-            { $haveCart = $order->id; }
-        }
+            $temp_id_user = Auth::user()->id;
 
-        //creation of cart if needed
-        if($haveCart == 0)
-        {
-            $cart = Order::create(['paid'=>'0', 'delivered'=>'0', 'id_users'=>$temp_id_user]);
-            $haveCart = $cart->id;
-        }
-
-        $cart = Order::find($haveCart);
-        ////////////////////////
-
-        $dejaArticle = null;
-        foreach($order->comanded as $comand)
-        {
-            if($comand->article->id == $id)
+            $quantity = request('inputQuantity');
+            
+            $orders = Order::where('id_users', '=', $temp_id_user)->get();
+            
+            /////     Cart     /////
+            //cherche cart
+            $haveCart = 0;
+            foreach($orders as $order)
             {
-                $dejaArticle = $comand;
+                if(!$order->paid)
+                { $haveCart = $order->id; }
             }
-        }
-
-        if($dejaArticle == null)
-        {
-            $dejaArticle = Comanded::create(['id_orders'=>$cart->id, 'id_articles'=>$id, 'quantity'=>$quantity]);
-            return redirect('shop/'.$id)->with('messageGreen', 'Article ajouté au panier');
+    
+            //creation of cart if needed
+            if($haveCart == 0)
+            {
+                $cart = Order::create(['paid'=>'0', 'delivered'=>'0', 'id_users'=>$temp_id_user]);
+                $haveCart = $cart->id;
+            }
+    
+            $cart = Order::find($haveCart);
+            ////////////////////////
+    
+            $dejaArticle = null;
+            foreach($order->comanded as $comand)
+            {
+                if($comand->article->id == $id)
+                {
+                    $dejaArticle = $comand;
+                }
+            }
+    
+            if($dejaArticle == null)
+            {
+                $dejaArticle = Comanded::create(['id_orders'=>$cart->id, 'id_articles'=>$id, 'quantity'=>$quantity]);
+                return redirect('shop/'.$id)->with('messageGreen', 'Article ajouté au panier');
+            }
+            else
+            {
+                return redirect('cart')->with('messageRed', 'Article déja dans le panier. Vous pouvez modifier la quantité.');
+            }
         }
         else
         {
-            return redirect('cart')->with('messageRed', 'Article déja dans le panier. Vous pouvez modifier la quantité.');
+            return redirect('shop/'.$id)->with('messageRed', 'Veuillez vous connecter pour ajouter un produit à votre panier.');
         }
+
         
-    	//return view('article',compact('article'));
     }
 
     
