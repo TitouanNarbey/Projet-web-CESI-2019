@@ -86,7 +86,6 @@ class UsersController extends Controller
         ([
             'inputEmail' =>'required',
             'inputPassword' =>'required'
-            
         ]);
 
         $email = request('inputEmail');
@@ -116,20 +115,7 @@ class UsersController extends Controller
         }
         else
         {
-          
-            return view('/login');
+            return redirect('/login')->with('messageRed', 'Les champs ne correspondent pas.');
         }
-
-        /*if (Auth::attempt(['email' => $email, 'password' => $password])) 
-        {
-            // Authentication passed...
-
-            $json = file_get_contents("http://10.169.129.14:3000/api/users");
-            $parse = json_decode($json, true);
-            var_dump($parse);
-        } else {
-            return view('login');
-        }*/
-
     }
 }
