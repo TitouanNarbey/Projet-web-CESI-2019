@@ -70,6 +70,7 @@ Ajouter la fonction télécharger une image et cacher le bouton en fonction du r
  
 <button type="button" class="btn btn-cesi  mt-1 mb-3 "><i class="fas fa-upload"></i> Ajouter une image</button>
 @if(session()->has('participate'))
+@if(session('participate') == 1)
   <form class="example" action="/events/{{$event->id}}" method="post">
     @csrf
     <input class ="btn btn-danger mt-1 mb-1" type="submit" value="Ne plus participer">
@@ -79,6 +80,7 @@ Ajouter la fonction télécharger une image et cacher le bouton en fonction du r
     @csrf
     <input class ="btn btn-success mt-1 mb-1" type="submit" value="Participer">
   </form>
+@endif
 @endif
 </div>
 </div>
