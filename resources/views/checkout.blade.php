@@ -35,8 +35,8 @@
 								<div class="col-lg-5">
 									<div class="row px-2">
 										<div class="form-group col-md-6">
-											<label class="form-control-label">Nom de la Carte</label>
-											<input type="text" id="cname" name="cname" placeholder="Prénom Nom">
+											<label class="form-control-label">Nom de</label>
+											<input type="text" id="cname" name="cname" placeholder="Johnny Doe">
 										</div>
 										<div class="form-group col-md-6">
 											<label class="form-control-label">Card Number</label>
