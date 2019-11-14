@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="bg2">
 <div class="container">
     <div class="row">
       <div class="col-md-2 col-sm-12 col-xs-12"></div>
@@ -17,7 +18,8 @@
           @csrf
           <div class="parts">
               <a href="{{action('UsersController@showlogin')}}"> Déjà inscrit ?</a>
-            </div>
+          </div>
+          <br>
           <div class="form-row">
             <div class="name-container">
               <div class="col-md-10 col-sm-12 col-xs-12">
@@ -28,17 +30,18 @@
               </div>
             </div>
 
-            {{-- The display message in case of error --}}
+            {{-- The display message in case of not putting a name --}}
             @error('inputName')
             <div class="invalid-feedback">
-                Please choose a username.
+                Please enter a name.
             </div>
             @enderror
+
             {{-- Firstname --}}            
             <div class="name-container">
               <div class="col-md-10 col-sm-12 col-xs-12">
                 <label for="inputFirstname">Prénom</label>
-                <input type="text" class="form-control form-control @error('inputFirstname') is-invalid @enderror" id="inputFirstname" placeholder="Prénom" name="inputFirstname">
+                <input type="text" class="form-control @error('inputFirstname') is-invalid @enderror" id="inputFirstname" placeholder="Prénom" name="inputFirstname">
               </div>
             </div>
           </div>
@@ -59,34 +62,36 @@
           <div class="form-group">
             <div class="col-md-7 col-sm-9 col-xs-12">
               <label for="inputEmail">Mail</label>
-              <input type="email" class="form-control" id="inputEmail" placeholder="exemple@mail.com" name="inputEmail">
+              <input type="email" class="form-control @error('inputEmail') is-invalid @enderror" id="inputEmail" placeholder="exemple@mail.com" name="inputEmail">
             </div>
           </div>
           {{-- password --}}          
           <div class="form-group">
             <div class="col-md-7 col-sm-9 col-xs-12">
               <label for="inputPassword">Mot de passe</label>
-              <input type="password" class="form-control" id="inputPassword" placeholder="Mot de passe" name="inputPassword">
+              <input type="password" class="form-control @error('inputPassword') is-invalid @enderror" id="inputPassword" placeholder="Mot de passe" name="inputPassword">
             </div>
           </div>
 
           <div class="form-group">
             <div class="col-md-7 col-sm-9 col-xs-12">
               <label for="inputState">Confirmation du mot de passe</label>
-              <input type="password" id="confirmpassword" class="form-control" placeholder="Confirmation du mot de passe" name="inputConfirmPassword">
+              <input type="password" id="confirmpassword" class="form-control @error('inputConfirmPassword') is-invalid @enderror" placeholder="Confirmation du mot de passe" name="inputConfirmPassword">
             </div>
           </div>
+          <br>
           <div class="form-group">
             <div class="form-check">
               <input class="form-check-input" type="checkbox" id="checkbox" name="inputCheckbox">
               <label class="form-check-label" for="gridCheck">                J'accepte les <a href="legal">mentions légales et les conditions d'utilisiation.       </a>       </label>
             </div>
           </div>
+          <br>
           <button type="submit" class="btn btn-primary btn-block text-dark">S'inscrire</button>
         </form>
         {{-- form end --}}      
       </div>
     </div>
   </div>
-  
+</div>
 @endsection 
