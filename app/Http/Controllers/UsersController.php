@@ -60,22 +60,18 @@ class UsersController extends Controller
                     $user->password = bcrypt($password);
                     $user->save();
 
-                    return view('login')->with('messageGreen', 'Vous avez bien été enregistré.');
+                    return view('login');
 
                 }
                 else
                 {
-                    return redirect('register')->with('messageRed', 'La confirmation du mot de passe ne correspond pas au mot de passe entré.');
+                    
                 }
-            }
-            else
-            {
-                return redirect('register')->with('messageRed', 'Le mot de passe doit contenir au moins une majuscule et un chiffre.');
             }
         }
         else
         {
-            return redirect('register')->with('messageRed', 'Vous devez accepter les conditions d\'utilisation.');
+            //error
         }
     }
 
@@ -119,24 +115,17 @@ class UsersController extends Controller
 
             Auth::login($user);
 
-            return view('/home');
-        }
+
+            }
         else
         {
             return redirect('/login')->with('messageRed', 'Les champs ne correspondent pas.');
         }
     }
 
-    public function handle($request, Closure $next, ... $roles)
-{
-    if (!Auth::check()) // I included this check because you have it, but it really should be part of your 'auth' middleware, most likely added as part of a route group.
-        return redirect('login');
 
-    $user = Auth::user();
 
-    if($user->isAdmin())
-        return $next($request);
-
-    return redirect('/admin');
 }
-}
+
+
+
