@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-// use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Article;
 use App\Order;
@@ -76,6 +75,7 @@ class CartsController extends Controller
         $id_order = request('id_order');
         $id_article = request('id_article');
 
+
         $order = Order::find($id_order);
 
         $obj = Comanded::where('id_orders', $id_order)->where('id_articles', $id_article);
@@ -83,6 +83,17 @@ class CartsController extends Controller
         $obj->delete();
         return redirect()->action('CartsController@showCart')->with('messageGreen', 'Article supprimé');
 
+    }
+    public function valideComande()
+    {
+        $id_order = request('id_order');
+                $paid = request('paid');
+
+        $order = Order::find($id_order);
+
+        $obj = Order::where('id_order', $id_order)->update([1 => $paid]);
+
+        return redirect()->action('CartsController@showCheckout');
     }
 
     public function showCheckout()

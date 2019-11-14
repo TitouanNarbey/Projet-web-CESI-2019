@@ -35,7 +35,7 @@
 								<div class="col-lg-5">
 									<div class="row px-2">
 										<div class="form-group col-md-6">
-											<label class="form-control-label">Nom de</label>
+											<label class="form-control-label">Nom de la carte</label>
 											<input type="text" id="cname" name="cname" placeholder="Johnny Doe">
 										</div>
 										<div class="form-group col-md-6">
@@ -63,10 +63,19 @@
 											{{$total}} €
 										</h6>
 									</div>
-									<button class="btn-block btn-blue">
+									<form class="valideComande" action="/valideComande" method="post">
+									@csrf
+									<button class="btn btn-sm btn-danger" type="submit">
 										<span>
 											<span id="checkout">Payer</span>
 										</span>
+																			<input type="hidden" name="id_order" value="{{$comand->order->id}}" />
+									</button>
+
+
+								
+								</form>
+										
 									</button>
 								</div>
 							</div>
