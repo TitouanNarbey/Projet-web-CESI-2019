@@ -10,6 +10,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class User extends Authenticatable
 {
+
+    use Notifiable;
+
+    //protected $guard = 'admin';
+
     protected $table = 'users';
     //protected $primaryKey = 'id';
     //public $timestamps = false;
@@ -59,7 +64,17 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Event', 'voted', 'id_users', 'id_events');
     }
 
-
+public function isAdmin()
+{
+    if($this->id_roles === 2)
+    { 
+        return true; 
+    } 
+    else 
+    { 
+        return false; 
+    }
+}
 
 
 

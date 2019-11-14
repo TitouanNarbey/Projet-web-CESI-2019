@@ -28,8 +28,8 @@ Route::get('blade', function () {
 Route::get('register', 'UsersController@register');
 Route::post('register', 'UsersController@postregister');
 
-Route::get('login', 'UsersController@showlogin')->name('login');
-Route::post('login', 'UsersController@postlogin')->name('login');
+Route::get('login', 'Auth\LoginController@adminLogin')->name('login');
+Route::post('login', 'LoginController@postlogin')->name('login');
 
 Route::get('profile', 'UsersController@profile');
 
