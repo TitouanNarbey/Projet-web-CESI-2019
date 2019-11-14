@@ -37,11 +37,6 @@
           <li class="nav-item">
               <a class="nav-link" href="/cart"><div class="colortext">Panier</div></a>
             </li>
-            
-            <li class="nav-item">
-                <a class="nav-link" href="/checkout"><div class="colortext">Checkout</div></a>
-              </li>
-
     </ul>
   </div>
 @if(Auth::user() === null)
