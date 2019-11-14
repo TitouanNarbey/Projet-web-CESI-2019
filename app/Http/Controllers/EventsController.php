@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Event;
+use App\ConnexionParticipate;
+use Auth;
 
 class EventsController extends Controller
 {
@@ -49,7 +51,24 @@ class EventsController extends Controller
     public function eventAction($id){
         
         $event = Event::find($id);
+
+        if(Auth::user() !== null)
+        {
+            if(Auth::user()->id_roles != 3)
+            {
+                $obj = ConnexionParticipate::create(['id_events'=>$id, 'id_users'=>Auth::user()->id]);
+                return redirect('events/'.$id)->with('messageGreen', 'Vous participez désormais à cette activité.');
+            }
+            else
+            {
+                return redirect('events/'.$id)->with('messageRed', 'Vous ne pouvez pas vous inscrire à un événement.');
+            }
+        }
+        else
+        {
+            return redirect('events/'.$id)->with('messageRed', 'Veuillez vous connecter pour vous inscrire à un événement.');
+        }
+
         
-        return redirect('event/'.$id)->with('messageGreen', 'Vous participez désormais à cette activité.');
     }
 }
