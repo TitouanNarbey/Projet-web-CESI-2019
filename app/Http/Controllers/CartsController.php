@@ -7,13 +7,14 @@ use Illuminate\Http\Request;
 use App\Article;
 use App\Order;
 use App\Comanded;
+use Session;
 use URL;
 
 class CartsController extends Controller
 {
     public function showCart()
     {
-        $temp_id_user = 1;
+        $temp_id_user = Session::get('id');
 
         /////     Cart     /////
         //cherche cart
@@ -86,7 +87,7 @@ class CartsController extends Controller
 
     public function showCheckout()
     {
-        $temp_id_user = 1;
+        $temp_id_user = Session::get('id');
 
         /////     Cart     /////
         //cherche cart
