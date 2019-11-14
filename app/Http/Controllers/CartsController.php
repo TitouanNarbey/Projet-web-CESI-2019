@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+// use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Article;
 use App\Order;
@@ -66,25 +67,20 @@ class CartsController extends Controller
         
         $obj = Comanded::where('id_orders', $id_order)->where('id_articles', $id_article)->update(['quantity' => $quantity]);
 
-        //return view('cart');
-        //return URL::action('CartsController@showCart');
         return redirect()->action('CartsController@showCart');
     }
     
     public function deleteComande()
     {
-        // $id_order = request('id_order');
-        // $id_article = request('id_article');
-        // $quantity = request('quantityChanger');
+        $id_order = request('id_order');
+        $id_article = request('id_article');
 
-        // $order = Order::find($id_order);
+        $order = Order::find($id_order);
 
-        // $haveComand = 0;
+        $obj = Comanded::where('id_orders', $id_order)->where('id_articles', $id_article);
 
-        // $obj = Comanded::where('id_orders', $id_order)->where('id_articles', $id_article)->where('quantity', $quantity);
-
-        // return $obj->delete();
-        return redirect()->action('CartsController@showCheckout');
+        $obj->delete();
+        return redirect()->action('CartsController@showCart');
 
     }
 
