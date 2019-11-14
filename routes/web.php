@@ -55,6 +55,7 @@ Route::post('shop/{id}', 'ShopController@addToCard');
 Route::get('events', 'EventsController@events');
 
 Route::get('events/{id}', 'EventsController@event');
+Route::post('events/{id}', 'EventsController@eventAction');
 
 Route::get('temp', function () {
     return controller('temp');
