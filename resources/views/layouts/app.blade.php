@@ -43,14 +43,18 @@
               </li>
 
     </ul>
- 
   </div>
-  <div class="topnav">
-      <div class="login-container">
-        <a href="/register"><button class="btn btn-danger my-2 my-sm-0">S'inscrire</button></a>
-        <a href="/login"><button class="btn btn-outline-primary my-2 my-sm-0">Se connecter</button></a>
-      </div>
-  </div>
+@if(Auth::user() === null)
+<div class="topnav">
+    <div class="login-container">
+      <a href="/register"><button class="btn btn-danger my-2 my-sm-0">S'inscrire</button></a>
+      <a href="/login"><button class="btn btn-outline-primary my-2 my-sm-0">Se connecter</button></a>
+    </div>
+</div>
+@else
+  
+@endif
+
 </nav>
 
   @if(session()->has('messageRed'))
