@@ -52,7 +52,11 @@
     </div>
 </div>
 @else
-  
+<div class="topnav">
+  <div class="login-container">
+    <a href="/profile"><button class="btn btn-danger my-2 my-sm-0"> <i class="fas fa-user"></i> Mon compte</button></a>
+  </div>
+</div>
 @endif
 
 </nav>
