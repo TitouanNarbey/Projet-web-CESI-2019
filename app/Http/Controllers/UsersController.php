@@ -116,7 +116,7 @@ class UsersController extends Controller
             Auth::login($user);
 
             return redirect('/home');
-            }
+        }
         else
         {
             return redirect('/login')->with('messageRed', 'Les champs ne correspondent pas.');
