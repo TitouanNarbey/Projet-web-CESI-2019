@@ -14,39 +14,47 @@ class CartsController extends Controller
 {
     public function showCart()
     {
-        $temp_id_user = Auth::user()->id;
 
-        /////     Cart     /////
-        //cherche cart
-        $haveCart = 0;
-
-        $orders = Order::where('id_users', '=', $temp_id_user)->get();
-
-        foreach($orders as $order)
+        if(Auth::user() !== null)
         {
-            if(!$order->paid)
-            { $haveCart = $order->id; }
-        }
+            $temp_id_user = Auth::user()->id;
 
-        //creation of cart if needed
-        if($haveCart == 0)
+            /////     Cart     /////
+            //cherche cart
+            $haveCart = 0;
+
+            $orders = Order::where('id_users', '=', $temp_id_user)->get();
+
+            foreach($orders as $order)
+            {
+                if(!$order->paid)
+                { $haveCart = $order->id; }
+            }
+
+            //creation of cart if needed
+            if($haveCart == 0)
+            {
+                $cartData = Order::create(['paid'=>'0', 'delivered'=>'0', 'id_users'=>$temp_id_user]);
+                $haveCart = $cart->id;
+            }
+
+            $cartData = Order::find($haveCart);
+            ////////////////////////
+
+
+            //calculate total
+            $total = 0;
+            foreach($cartData->comanded as $comand)
+            {
+                $total += $comand->article->price * $comand->quantity;
+            }
+
+            return view('cart', compact('cartData'), compact('total'));
+        }
+        else
         {
-            $cartData = Order::create(['paid'=>'0', 'delivered'=>'0', 'id_users'=>$temp_id_user]);
-            $haveCart = $cart->id;
+            return redirect('home')->with('messageRed', 'Veuillez vous connecter pour accéder à votre panier.');
         }
-
-        $cartData = Order::find($haveCart);
-        ////////////////////////
-
-
-        //calculate total
-        $total = 0;
-        foreach($cartData->comanded as $comand)
-        {
-            $total += $comand->article->price * $comand->quantity;
-        }
-
-    	return view('cart', compact('cartData'), compact('total'));
     }
 
     public function changequantity()
@@ -76,9 +84,6 @@ class CartsController extends Controller
         $id_order = request('id_order');
         $id_article = request('id_article');
 
-
-        $order = Order::find($id_order);
-
         $obj = Comanded::where('id_orders', $id_order)->where('id_articles', $id_article);
 
         $obj->delete();
@@ -88,13 +93,10 @@ class CartsController extends Controller
     public function valideComande()
     {
         $id_order = request('id_order');
-                $paid = request('paid');
 
-        $order = Order::find($id_order);
+        $obj = Order::find($id_order)->update(['paid' => 1]);
 
-        $obj = Order::where('id_order', $id_order)->update([1 => $paid]);
-
-        return redirect()->action('CartsController@showCheckout');
+        return redirect('home')->with('messageGreen', 'Payement validé');
     }
 
     public function showCheckout()
@@ -117,7 +119,7 @@ class CartsController extends Controller
         if($haveCart == 0)
         {
             $cartData = Order::create(['paid'=>'0', 'delivered'=>'0', 'id_users'=>$temp_id_user]);
-            $haveCart = $cart->id;
+            $haveCart = $cartData->id;
         }
 
         $cartData = Order::find($haveCart);
