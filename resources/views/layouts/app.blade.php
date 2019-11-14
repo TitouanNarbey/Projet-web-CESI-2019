@@ -50,9 +50,24 @@
         <a href="/register"><button class="btn btn-danger my-2 my-sm-0">S'inscrire</button></a>
         <a href="/login"><button class="btn btn-outline-primary my-2 my-sm-0">Se connecter</button></a>
       </div>
-    </div>
-    
+  </div>
 </nav>
+
+  @if(session()->has('messageRed'))
+  <div class="alert alert-danger text-center" role="alert">
+      {{session()->get('messageRed')}}
+  </div>
+  @endif
+  @if(session()->has('messageGreen'))
+  <div class="alert alert-success text-center" role="alert">
+      {{session()->get('messageGreen')}}
+  </div>
+  @endif
+  @if(session()->has('messageCesi'))
+  <div class="alert alert-success btn-cesi text-center" role="alert">
+      {{session()->get('messageCesi')}}
+  </div>
+  @endif
 
         @section('content')
         @show
