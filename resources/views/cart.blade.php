@@ -51,6 +51,8 @@
 									<button class="btn btn-sm btn-danger" type="submit">
 										<i class="fa fa-trash"></i>
 									</button>
+									<input type="hidden" name="id_order" value="{{$comand->order->id}}" />
+									<input type="hidden" name="id_article" value="{{$comand->article->id}}" />
 								
 								</form>
 						</tr>

@@ -1,0 +1,40 @@
+
+
+.profileform
+{
+    font-size:25px;
+    /* border:1px solid; */
+}
+
+.profileformname
+{
+    font-size:45px;
+    font-style: oblique;
+}
+
+.titleprofile-container
+{
+    /* border:1px solid; */
+    padding:px 60px; 
+    margin-top:2vh;
+    font-size: 50px;
+    margin-bottom:2vh;
+    background-color:RGB(043, 074, 123);
+    color:white;
+    text-align:center; 
+    font-style:courier;
+}
+
+.name-container
+{
+    padding:5px 5px;
+    margin-bottom:1vh;
+}
+
+.profile-container
+{
+    border:4px solid;
+    padding:10px 60px; 
+    margin-top:10vh;
+    margin-bottom:1vh;
+}
