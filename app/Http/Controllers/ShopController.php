@@ -8,6 +8,7 @@ use App\Order;
 use App\Comanded;
 use App\Category;
 use Session;
+use Auth;
 
 class ShopController extends Controller
 {
@@ -65,7 +66,7 @@ class ShopController extends Controller
 
     public function addToCard($id){
         
-        $temp_id_user = Session::get('id');
+        $temp_id_user = Auth::user()->id;
 
         $quantity = request('inputQuantity');
         

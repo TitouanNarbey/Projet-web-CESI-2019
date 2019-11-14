@@ -13,7 +13,7 @@ class UsersController extends Controller
 {
     public function profile()
     {
-        $id=Session::get('id');
+        $id = Auth::user()->id;
     	$user = User::find($id);
 		return view('profile',compact('user'));	
     }

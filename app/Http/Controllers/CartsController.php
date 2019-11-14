@@ -8,12 +8,13 @@ use App\Order;
 use App\Comanded;
 use Session;
 use URL;
+use Auth;
 
 class CartsController extends Controller
 {
     public function showCart()
     {
-        $temp_id_user = Session::get('id');
+        $temp_id_user = Auth::user()->id;
 
         /////     Cart     /////
         //cherche cart
@@ -98,7 +99,7 @@ class CartsController extends Controller
 
     public function showCheckout()
     {
-        $temp_id_user = Session::get('id');
+        $temp_id_user = Auth::user()->id;
 
         /////     Cart     /////
         //cherche cart
