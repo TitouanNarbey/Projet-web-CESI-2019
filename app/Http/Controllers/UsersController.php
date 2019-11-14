@@ -32,7 +32,8 @@ class UsersController extends Controller
                 'inputName' =>'required',
                 'inputFirstname' =>'required',
                 'inputEmail' =>'required',
-                'inputPassword' =>'required'
+                'inputPassword' =>'required',
+                'inputConfirmPassword' =>'required'
                 
             ]);
             
@@ -81,6 +82,7 @@ class UsersController extends Controller
 
     public function postlogin()
     {
+        request()->validate
         ([
             'inputEmail' =>'required',
             'inputPassword' =>'required'
@@ -115,7 +117,8 @@ class UsersController extends Controller
         }
         else
         {
-            echo ("mauvais password :(");
+          
+            return view('/login');
         }
 
         /*if (Auth::attempt(['email' => $email, 'password' => $password])) 
