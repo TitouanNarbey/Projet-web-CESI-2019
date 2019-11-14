@@ -69,7 +69,7 @@
 										<span>
 											<span id="checkout">Payer</span>
 										</span>
-																			<input type="hidden" name="id_order" value="{{$comand->order->id}}" />
+									<input type="hidden" name="id_order" value="{{$comand->order->id}}" />
 									</button>
 
 
