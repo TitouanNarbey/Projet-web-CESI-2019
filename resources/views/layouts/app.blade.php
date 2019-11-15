@@ -109,13 +109,13 @@
               <a href="/">Accueil</a>
             </li>
             <li>
-              <a href="shop">La boutique</a>
+              <a href="/shop">La boutique</a>
             </li>
             <li>
-              <a href="events">Les événements</a>
+              <a href="/events">Les événements</a>
             </li>
             <li>
-              <a href="legal">Mentions légales et CGUs</a>
+              <a href="/legal">Mentions légales et CGUs</a>
             </li>
           </ul>
   
