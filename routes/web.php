@@ -28,9 +28,15 @@ Route::get('blade', function () {
 Route::get('register', 'UsersController@register');
 Route::post('register', 'UsersController@postregister');
 
+//Dynamic profile
+Route::get('useradmin', 'UseradminController@useradmin');
+Route::get('/useradmin/read-data', 'UseradminController@readData')->name('useradmin.action');
+
+// Login
 Route::get('login', 'UsersController@showlogin')->name('login');
 Route::post('login', 'UsersController@postlogin')->name('login');
 
+// Profile
 Route::get('profile', 'UsersController@profile');
 
 Route::get('cart', 'CartsController@showCart');
