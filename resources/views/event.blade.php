@@ -69,8 +69,8 @@ Ajouter la fonction télécharger une image et cacher le bouton en fonction du r
      
  
 <button type="button" class="btn btn-cesi  mt-1 mb-3 "><i class="fas fa-upload"></i> Ajouter une image</button>
-@if(isset($sub))
 
+@if(isset($sub))
 @if($sub == 1)
   <form class="example" action="/events/{{$event->id}}" method="post">
     @csrf
@@ -85,6 +85,7 @@ Ajouter la fonction télécharger une image et cacher le bouton en fonction du r
   </form>
 @endif
 @endif
+
 </div>
 </div>
 <!-- Espace Commentaire -->
