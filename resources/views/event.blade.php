@@ -88,30 +88,28 @@ Ajouter la fonction télécharger une image et cacher le bouton en fonction du r
 </div>
 </div>
 <!-- Espace Commentaire -->
-<div class="media mt-5"><img class="d-flex rounded-circle avatar z-depth-1-half mr-3" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.jpg"alt="Avatar">
+<div class="media mt-5"><img class="d-flex rounded-circle avatar z-depth-1-half mr-3" src="{{$user->image->path}}" alt="Avatar {{$user->first_name}} {{$user->last_name}}">
 <div class="media-body"><h5 class="mt-0 font-weight-bold blue-text">
-    Danny Tatuum
+    {{$user->first_name}} {{$user->last_name}}
 </h5>
-<div class="form-group basic-textarea rounded-corners">
-  <textarea class="form-control z-depth-1" id="exampleFormControlTextarea345" rows="3" cols="132" placeholder="Write your comment..."></textarea>
-  <button type="button" class="btn btn-cesi float-right mt-1 "> Ajouter un commentaire</button>
+<form class="example" action="/events/{{$event->id}}/postComment" method="post">
+  @csrf
+  <div class="form-group basic-textarea rounded-corners">
+    <textarea class="form-control z-depth-1" id="exampleFormControlTextarea345" rows="3" cols="132" placeholder="Write your comment..." name="text"></textarea>
+    <button type="submit" class="btn btn-cesi float-right mt-1 "> Ajouter un commentaire</button>
+  </div>
+</form>
 </div>
 </div>
-</div>
-<div class="media mt-2"><img class="d-flex rounded-circle avatar z-depth-1-half mr-3" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.jpg"alt="Avatar">
-<div class="media-body"><h5 class="mt-0 font-weight-bold blue-text">
-    Anna Smith
-</h5>
-Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purusodio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputatefringilla. Donec lacinia congue felis in faucibus.
-</div>
-</div>
-<div class="media mt-2"><img class="d-flex rounded-circle avatar z-depth-1-half mr-3" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-10.jpg"alt="Avatar">
-<div class="media-body"><h5 class="mt-0 font-weight-bold blue-text">
-    Caroline Horwitz
-</h5>
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis odit minima eaque dignissimos recusandaeofficiis commodi nulla est, tempore atque voluptas non quod maxime, iusto, debitis aliquid? Iure ipsum,itaque.  
-</div>
-</div>
+@foreach($event->posts->reverse() as $post)
+  <div class="media mt-2"><img class="d-flex rounded-circle avatar z-depth-1-half mr-3" src="{{$post->user->image->path}}" alt="Avatar {{$post->user->first_name}} {{$post->user->last_name}}">
+  <div class="media-body"><h5 class="mt-0 font-weight-bold blue-text">
+      {{$post->user->first_name}} {{$post->user->last_name}}
+  </h5>
+  {{$post->text}}
+  </div>
+  </div>
+@endforeach
 </div>
 
 

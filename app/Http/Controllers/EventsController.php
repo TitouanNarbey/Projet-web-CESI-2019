@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use App\Event;
 use App\ConnexionParticipate;
+use App\Post;
 use Auth;
 
 class EventsController extends Controller
@@ -45,7 +47,8 @@ class EventsController extends Controller
     public function event($id){
 
     	$event = Event::find($id);
-    	return view('event',compact('event'));
+        $user = Auth::user();
+    	return view('event', compact('event'), compact('user'));
     }
 
     public function eventAction($id){
@@ -78,5 +81,15 @@ class EventsController extends Controller
         }
 
         
+    }
+
+    public function postComment($id){
+
+        $text = request('text');
+        $user_id = Auth::user()->id;
+
+        $comment = Post::create(['text'=>$text, 'date'=>now(), 'id_events'=>$id, 'id_users'=>$user_id]);
+
+        return redirect('events/'.$id);
     }
 }

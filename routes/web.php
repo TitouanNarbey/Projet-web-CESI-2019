@@ -56,6 +56,7 @@ Route::get('events', 'EventsController@events');
 
 Route::get('events/{id}', 'EventsController@event');
 Route::post('events/{id}', 'EventsController@eventAction');
+Route::post('events/{id}/postComment', 'EventsController@postComment'); 
 
 Route::get('temp', function () {
     return controller('temp');
