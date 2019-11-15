@@ -61,6 +61,9 @@ Route::post('shop/{id}', 'ShopController@addToCard');
 Route::get('events', 'EventsController@events');
 
 Route::get('events/{id}', 'EventsController@event');
+Route::post('events/{id}', 'EventsController@eventAction');
+Route::post('events/{id}/postComment', 'EventsController@postComment'); 
+Route::post('events/{id}/imageUploadPost', 'EventsController@imageUploadPost');
 
 Route::get('temp', function () {
     return controller('temp');
