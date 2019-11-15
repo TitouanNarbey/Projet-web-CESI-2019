@@ -4,6 +4,15 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use App\User;
+
+
+
+ 
+    use Illuminate\Support\Facades\Hash;
+    use Illuminate\Support\Facades\Validator;
+    use Illuminate\Foundation\Auth\RegistersUsers;
+    use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -34,6 +43,8 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest')->except('logout');
-    }
+        $this->middleware('guest')->except('logout');    }
+
+
+    
 }

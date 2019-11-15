@@ -61,7 +61,7 @@ Route::get('temp', function () {
 });
 
 //Penser à appliquer le middleware Auth dessus
-Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
+Route::group(['prefix'=>'admin','middleware'=>'checkadmin'],function(){
     Route::get('/', 'AdminController@dashboard');
     Route::get('shop', 'AdminController@shopAdmin');
     Route::get('events', 'AdminController@eventsAdmin');

@@ -10,6 +10,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class User extends Authenticatable
 {
+
+    use Notifiable;
+
+    //protected $guard = 'admin';
+
     protected $table = 'users';
     //protected $primaryKey = 'id';
     //public $timestamps = false;
@@ -58,6 +63,7 @@ class User extends Authenticatable
     public function voted(){
         return $this->belongsToMany('App\Event', 'voted', 'id_users', 'id_events');
     }
+
 
 
 

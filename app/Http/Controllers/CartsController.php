@@ -96,7 +96,7 @@ class CartsController extends Controller
 
         $obj = Order::find($id_order)->update(['paid' => 1]);
 
-        return redirect('home')->with('messageGreen', 'Payement validé');
+        return redirect('home')->with('messageGreen', 'Paiement validé');
     }
 
     public function showCheckout()

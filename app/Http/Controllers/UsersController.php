@@ -60,22 +60,18 @@ class UsersController extends Controller
                     $user->password = bcrypt($password);
                     $user->save();
 
-                    return view('login')->with('messageGreen', 'Vous avez bien été enregistré.');
+                    return view('login');
 
                 }
                 else
                 {
-                    return redirect('register')->with('messageRed', 'La confirmation du mot de passe ne correspond pas au mot de passe entré.');
+                    
                 }
-            }
-            else
-            {
-                return redirect('register')->with('messageRed', 'Le mot de passe doit contenir au moins une majuscule et un chiffre.');
             }
         }
         else
         {
-            return redirect('register')->with('messageRed', 'Vous devez accepter les conditions d\'utilisation.');
+            //error
         }
     }
 
@@ -119,11 +115,17 @@ class UsersController extends Controller
 
             Auth::login($user);
 
-            return view('/home');
+            return redirect('/home');
         }
         else
         {
             return redirect('/login')->with('messageRed', 'Les champs ne correspondent pas.');
         }
     }
+
+
+
 }
+
+
+
