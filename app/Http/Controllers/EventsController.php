@@ -47,24 +47,13 @@ class EventsController extends Controller
     }
 
     public function event($id){
-
-    	$event = Event::find($id);
-        $user = Auth::user();
-    	return view('event', compact('event'), compact('user'));
-    }
-
-    public function eventAction($id){
-        
         $event = Event::find($id);
-        $participate = ConnexionParticipate::where('id_events', $id)->where('id_users', Auth::user()->id);
-
         if(Auth::user() !== null)
         {
             if(Auth::user()->id_roles != 3)
             {
                 $participate = ConnexionParticipate::where('id_events', $id)->where('id_users', Auth::user()->id)->get();
                 $sub = 0;
-
                 if(isset($participate[0]))
                 {
                     $sub = 1;
