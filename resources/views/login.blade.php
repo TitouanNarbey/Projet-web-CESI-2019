@@ -24,19 +24,19 @@
 						<label for="exampleInputPassword1">Mot de passe</label>
 						<input type="password" class="form-control @error('inputPassword') is-invalid @enderror" id="exampleInputPassword1" placeholder="Password" name="inputPassword">
 					</div>
-					<div class="form-group form-check">
+					{{-- <div class="form-group form-check">
 						<input type="checkbox" class="form-check-input" id="exampleCheck1">
 						<label class="form-check-label" for="exampleCheck1">Me garder connecté.</label>
-					</div>
+					</div> --}}
 					<button type="submit" class="btn btn-primary btn-block text-white">Se connecter</button>
-					<div class="parts">
+					{{-- <div class="parts">
 						Mot de passe oublié ?                        
-					</div>
+					</div> --}}
 					<div class="parts">
 						<a href="{{action('UsersController@register')}}"> Pas encore inscrit ?</a>
 					</div>
-          {{--Error--}}                                
-          @error('inputEmail')                        
+					{{--Error--}}                                
+					@error('inputEmail')                        
 					<div class="invalid-feedback">
 						The email is not correct                        
 					</div>
