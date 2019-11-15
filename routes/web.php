@@ -38,6 +38,7 @@ Route::post('login', 'UsersController@postlogin')->name('login');
 
 // Profile
 Route::get('profile', 'UsersController@profile');
+Route::get('disconnect', 'UsersController@disconnect');
 
 Route::get('cart', 'CartsController@showCart');
 Route::post('changequantity', 'CartsController@changequantity');

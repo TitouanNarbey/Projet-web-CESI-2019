@@ -66,6 +66,7 @@
                     </div>
                 </div>
                 </form>
+                <a href="/disconnect"><button class="btn btn-danger my-2 my-sm-0"><i class="fas fa-user-slash"></i> Déconnexion</button></a>
             {{-- form end --}}                
             </div>
         </div>

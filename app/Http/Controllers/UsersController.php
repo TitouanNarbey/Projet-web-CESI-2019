@@ -72,13 +72,17 @@ class UsersController extends Controller
                 }
                 else
                 {
-                    
+                    return redirect('register')->with('messageRed', 'La confirmation du mot de passe ne correspond pas au mot de passe entré.');
                 }
+            }
+            else
+            {
+                return redirect('register')->with('messageRed', 'Le mot de passe doit contenir au moins une majuscule et un chiffre.');
             }
         }
         else
         {
-            //error
+            return redirect('register')->with('messageRed', 'Vous devez accepter les conditions d\'utilisation.');
         }
     }
 
@@ -130,7 +134,18 @@ class UsersController extends Controller
         }
     }
 
-
+    public function disconnect()
+    {
+        if(Auth::user() !== null)
+        {
+            Auth::logout();
+            return redirect('/home')->with('messageGreen', 'Déconnexion réussie');
+        }
+        else
+        {
+            return redirect('/home')->with('messageRed', 'Vous n\'avez pas de compte.');
+        }
+    }
 
 }
 
