@@ -53,7 +53,7 @@ class CartsController extends Controller
         }
         else
         {
-            return redirect('home')->with('messageRed', 'Veuillez vous connecter pour accéder à votre panier.');
+            return redirect('/home')->with('messageRed', 'Veuillez vous connecter pour accéder à votre panier.');
         }
     }
 
@@ -109,7 +109,7 @@ class CartsController extends Controller
 		else
 		{
 			$obj->update(['paid' => 1]);
-        	return redirect('home')->with('messageGreen', 'Paiement validé');
+        	return redirect('/home')->with('messageGreen', 'Paiement validé');
 		}
     }
 
