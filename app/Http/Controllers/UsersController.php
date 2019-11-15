@@ -13,9 +13,16 @@ class UsersController extends Controller
 {
     public function profile()
     {
-        $id = Auth::user()->id;
-    	$user = User::find($id);
-		return view('profile',compact('user'));	
+        if(Auth::user() !== null)
+        {
+            $id = Auth::user()->id;
+            $user = User::find($id);
+            return view('profile',compact('user'));
+        }
+        else
+        {
+            return redirect('/home')->with('messageRed', 'Vous n\'avez pas de profile.');
+        }
     }
 
     public function register()
