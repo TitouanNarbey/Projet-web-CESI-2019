@@ -13,22 +13,17 @@ Ajouter la fonction télécharger une image et cacher le bouton en fonction du r
   </h1>
   <div id="demo" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
-    <ul class="carousel-indicators">
-      <li data-target="#demo" data-slide-to="0" class="active"></li>
-      <li data-target="#demo" data-slide-to="1"></li>
-      <li data-target="#demo" data-slide-to="2"></li>
-    </ul>
+    
     <!-- The slideshow -->
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="{{asset('assets/img/img_1.png')}}" alt="Los Angeles" >
+        <img src="{{$event->image->path}}" alt="Photo de l'événement {{$event->id}}" >
       </div>
+      @foreach($event->Illustrateeventsmulti as $picture)
       <div class="carousel-item">
-        <img src="{{asset('assets/img/img_3.png')}}" alt="Chicago">
+        <img src="{{$picture->image->path}}" alt="Photo de l'événement {{$event->id}}">
       </div>
-      <div class="carousel-item">
-        <img src="{{asset('assets/img/img_2.png')}}" alt="New York">
-      </div>
+      @endforeach
     </div>
   </div>
   <!-- Fiche de l'article -->
