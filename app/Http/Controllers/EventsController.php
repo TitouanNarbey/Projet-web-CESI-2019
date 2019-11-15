@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Event;
+use App\Image;
+use App\Illustrateeventsmulti;
 use App\ConnexionParticipate;
 use Auth;
 
@@ -107,7 +109,7 @@ class EventsController extends Controller
         }
     }
 
-    public function imageUploadPost(){
+    public function imageUploadPost($id){
         request()->validate([
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
@@ -116,8 +118,13 @@ class EventsController extends Controller
 
         request()->image->move(public_path('assets/img/events'), $imageName);
 
+
+        $objImage = Image::create(['path'=>'/assets/img/events/'.$imageName, 'alt'=>'']);
+
+        $obj = Illustrateeventsmulti::create(['id_images'=>$objImage->id, 'id_events'=>$id, 'id_users'=>Auth::user()->id]);
+
         return back()
-            ->with('Votre image a bien été .')
+            ->with('Votre image a bien été ajouté.')
             ->with('image',$imageName);
     }
 }
