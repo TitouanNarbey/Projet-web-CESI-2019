@@ -21,8 +21,8 @@
       </div><br />
     @endif
       <form method="post" action="{{ route('participate.store') }}">
+          @csrf
           <div class="form-group">
-              @csrf
               <label for="name">Show Name:</label>
               <input type="text" class="form-control" name="show_name"/>
           </div>

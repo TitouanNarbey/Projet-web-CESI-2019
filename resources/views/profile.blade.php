@@ -8,6 +8,7 @@
             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
                 {{-- form start --}}                
                 <form class="form-container rounded">
+                    @csrf
                    {{-- title --}}                
                     <div class="col-md-12 col-sm-12 col-xs-12" align="center">
                         <div class="titleprofile-container rounded">

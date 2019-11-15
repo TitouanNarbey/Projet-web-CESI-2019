@@ -2,6 +2,7 @@
 
 @section('content')
 <form>
+    @csrf
     <br>
     <br>
     <div class="container mh-30 col-10">

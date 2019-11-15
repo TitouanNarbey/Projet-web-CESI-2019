@@ -35,6 +35,7 @@ Réparer le carousel-->
   <div class="description text-center mt-5">
     <h2>Retrouve tes goodies préférées aux couleurs du CESI et de ton BDE</h2>
     <form class="example" action="#">
+      @csrf
       <input type="text" placeholder="Search.." name="search">
       <button type="submit"><i class="fa fa-search"></i></button>
     </form>

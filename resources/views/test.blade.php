@@ -99,6 +99,7 @@
            </div>
                     {{-- End of title --}}
            <form class="form-container rounded">
+               @csrf
                       <div class="form-group">
                           <label for="exampleInputEmail1">Adresse mail</label>
                           <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
