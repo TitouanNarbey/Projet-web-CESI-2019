@@ -13,22 +13,17 @@ Ajouter la fonction télécharger une image et cacher le bouton en fonction du r
   </h1>
   <div id="demo" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
-    <ul class="carousel-indicators">
-      <li data-target="#demo" data-slide-to="0" class="active"></li>
-      <li data-target="#demo" data-slide-to="1"></li>
-      <li data-target="#demo" data-slide-to="2"></li>
-    </ul>
+    
     <!-- The slideshow -->
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="{{asset('assets/img/img_1.png')}}" alt="Los Angeles" >
+        <img src="{{$event->image->path}}" alt="Photo de l'événement {{$event->id}}" >
       </div>
+      @foreach($event->Illustrateeventsmulti as $picture)
       <div class="carousel-item">
-        <img src="{{asset('assets/img/img_3.png')}}" alt="Chicago">
+        <img src="{{$picture->image->path}}" alt="Photo de l'événement {{$event->id}}">
       </div>
-      <div class="carousel-item">
-        <img src="{{asset('assets/img/img_2.png')}}" alt="New York">
-      </div>
+      @endforeach
     </div>
   </div>
   <!-- Fiche de l'article -->
@@ -62,21 +57,35 @@ Ajouter la fonction télécharger une image et cacher le bouton en fonction du r
       </span>
       <br>
     </div>
-    <h2>Tu as pris de belles photos pendant l'événement ?</h2>
-<h5>
-    Envoie nous les !!!!
-</h5>
+    
      
  
-<button type="button" class="btn btn-cesi  mt-1 mb-3 "><i class="fas fa-upload"></i> Ajouter une image</button>
-@if(isset($sub))
 
+
+@if(isset($sub))
 @if($sub == 1)
   <form class="example" action="/events/{{$event->id}}" method="post">
     @csrf
     <input type="hidden" name="inscription" value="-1" />
     <input class ="btn btn-danger mt-1 mb-1" type="submit" value="Ne plus participer">
   </form>
+  <br>
+<h2>Tu as pris de belles photos pendant l'événement ?</h2>
+<h5>
+    Envoie nous les !!!!
+</h5>
+<form action="/events/{{$event->id}}/imageUploadPost" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="row mt-5">
+                <div class="col-md-12 text-right">
+                    <input type="file" name="image" class="form-control float-center">
+                     <button type="submit" class="btn btn-cesi">Upload</button>
+                </div>
+                
+                   
+            </div>
+
+</form>
 @else
   <form class="example" action="/events/{{$event->id}}" method="post">
     @csrf
@@ -85,6 +94,10 @@ Ajouter la fonction télécharger une image et cacher le bouton en fonction du r
   </form>
 @endif
 @endif
+
+
+
+
 </div>
 </div>
 <!-- Espace Commentaire -->

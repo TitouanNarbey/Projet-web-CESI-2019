@@ -35,3 +35,5 @@ migrate: ## Migrate bdd
 clearSession:
 	php artisan make:command FlushSessions
 
+777:
+	cd .. && sudo chmod -R 777 www && cd www

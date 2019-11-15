@@ -56,7 +56,11 @@ Route::get('events', 'EventsController@events');
 
 Route::get('events/{id}', 'EventsController@event');
 Route::post('events/{id}', 'EventsController@eventAction');
+<<<<<<< HEAD
 Route::post('events/{id}/postComment', 'EventsController@postComment'); 
+=======
+Route::post('events/{id}/imageUploadPost', 'EventsController@imageUploadPost');
+>>>>>>> d31fb71d95a8d51393a2b33ba45c8bc4f5655ad7
 
 Route::get('temp', function () {
     return controller('temp');

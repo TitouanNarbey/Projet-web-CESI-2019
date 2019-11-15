@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use App\Event;
+use App\Image;
+use App\Illustrateeventsmulti;
 use App\ConnexionParticipate;
 use App\Post;
 use Auth;
@@ -49,38 +51,85 @@ class EventsController extends Controller
     	$event = Event::find($id);
         $user = Auth::user();
     	return view('event', compact('event'), compact('user'));
-    }
-
-    public function eventAction($id){
-        
-        $event = Event::find($id);
-        $participate = ConnexionParticipate::where('id_events', $id)->where('id_users', Auth::user()->id);
 
         if(Auth::user() !== null)
         {
             if(Auth::user()->id_roles != 3)
             {
-                $obj = ConnexionParticipate::create(['id_events'=>$id, 'id_users'=>Auth::user()->id]);
-                if(isset($obj[0]))
+                $participate = ConnexionParticipate::where('id_events', $id)->where('id_users', Auth::user()->id)->get();
+                $sub = 0;
+
+                if(isset($participate[0]))
                 {
-                    return redirect('events/'.$id)->with('messageGreen', 'Vous participez désormais à cette activité.')->with('participate', '1');
+                    $sub = 1;
                 }
                 else
                 {
-                    return redirect('events/'.$id)->with('messageGreen', 'Vous participez désormais à cette activité.')->with('participate', '0');
+                    $sub = 0;
                 }
+
+                return view('event',compact('event'), compact('sub'));
             }
             else
             {
-                return redirect('events/'.$id)->with('messageRed', 'Vous ne pouvez pas vous inscrire à un événement.');
+                return view('event',compact('event'));
             }
         }
         else
         {
-            return redirect('events/'.$id)->with('messageRed', 'Veuillez vous connecter pour vous inscrire à un événement.');
+            return view('event',compact('event'));
         }
+    }
 
+    public function eventAction($id){
         
+        $event = Event::find($id);
+        $inscription = request('inscription');
+
+        if(Auth::user() !== null)
+        {
+            if(Auth::user()->id_roles != 3)
+            {
+                if($inscription == 1)
+                {
+                    $obj = ConnexionParticipate::create(['id_events'=>$id, 'id_users'=>Auth::user()->id]);
+                    return redirect('events/'.$id)->with('messageGreen', 'Vous participez désormais à cette activité.')->with('participate', '1');
+                }
+                else
+                {
+                    $obj = ConnexionParticipate::where('id_events', $id)->where('id_users', Auth::user()->id);
+                    $obj->delete();
+                    return redirect('events/'.$id)->with('messageGreen', 'Vous ne participez plus à cette activité.')->with('participate', '0');
+                }
+            }
+            else
+            {
+                return redirect('events/'.$id)->with('messageRed', 'Vous ne pouvez pas vous inscrire à un événement.')->with('participate', '0');
+            }
+        }
+        else
+        {
+            return redirect('events/'.$id)->with('messageRed', 'Veuillez vous connecter pour vous inscrire à un événement.')->with('participate', '0');
+        }
+    }
+
+    public function imageUploadPost($id){
+        request()->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        $imageName = time().'.'.request()->image->getClientOriginalExtension();
+
+        request()->image->move(public_path('assets/img/events'), $imageName);
+
+
+        $objImage = Image::create(['path'=>'/assets/img/events/'.$imageName, 'alt'=>'']);
+
+        $obj = Illustrateeventsmulti::create(['id_images'=>$objImage->id, 'id_events'=>$id, 'id_users'=>Auth::user()->id]);
+
+        return back()
+            ->with('Votre image a bien été ajouté.')
+            ->with('image',$imageName);
     }
 
     public function postComment($id){
