@@ -64,32 +64,32 @@
         @endif
     @endif
 
-     @if(isset($sub))
-        <!-- Espace Commentaire -->
-        <div class="media mt-5"><img class="d-flex rounded-circle avatar z-depth-1-half mr-3" src="{{Auth::user()->image->path}}" alt="Avatar {{Auth::user()->first_name}} {{Auth::user()->last_name}}">
-            <div class="media-body">
-                <h5 class="mt-0 font-weight-bold blue-text">{{Auth::user()->first_name}} {{Auth::user()->last_name}}</h5>
-                <form class="example" action="/events/{{$event->id}}/postComment" method="post">
-                    @csrf
-                    <div class="form-group basic-textarea rounded-corners">
-                        <textarea class="form-control z-depth-1" id="exampleFormControlTextarea345" rows="3" cols="132" placeholder="Write your comment..." name="text"></textarea>
-                        <button type="submit" class="btn btn-cesi float-right mt-1 "> Ajouter un commentaire</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    @endif
-
-    {{-- comments --}}
-    @foreach($event->posts->reverse() as $post)
-        <div class="media mt-2"><img class="d-flex rounded-circle avatar z-depth-1-half mr-3" src="{{$post->user->image->path}}" alt="Avatar {{$post->user->first_name}} {{$post->user->last_name}}">
-            <div class="media-body">
-                <h5 class="mt-0 font-weight-bold blue-text">{{$post->user->first_name}} {{$post->user->last_name}}</h5>
-            {{$post->text}}
-            </div>
-        </div>
-    @endforeach
-
 </div>
+@if(isset($sub))
+    <!-- Espace Commentaire -->
+    <div class="media mt-5"><img class="d-flex rounded-circle avatar z-depth-1-half mr-3" src="{{Auth::user()->image->path}}" alt="Avatar {{Auth::user()->first_name}} {{Auth::user()->last_name}}">
+        <div class="media-body">
+            <h5 class="mt-0 font-weight-bold blue-text">{{Auth::user()->first_name}} {{Auth::user()->last_name}}</h5>
+            <form class="example" action="/events/{{$event->id}}/postComment" method="post">
+                @csrf
+                <div class="form-group basic-textarea rounded-corners">
+                    <textarea class="form-control z-depth-1" id="exampleFormControlTextarea345" rows="3" cols="132" placeholder="Write your comment..." name="text"></textarea>
+                    <button type="submit" class="btn btn-cesi float-right mt-1 "> Ajouter un commentaire</button>
+                </div>
+            </form>
+        </div>
+    </div>
+@endif
+
+{{-- comments --}}
+@foreach($event->posts->reverse() as $post)
+    <div class="media mt-2"><img class="d-flex rounded-circle avatar z-depth-1-half mr-3" src="{{$post->user->image->path}}" alt="Avatar {{$post->user->first_name}} {{$post->user->last_name}}">
+        <div class="media-body">
+            <h5 class="mt-0 font-weight-bold blue-text">{{$post->user->first_name}} {{$post->user->last_name}}</h5>
+        {{$post->text}}
+        </div>
+    </div>
+@endforeach
+
 
 @endsection
