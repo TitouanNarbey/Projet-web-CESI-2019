@@ -1,7 +1,7 @@
 @extends('layouts.app')@section('content')
 <!--Création de la zone de produit-->
 <div class="product_area ">
-  <div class="container col-11">
+  <div class="container col-11 mb-5">
     <div class="row ">
       <div class="col-lg-6 mt-5">
         <div id="demo" class="carousel slide" data-ride="carousel">
@@ -48,5 +48,9 @@
     </form>
   </div>
 </div>
+</div>
+</div>
+</div>
+
 
 @endsection
