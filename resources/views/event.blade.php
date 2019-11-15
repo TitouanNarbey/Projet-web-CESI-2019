@@ -62,13 +62,10 @@ Ajouter la fonction télécharger une image et cacher le bouton en fonction du r
       </span>
       <br>
     </div>
-    <h2>Tu as pris de belles photos pendant l'événement ?</h2>
-<h5>
-    Envoie nous les !!!!
-</h5>
+    
      
  
-<button type="button" class="btn btn-cesi  mt-1 mb-3 "><i class="fas fa-upload"></i> Ajouter une image</button>
+
 
 @if(isset($sub))
 @if($sub == 1)
@@ -77,6 +74,23 @@ Ajouter la fonction télécharger une image et cacher le bouton en fonction du r
     <input type="hidden" name="inscription" value="-1" />
     <input class ="btn btn-danger mt-1 mb-1" type="submit" value="Ne plus participer">
   </form>
+  <br>
+<h2>Tu as pris de belles photos pendant l'événement ?</h2>
+<h5>
+    Envoie nous les !!!!
+</h5>
+<form action="/events/{{$event->id}}/imageUploadPost" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="row mt-5">
+                <div class="col-md-12 text-right">
+                    <input type="file" name="image" class="form-control float-center">
+                     <button type="submit" class="btn btn-cesi">Upload</button>
+                </div>
+                
+                   
+            </div>
+
+</form>
 @else
   <form class="example" action="/events/{{$event->id}}" method="post">
     @csrf
@@ -85,6 +99,9 @@ Ajouter la fonction télécharger une image et cacher le bouton en fonction du r
   </form>
 @endif
 @endif
+
+
+
 
 </div>
 </div>
