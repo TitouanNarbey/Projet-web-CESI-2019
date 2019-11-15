@@ -61,7 +61,7 @@ class EventsController extends Controller
                 {
                     $sub = 0;
                 }
-                
+
                 return view('event',compact('event'), compact('sub'));
             }
             else
@@ -105,7 +105,19 @@ class EventsController extends Controller
         {
             return redirect('events/'.$id)->with('messageRed', 'Veuillez vous connecter pour vous inscrire à un événement.')->with('participate', '0');
         }
+    }
 
-        
+    public function imageUploadPost(){
+        request()->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        $imageName = time().'.'.request()->image->getClientOriginalExtension();
+
+        request()->image->move(public_path('assets/img/events'), $imageName);
+
+        return back()
+            ->with('Votre image a bien été .')
+            ->with('image',$imageName);
     }
 }
