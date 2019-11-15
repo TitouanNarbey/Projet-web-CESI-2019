@@ -32,11 +32,10 @@
             <div class="title-container-home"><p> Les événements</p></div>
             <div class="d-flex flex-row-reverse">
                     <div class="p-2"> </div>
-            <button class="btn btn-primary text-white " href={{ url('events') }} p-2>Voir les autres événements ►</button>
+            <a href="events">{{--<button class="btn btn-primary text-white" p-2>--}}Voir les autres événements ►{{--</button>--}}</a>
             
         </div>
     </div>
-        
         <div class="form-group">
             <div class="title-container-home"><p>Les coups de coeur du moment</p></div>
             <div class=""> 
@@ -44,8 +43,7 @@
             </div>
             <div class="d-flex flex-row-reverse">
                     <div class="p-2"> </div>
-            <button class="btn btn-primary text-white " href={{ url('events') }} p-2>Voir toute la boutique ►</button>
-            
+                    <a href="/shop">{{--<button class="btn btn-primary text-white" p-2>--}}Voir toute la boutique ►{{--</button>--}}</a>
         </div>
     </div>
         </div>
