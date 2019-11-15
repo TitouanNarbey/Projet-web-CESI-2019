@@ -9,6 +9,9 @@ use App\Comanded;
 use Session;
 use URL;
 use Auth;
+use App\Http\Controllers\Controller;
+use App\Mail\NoticeMail;
+use Illuminate\Support\Facades\Mail;
 
 class CartsController extends Controller
 {
@@ -95,6 +98,8 @@ class CartsController extends Controller
         $id_order = request('id_order');
 
         $obj = Order::find($id_order)->update(['paid' => 1]);
+
+        Mail::to('cesi.noreply@gmail.com')->send(new NoticeMail());
 
         return redirect('home')->with('messageGreen', 'Paiement validé');
     }

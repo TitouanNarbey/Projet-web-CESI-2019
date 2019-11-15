@@ -22,7 +22,8 @@ Route::get('home', function () {
 Route::get('blade', function () {
     return view('child');
 });
-
+//Route de mail
+Route::post('contact', 'MailController@store');
 
 
 Route::get('register', 'UsersController@register');
