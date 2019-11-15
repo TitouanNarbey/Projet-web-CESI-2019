@@ -92,11 +92,25 @@ class CartsController extends Controller
     }
     public function valideComande()
     {
-        $id_order = request('id_order');
+		$id_order = request('id_order');
+		$obj = Order::find($id_order);
 
-        $obj = Order::find($id_order)->update(['paid' => 1]);
+		
+		$empty = true;
+		foreach($obj->comanded as $comand)
+		{
+			$empty = false;
+		}
 
-        return redirect('home')->with('messageGreen', 'Paiement validé');
+		if($empty)
+		{
+			return redirect('/cart')->with('messageRed', 'Votre panier est vide');
+		}
+		else
+		{
+			$obj->update(['paid' => 1]);
+        	return redirect('home')->with('messageGreen', 'Paiement validé');
+		}
     }
 
     public function showCheckout()
