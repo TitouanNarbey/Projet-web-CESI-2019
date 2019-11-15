@@ -68,9 +68,9 @@ Réparer le carousel-->
             <div class="card {{$article->category}}">
               <a href="shop/{{$article->id}}" class="nounderline">
                 <div class="headerCardEvent">
-                  <img src="{{$article->image->path}}" class="img-fluid sizeBanner" alt="{{$article->image->alt}}">
+                  <img src="{{$article->image->path}}" class="img-fluid sizeBanner" alt="{{$article->image->alt}}" witdh=100%>
                 </div>
-                <div class="card-body">
+                <div class="card-body"><br>
                   <h3>
                     {{$article->
                     name}}
