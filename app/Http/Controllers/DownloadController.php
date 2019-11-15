@@ -26,7 +26,7 @@ class DownloadController extends Controller
 		$zip = new ZipArchive();
 	
 		# create a temp file & open it
-		$tmp_file = tempnam('.','');
+		$tmp_file = tempnam('/tmp/','');
 		$zip->open($tmp_file, ZipArchive::CREATE);
 
 		# loop through each file
@@ -42,7 +42,7 @@ class DownloadController extends Controller
 		$zip->close();
 
 		# send the file to the browser as a download
-		header('Content-disposition: attachment; filename=download.zip');
+		header('Content-disposition: attachment; filename=BDE-CESI-Lyon_AllImages.zip');
 		header('Content-type: application/zip');
 		readfile($tmp_file);
 	}
