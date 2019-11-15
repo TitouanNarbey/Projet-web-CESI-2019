@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use App\Event;
 use App\Image;
+use App\User;
 use App\Illustrateeventsmulti;
 use App\ConnexionParticipate;
 use App\Post;
@@ -47,7 +48,9 @@ class EventsController extends Controller
     }
 
     public function event($id){
+
         $event = Event::find($id);
+
         if(Auth::user() !== null)
         {
             if(Auth::user()->id_roles != 3)
@@ -62,17 +65,16 @@ class EventsController extends Controller
                 {
                     $sub = 0;
                 }
-
-                return view('event',compact('event'), compact('sub'));
+                return view('event', compact('event'), compact('sub'));
             }
             else
             {
-                return view('event',compact('event'));
+                return view('event', compact('event'));
             }
         }
         else
         {
-            return view('event',compact('event'));
+            return view('event', compact('event'));
         }
     }
 
