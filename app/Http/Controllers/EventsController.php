@@ -12,7 +12,7 @@ use App\ConnexionParticipate;
 use App\Post;
 use App\EventOfTheMonth;
 use Auth;
-use App\Bestarticle;
+use App\BestArticle;
 
 
 class EventsController extends Controller
