@@ -5,15 +5,23 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use App\ConnexionParticipate;
-use App\Exports\ConnexionParticipateExport;
 use Maatwebsite\Excel\Facades\Excel;
+use App\Event;
 
 class ParticipateController extends Controller
 {
      
-public function export() 
+public function export($id) 
 {
-	
-        return Excel::download(new ConnexionParticipateExport, 'listeParticipants.xlsx');
+
+
+       $event = Event::find($id);
+
+     
+	return view('view',compact('event'));
+    
+    
+
+
 }
 }
