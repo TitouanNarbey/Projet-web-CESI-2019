@@ -50,8 +50,10 @@
 
 	<div class="d-flex flex-row-reverse">
 		<div class="p-2"></div>
-		<a href="events">{{--<button class="btn btn-primary text-white" p-2>--}}Voir les autres événements ►{{--</button>--}}</a>
+		<a href="events"><button class="btn btn-primary text-white" p-2>Voir les autres événements ►</button></a>
 	</div>
+
+	<br>
 
 	<div class="form-group">
 		<div class="title-container-home"><p>Les coups de coeur du moment</p></div>
@@ -81,7 +83,7 @@
 		</div>
 		<div class="d-flex flex-row-reverse">
 			<div class="p-2"> </div>
-			<a href="/shop">{{--<button class="btn btn-primary text-white" p-2>--}}Voir toute la boutique ►{{--</button>--}}</a>
+			<a href="/shop"><button class="btn btn-primary text-white" p-2>Voir toute la boutique ►</button></a>
 		</div>
 	</div>
 </div>
