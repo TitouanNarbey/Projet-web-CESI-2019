@@ -233,7 +233,7 @@ class EventsController extends Controller
         $obj = Illustrateeventsmulti::create(['id_images'=>$objImage->id, 'id_events'=>$id, 'id_users'=>Auth::user()->id]);
 
         return back()
-            ->with('Votre image a bien été ajouté.')
+            ->with('messageGreen', 'Votre image a bien été ajouté.')
             ->with('image',$imageName);
     }
 
@@ -258,10 +258,37 @@ class EventsController extends Controller
 
     public function giveLike(){
 
+        $id = request('event_id');
+
+        if(Auth::user() !== null)
+        {
+            if(Auth::user()->id_roles != 3)
+            {
+                $liked = ConnexionVoted::where('id_events', $id)->where('id_users', Auth::user()->id)->get();
+
+                if(!isset($liked[0]))
+                {
+                    $obj = ConnexionVoted::create(['id_events'=>$id, 'id_users'=>Auth::user()->id]);
+                }
+            }
+        }
+        return redirect('/events/'.$id);
     }
 
     public function removeLike(){
 
+        $event_id = request('event_id');
+
+        if(Auth::user() !== null)
+        {
+            if(Auth::user()->id_roles != 3)
+            {
+                $liked = ConnexionVoted::where('id_events', $event_id)->where('id_users', Auth::user()->id);
+
+                $liked->delete();
+            }
+        }
+        return redirect('/events/'.$event_id);
     }
 
 }

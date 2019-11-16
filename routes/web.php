@@ -61,6 +61,8 @@ Route::get('events/{id}', 'EventsController@event');
 Route::post('events/{id}', 'EventsController@eventAction');
 Route::post('events/{id}/postComment', 'EventsController@postComment'); 
 Route::post('events/{id}/imageUploadPost', 'EventsController@imageUploadPost');
+Route::post('removeLike', 'EventsController@removeLike'); 
+Route::post('giveLike', 'EventsController@giveLike');
 
 Route::get('downloadAllImages', 'DownloadController@downloadAllImages');
 Route::get('acceptCookies', 'UsersController@acceptCookies');

@@ -37,14 +37,23 @@
 			<br>
         </div>
     </div>
+
 @if(isset($like))
-@if($like == 1 || $like == 0)
-<button type="button" class="btn btn-danger"> {{$likes}} <i class="fas fa-heart"></i></button>
+    @if($like == 1)
+        <form method="post" action="/removeLike">
+            @csrf
+            <button type="submit" class="btn btn-danger"> {{$likes}} <i class="fas fa-heart"></i></button>
+            <input type="hidden" name="event_id" value="{{$event->id}}" />
+        </form>
+    @else
+        <form method="post" action="/giveLike">
+            @csrf
+            <button type="submit" class="btn btn-danger"> {{$likes}} <i class="far fa-heart"></i></button>
+            <input type="hidden" name="event_id" value="{{$event->id}}" />
+        </form>
+    @endif
 @else
-<button type="button" class="btn btn-danger"> {{$likes}} <i class="far fa-heart"></i></button>
-@endif
-@else
-<button type="button" class="btn btn-danger"> {{$likes}} <i class="far fa-heart"></i> </button>
+    <button type="button" class="btn btn-danger"> {{$likes}} <i class="far fa-heart"></i> </button>
 @endif
 
 @if(Auth::user() !== null)
