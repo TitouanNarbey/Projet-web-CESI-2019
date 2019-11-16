@@ -60,21 +60,54 @@
                     </div>
                 </div>
                 @endforeach
-            <div class="d-flex flex-row-reverse">
+            
+            
+        </div>
+        <div class="d-flex flex-row-reverse">
                     <div class="p-2"> </div>
             <a href="events">{{--<button class="btn btn-primary text-white" p-2>--}}Voir les autres événements ►{{--</button>--}}</a>
+    </div>
+
+        <div class="form-group">
+            <div class="title-container-home"><p>Les coups de coeur du moment</p></div>
+            <div class="row mx-auto">
+
+            @foreach($articles as $article)
+                <div class="col-xl-3 mt-5">
+                    <div class="card">
+                        <a href="events/{{$article->article->id}}" class="nounderline">
+                            <div class="headerCardEvent">
+                                <img src="{{$article->article->image->path}}" class="img-fluid sizeBanner" alt="{{$article->article->image->alt}}">
+                            </div>
+                            <div class="card-body mt-5">
+                                <h3>
+                                    {{$article->article->
+                                    name}}
+                                </h3>
+                                <div class="eventCardDescription">
+                                    {{$article->article->
+                                    description}}  
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                  <div class="text-right eventCardFooter">
+                    <h2><span class="badge badge-dark ">{{$article->article->price}} €</span></h2>
+                    <h2><span class="badge badge-dark ">{{$article->article->stock}} en stock</span></h2>
+                  </div>
+                </div>
+                        </a>
+                    </div>
+                </div>
+            @endforeach    
+            
             
         </div>
     </div>
-        <div class="form-group">
-            <div class="title-container-home"><p>Les coups de coeur du moment</p></div>
-            <div class=""> 
-                {{-- Insérer ici le code --}}
-            </div>
             <div class="d-flex flex-row-reverse">
                     <div class="p-2"> </div>
                     <a href="/shop">{{--<button class="btn btn-primary text-white" p-2>--}}Voir toute la boutique ►{{--</button>--}}</a>
         </div>
+
     </div>
         </div>
 </form>

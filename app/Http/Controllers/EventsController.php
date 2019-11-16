@@ -12,6 +12,8 @@ use App\ConnexionParticipate;
 use App\Post;
 use App\EventOfTheMonth;
 use Auth;
+use App\Bestarticle;
+
 
 class EventsController extends Controller
 {
@@ -229,10 +231,13 @@ class EventsController extends Controller
         return redirect('events/'.$id);
     }
 
-    public function homeEvent(){
+    public function homeEventArticle(){
 
         $events = EventOfTheMonth::all();
+        $articles = BestArticle::all();
 
-        return view('home', compact('events'));
+
+        return view('home', compact('events'),compact('articles'));
     }
+
 }

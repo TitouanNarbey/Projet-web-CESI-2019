@@ -19,7 +19,8 @@ Route::get('home', function () {
     return view('home');
 });
 
-Route::get('/', 'EventsController@homeEvent');
+Route::get('/', 'EventsController@homeEventArticle');
+
 //Route de Test
 Route::get('blade', function () {
     return view('child');
