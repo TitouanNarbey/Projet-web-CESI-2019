@@ -59,7 +59,7 @@
 @if(Auth::user() !== null)
     @if(Auth::user()->id_roles == 2)
 
-    <a href="/events/{{$event->id}}/export"><button class="btn btn-cesi">Exporter la liste des participantszz</button></a>
+    <a href="/events/{{$event->id}}/export"><button class="btn btn-cesi">Exporter la liste des participants</button></a>
                     
                 @endif
                 @endif
