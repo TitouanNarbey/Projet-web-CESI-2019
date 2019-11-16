@@ -17,6 +17,8 @@
 </div>
 
 <!-- Fiche de l'article -->
+
+
 <div class="text-center mt-2 mb-2">
 	<h2>Organisée par {{$event->creator->last_name}} {{$event->creator->first_name}} le {{$event->start_date}}</h2>
 	<div class="description ">
@@ -35,6 +37,11 @@
 			<br>
         </div>
     </div>
+    @if(Auth::user()->id_roles == 2)
+
+    <a href="/events/{{$event->id}}/export"><button class="btn btn-cesi">Exporter ma liste</button></a>
+                    
+                @endif
         
     @if(isset($sub))
         @if($event->start_date > date("Y-m-d"))

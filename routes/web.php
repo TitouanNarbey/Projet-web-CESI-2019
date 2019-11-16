@@ -68,7 +68,6 @@ Route::get('temp', function () {
     return controller('temp');
 });
 
-//Penser à appliquer le middleware Auth dessus
 Route::group(['prefix'=>'admin','middleware'=>'checkadmin'],function(){
     Route::get('/', 'AdminController@dashboard');
     Route::get('shop', 'AdminController@shopAdmin');
@@ -78,6 +77,9 @@ Route::group(['prefix'=>'admin','middleware'=>'checkadmin'],function(){
     Route::get('new-article', 'AdminController@createArticle');
     Route::get('new-event', 'AdminController@createEvent');
 });
+
+Route::get('events/{id}/export', 'ParticipateController@export');
+
 
 
 Route::get('testDiplayCampus', function () {
@@ -327,4 +329,4 @@ Route::get('testCurrent', function () {
     }
 });*/
 
-Route::get('export', 'ParticipateController@export');
+

@@ -1,41 +1,11 @@
-@extends('app.layout')
-
-@section('content')
-<style>
-  .uper {
-    margin-top: 40px;
-  }
-</style>
-<div class="card uper">
-  <div class="card-header">
-    Add participate Shows
-  </div>
-  <div class="card-body">
-    @if ($errors->any())
-      <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-              <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-      </div><br />
-    @endif
-      <form method="post" action="{{ route('participate.store') }}">
-          @csrf
-          <div class="form-group">
-              <label for="name">Show Name:</label>
-              <input type="text" class="form-control" name="show_name"/>
-          </div>
-          <div class="form-group">
-              <label for="price">Series :</label>
-              <input type="text" class="form-control" name="series"/>
-          </div>
-          <div class="form-group">
-              <label for="quantity">Show Lead Actor :</label>
-              <input type="text" class="form-control" name="lead_actor"/>
-          </div>
-          <button type="submit" class="btn btn-primary">Create Show</button>
-      </form>
-  </div>
-</div>
-@endsection
+<?php 
+  $file_name = 'Liste des inscrits.csv';
+    header("Content-Disposition: attachment; filename=$file_name");
+  header("Content-Type: text/csv;"); 
+  $file = fopen('php://output', 'w');
+  $header = array("Liste des inscrits");
+  fputcsv($file, $header);?>
+  Prenom;"Nom";"Contact"     
+      @foreach($event->participate as $user)
+{{$user->last_name}};{{$user->first_name}};{{$user->email}}
+      @endforeach 
