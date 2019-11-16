@@ -6,7 +6,6 @@
 <div class="container col-11 text-center mt-2">
     <h3> Comment signaler des éléments inappropriés ou insultants sur le site du BDE CESI Lyon (par ex. : nudité, incitation à la haine, menaces) ? </h3>
     <p>Nous sommes désolés d’apprendre que vous rencontrez un problème sur notre site et nous souhaitons vous aider.</p>
-    <br>
     <p>Si vous souhaitez signaler un contenu qui va à l’encontre de l'image du CESI (par exemple : nudité, propos haineux, violence), remplissez le formulaire ci-dessous et nous nous efforcerons de régler votre problème le plus rapidement possible.</p>
 </div>
 
