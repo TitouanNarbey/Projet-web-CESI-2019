@@ -8,13 +8,13 @@
 						<tr>
 							<th scope="col"></th>
 							<th scope="col">
-								Product
+								Produit
 							</th>
 							<th scope="col" class="text-center">
-								Quantity
+								Quantité
 							</th>
 							<th scope="col" class="text-right">
-								Price
+								Prix
 							</th>
 							<th></th>
 						</tr>
@@ -75,10 +75,10 @@
 		<div class="col mb-2">
 			<div class="row">
 				<div class="col-sm-12  col-md-6">
-					<a href="shop" target="_self"><button class="btn btn-block btn-light">Continue Shopping</button></a>
+					<a href="shop" target="_self"><button class="btn btn-block btn-light">Continuer la commande</button></a>
 				</div>
 				<div class="col-sm-12 col-md-6 text-right">
-					<a href="checkout" target="_self"><button class="btn btn-lg btn-block btn-success text-uppercase">Checkout</button></a>
+					<a href="checkout" target="_self"><button class="btn btn-lg btn-block btn-success text-uppercase">paiement</button></a>
 				</div>
 			</div>
 		</div>
