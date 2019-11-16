@@ -77,6 +77,7 @@
         @show
 
 <!-- Footer -->
+<br>
 <footer class="page-footer font-small pt-4" id="sticky-footer" >
 
     <!-- Footer Links -->
