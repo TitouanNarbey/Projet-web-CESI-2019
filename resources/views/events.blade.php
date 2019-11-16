@@ -67,6 +67,17 @@ Ajouter un bouton de signalement en récupérent $_SESSION et en regardant le r�
       <input class ="btn btn-cesi btn-block mt-1" type="submit" name="unique" value="Unique">
   </form>
         </div>
+        	<button onclick="showDropdownDate()" class=" btn btn-cesi">Date</button>
+      <div id="date" class="dropdown-content">
+        <form class="example" action="#">
+    	@csrf
+      <input class ="btn btn-cesi btn-block mt-1" type="submit" name="actual" value="Ce mois">
+    </form>
+          <form class="example" action="#">
+    	@csrf
+      <input class ="btn btn-cesi btn-block mt-1" type="submit" name="soon" value="à venir">
+  </form>
+        </div>
  </div>
     </div>
 		<!-- Affichage des différentes événements -->

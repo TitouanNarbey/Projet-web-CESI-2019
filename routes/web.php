@@ -11,13 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', 'EventsController@homeEventArticle');
+Route::get('home', 'EventsController@homeEventArticle');
 
-Route::get('home', function () {
-    return view('home');
-});
 //Route de Test
 Route::get('blade', function () {
     return view('child');
