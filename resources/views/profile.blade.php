@@ -69,6 +69,7 @@
                 <a href="/disconnect"><button class="btn btn-danger my-2 my-sm-0"><i class="fas fa-user-slash"></i> Déconnexion</button></a>
                 @if(Auth::user()->id_roles == 3)
                     <a href="/downloadAllImages"><button class="btn btn-info my-2 my-sm-0"><i class="fas fa-download"></i> Télécharger toutes les images</button></a>
+                    <a href="/report"><button class="btn btn-danger my-2 my-sm-0"><i class="fas fa-flag"></i> Signaler</button></a>
                 @endif
             {{-- form end --}}                
             </div>
