@@ -14,6 +14,7 @@
     <link href="{{ asset('assets/css/profile.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/cssdeBen.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/CSSdeLoïs.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/cssdeTitouan.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/navbar.css') }}" rel="stylesheet">
   </head>
     <body>
@@ -57,6 +58,14 @@
 
 </nav>
 
+  @if(Session::get('AcceptCookies') != 1)
+  <div class="statusBarCookies pb-1">
+    <h4 class="pt-2 ml-2">Utilisation des Cookies</h4>
+    <p class="ml-2">En utilisant ce site, vous acceptez notre utilisation de cookies afin que vous puissiez accéder à nos services. Nous ne revendrons pas vos données à des tiers, et n'effectuerons pas d'étude statistique. Les cookies sont utilisés uniquement pour le fonctionnement du site.</p>
+    <a class="ml-2" href="/acceptCookies"><button class="btn btn-primary text-white" p-2>Accepter</button></a>
+    <a class="ml-2" href="/legal">En savoir plus</a>
+  </div>
+  @endif
   @if(session()->has('messageRed'))
   <div class="alert alert-danger text-center" role="alert">
       {{session()->get('messageRed')}}
