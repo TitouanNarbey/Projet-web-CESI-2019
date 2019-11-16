@@ -37,10 +37,22 @@
 			<br>
         </div>
     </div>
+@if(isset($like))
+@if($like == 1 || $like == 0)
+<button type="button" class="btn btn-danger"> {{$likes}} <i class="fas fa-heart"></i></button>
+@else
+<button type="button" class="btn btn-danger"> {{$likes}} <i class="far fa-heart"></i></button>
+@endif
+@else
+<button type="button" class="btn btn-danger"> {{$likes}} <i class="far fa-heart"></i> </button>
+@endif
+
+@if(Auth::user() !== null)
     @if(Auth::user()->id_roles == 2)
 
-    <a href="/events/{{$event->id}}/export"><button class="btn btn-cesi">Exporter ma liste</button></a>
+    <a href="/events/{{$event->id}}/export"><button class="btn btn-cesi">Exporter la liste des participantszz</button></a>
                     
+                @endif
                 @endif
         
     @if(isset($sub))

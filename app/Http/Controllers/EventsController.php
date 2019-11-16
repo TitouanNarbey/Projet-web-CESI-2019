@@ -13,6 +13,7 @@ use App\Post;
 use App\EventOfTheMonth;
 use Auth;
 use App\BestArticle;
+use App\ConnexionVoted;
 
 
 class EventsController extends Controller
@@ -143,7 +144,7 @@ class EventsController extends Controller
 
         $event = Event::find($id);
 
-        $like = -1;
+        
         $likes = ConnexionVoted::where('id_events', $id)->count();
 
         if(Auth::user() !== null)
@@ -172,16 +173,16 @@ class EventsController extends Controller
                     $like = 0;
                 }
 
-                return view('event', compact('event'), compact('sub'), compact('likes'), compact('like'));
+                return view('event', compact('event'))->with('sub',$sub)->with('like',$like)->with('likes',$likes);
             }
             else
             {
-                return view('event', compact('event'), compact('likes'), compact('like'));
+                return view('event', compact('event'))->with('like',$like)->with('likes',$likes);
             }
         }
         else
         {
-            return view('event', compact('event'), compact('likes'), compact('like'));
+                return view('event', compact('event'))->with('likes',$likes);
         }
     }
 
