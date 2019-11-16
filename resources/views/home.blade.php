@@ -29,8 +29,37 @@
             </div>
         </div>
         <br>
-        <div class="form-group">
+        <div class="container col-11">
             <div class="title-container-home"><p> Les événements</p></div>
+            <div class="row mx-auto">
+
+            @foreach($events as $event)
+                <div class="col-xl-3 mt-5">
+                    <div class="card">
+                        <a href="events/{{$event->event->id}}" class="nounderline">
+                            <div class="headerCardEvent">
+                                <img src="{{$event->event->image->path}}" class="img-fluid sizeBanner" alt="{{$event->event->image->alt}}">
+                            </div>
+                            <div class="card-body">
+                                <h3>
+                                    {{$event->event->
+                                    name}}
+                                </h3>
+                                <div class="eventCardDescription">
+                                    {{$event->event->
+                                    description}}  
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="text-right eventCardFooter">
+                                     Création : {{$event->event->
+                                    start_date}}
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                @endforeach
             <div class="d-flex flex-row-reverse">
                     <div class="p-2"> </div>
             <a href="events">{{--<button class="btn btn-primary text-white" p-2>--}}Voir les autres événements ►{{--</button>--}}</a>

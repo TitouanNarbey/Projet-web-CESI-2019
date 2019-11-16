@@ -18,6 +18,8 @@ Route::get('/', function () {
 Route::get('home', function () {
     return view('home');
 });
+
+Route::get('/', 'EventsController@homeEvent');
 //Route de Test
 Route::get('blade', function () {
     return view('child');

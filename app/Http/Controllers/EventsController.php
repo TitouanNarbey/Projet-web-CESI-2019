@@ -10,6 +10,7 @@ use App\User;
 use App\Illustrateeventsmulti;
 use App\ConnexionParticipate;
 use App\Post;
+use App\EventOfTheMonth;
 use Auth;
 
 class EventsController extends Controller
@@ -226,5 +227,12 @@ class EventsController extends Controller
         $comment = Post::create(['text'=>$text, 'date'=>now(), 'id_events'=>$id, 'id_users'=>$user_id]);
 
         return redirect('events/'.$id);
+    }
+
+    public function homeEvent(){
+
+        $events = EventOfTheMonth::all();
+
+        return view('home', compact('events'));
     }
 }
