@@ -40,6 +40,7 @@ Route::get('cart', 'CartsController@showCart');
 Route::post('changequantity', 'CartsController@changequantity');
 Route::post('deleteComande', 'CartsController@deleteComande');
 Route::post('valideComande', 'CartsController@valideComande');
+Route::post('paypal', 'PaymentController@payWithpaypal');
 
 Route::get('checkout', 'CartsController@showCheckout');
 
