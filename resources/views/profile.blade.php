@@ -2,6 +2,19 @@
 
 @section('content')
 
+@if(isset($reports))
+    @foreach($reports as $report)
+        <form class="statusBarReport pb-1 mb-1" method="post" action="">
+            @csrf
+            <h4 class="pt-2 ml-2">{{$report->type}} a été signalé !</h4>
+            <p class="ml-2">{{$report->text}}</p>
+            <button type="submit" class="btn btn-light">Le problème est réglé</button>
+            <a class="ml-2 nounderline" href="{{$report->link}}">Accéder au contenu</a>
+			<input type="hidden" name="id_order" value="{{$report->id}}" />
+        </form>
+    @endforeach
+@endif
+
 <div class="container">
         <div class="row">
             <div class="col-lg-1 col-md-4 col-sm-12 col-xs-12"></div>
@@ -69,6 +82,7 @@
                 <a href="/disconnect"><button class="btn btn-danger my-2 my-sm-0"><i class="fas fa-user-slash"></i> Déconnexion</button></a>
                 @if(Auth::user()->id_roles == 3)
                     <a href="/downloadAllImages"><button class="btn btn-info my-2 my-sm-0"><i class="fas fa-download"></i> Télécharger toutes les images</button></a>
+                    <a href="/report"><button class="btn btn-danger my-2 my-sm-0"><i class="fas fa-flag"></i> Signaler</button></a>
                 @endif
             {{-- form end --}}                
             </div>
