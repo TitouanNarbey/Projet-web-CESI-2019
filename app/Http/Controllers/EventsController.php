@@ -43,6 +43,95 @@ class EventsController extends Controller
         }
         else {
         }
+        if ( isset($_GET['actual'])) {
+
+            $month = date("m");
+            $bissextile = date("L");
+            
+
+            switch($month)
+            {
+                case 1 :
+
+                $day = 31;
+                $events = Event::where('start_date', '<',date("Y-m-$day"))->where('start_date', '>',date("Y-m-01"))->get();
+                break;
+
+                case 2 :
+
+                if ($bissextile = 1){
+
+                $day = 29;
+                $events = Event::where('start_date', '<',date("Y-m-$day"))->where('start_date', '>',date("Y-m-01"))->get();
+                break;
+                }
+                else
+                {
+                    $day = 28;
+                $events = Event::where('start_date', '<',date("Y-m-$day"))->where('start_date', '>',date("Y-m-01"))->get();
+                break; 
+                }
+                case 3 :
+
+                $day = 31;
+                $events = Event::where('start_date', '<',date("Y-m-$day"))->where('start_date', '>',date("Y-m-01"))->get();
+                break;
+                case 4 :
+
+                $day = 30;
+                $events = Event::where('start_date', '<',date("Y-m-$day"))->where('start_date', '>',date("Y-m-01"))->get();
+                break;
+                case 5 :
+
+                $day = 31;
+                $events = Event::where('start_date', '<',date("Y-m-$day"))->where('start_date', '>',date("Y-m-01"))->get();
+                break;
+                case 6 :
+
+                $day = 30;
+                $events = Event::where('start_date', '<',date("Y-m-$day"))->where('start_date', '>',date("Y-m-01"))->get();
+                break;
+                case 7 :
+
+                $day = 31;
+                $events = Event::where('start_date', '<',date("Y-m-$day"))->where('start_date', '>',date("Y-m-01"))->get();
+                break;
+                case 8 :
+
+                $day = 31;
+                $events = Event::where('start_date', '<',date("Y-m-$day"))->where('start_date', '>',date("Y-m-01"))->get();
+                break;
+                case 9 :
+
+                $day = 30;
+                $events = Event::where('start_date', '<',date("Y-m-$day"))->where('start_date', '>',date("Y-m-01"))->get();
+                break;
+                case 10 :
+
+                $day = 31;
+                $events = Event::where('start_date', '<',date("Y-m-$day"))->where('start_date', '>',date("Y-m-01"))->get();
+                break;
+                case 11 :
+
+                $day = 30;
+                $events = Event::where('start_date', '<',date("Y-m-$day"))->where('start_date', '>',date("Y-m-01"))->get();
+                break;
+                case 12 :
+
+                $day = 31;
+                $events = Event::where('start_date', '<',date("Y-m-$day"))->where('start_date', '>',date("Y-m-01"))->get();
+                break;
+            }
+        }
+        else {
+        }
+        if ( isset($_GET['soon'])) {
+
+            $month_soon = date("m")+1;
+            $events = Event::where('start_date', '>',date("Y-$month_soon-01"))->get();
+        }
+        else {
+        }
        
 		return view('events',compact('events'));	
     }

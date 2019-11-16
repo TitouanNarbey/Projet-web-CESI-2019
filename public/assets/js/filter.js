@@ -11,3 +11,6 @@ function showDropdownCategory() {
 function showDropdownFrequency() {
   document.getElementById("frequency").classList.toggle("show");
 }
+function showDropdownDate() {
+  document.getElementById("date").classList.toggle("show");
+}
