@@ -147,6 +147,12 @@ class UsersController extends Controller
         }
     }
 
+    public function acceptCookies()
+    {
+        Session::put('AcceptCookies', 1);
+        return back();
+    }
+
 }
 
 

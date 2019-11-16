@@ -63,6 +63,7 @@ Route::post('events/{id}/postComment', 'EventsController@postComment');
 Route::post('events/{id}/imageUploadPost', 'EventsController@imageUploadPost');
 
 Route::get('downloadAllImages', 'DownloadController@downloadAllImages');
+Route::get('acceptCookies', 'UsersController@acceptCookies');
 
 Route::get('temp', function () {
     return controller('temp');
