@@ -18,7 +18,7 @@ class CartsController extends Controller
         if(Auth::user() !== null)
         {
             $temp_id_user = Auth::user()->id;
-
+            
             /////     Cart     /////
             //cherche cart
             $haveCart = 0;
