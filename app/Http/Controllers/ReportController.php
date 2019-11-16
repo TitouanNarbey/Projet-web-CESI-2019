@@ -51,4 +51,28 @@ class ReportController extends Controller
             return redirect('/home')->with('messageRed', 'Vous n\'avez pas le droit d\'accéder à cette page.');
         }
     }
+
+    public function deleteReport()
+    {
+        if(Auth::user() !== null)
+        {
+            if(Auth::user()->id_roles == 2)
+            {
+                $id_report = request('id_report');
+
+                $obj = Report::find($id_report);
+                $obj->delete();
+
+                return redirect('/profile')->with('messageGreen', 'Signalement effacé.');
+            }
+            else
+            {
+                return redirect('/home')->with('messageRed', 'Vous n\'avez pas le droit d\'accéder à cette page.');
+            }
+        }
+        else
+        {
+            return redirect('/home')->with('messageRed', 'Vous n\'avez pas le droit d\'accéder à cette page.');
+        }
+    }
 }
