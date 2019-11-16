@@ -76,24 +76,21 @@ class ShopController extends Controller
             
             /////     Cart     /////
             $haveCart = 0;
-                        //creation of cart if needed
+
+            //creation of cart if needed
+            foreach($orders as $order)
+            {
+                if(!$order->paid)
+                { $haveCart = $order->id; }
+            }
+
+            //cherche cart
             if($haveCart == 0)
             {
                 $cart = Order::create(['paid'=>'0', 'delivered'=>'0', 'id_users'=>$temp_id_user]);
                 $haveCart = $cart->id;
             }
 
-
-            //cherche cart
-            
-            foreach($orders as $order)
-            {
-                if(!$order->paid)
-                { $haveCart = $order->id; }
-            }
-    
-
-    
             $cart = Order::find($haveCart);
             ////////////////////////
     
