@@ -11,7 +11,7 @@ class BestArticle extends Model
     public $timestamps = false;
     protected $fillable = ['id_articles'];
 
-    public function event(){
+    public function article(){
         return $this->belongsTo('App\Article', 'id_articles', 'id');
     }
 }
