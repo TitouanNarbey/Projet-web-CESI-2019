@@ -87,7 +87,7 @@
 
 <!-- Footer -->
 <br>
-<footer class="page-footer font-small pt-4" id="sticky-footer" >
+<footer class="page-footer font-small pt-4 " id="sticky-footer" >
 
     <!-- Footer Links -->
     <div class="container-fluid text-center text-md-left">
