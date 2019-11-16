@@ -16,10 +16,12 @@ class CreateReportTable extends Migration
         Schema::create('reports', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
+            $table->string('type', 255);
             $table->string('text', 4095);
+            $table->string('link', 4095);
             
-            $table->unsignedBigInteger('id_users');
-            $table->foreign('id_users')->references('id')->on('users');
+            /*$table->unsignedBigInteger('id_users');
+            $table->foreign('id_users')->references('id')->on('users');*/
         });
     }
 
