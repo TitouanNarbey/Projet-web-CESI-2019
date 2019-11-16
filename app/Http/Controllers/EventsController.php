@@ -143,11 +143,16 @@ class EventsController extends Controller
 
         $event = Event::find($id);
 
+        $like = -1;
+        $likes = ConnexionVoted::where('id_events', $id)->count();
+
         if(Auth::user() !== null)
         {
             if(Auth::user()->id_roles != 3)
             {
                 $participate = ConnexionParticipate::where('id_events', $id)->where('id_users', Auth::user()->id)->get();
+                $liked = ConnexionVoted::where('id_events', $id)->where('id_users', Auth::user()->id)->get();
+
                 $sub = 0;
                 if(isset($participate[0]))
                 {
@@ -157,16 +162,26 @@ class EventsController extends Controller
                 {
                     $sub = 0;
                 }
-                return view('event', compact('event'), compact('sub'));
+
+                if(isset($liked[0]))
+                {
+                    $like = 1;
+                }
+                else
+                {
+                    $like = 0;
+                }
+
+                return view('event', compact('event'), compact('sub'), compact('likes'), compact('like'));
             }
             else
             {
-                return view('event', compact('event'));
+                return view('event', compact('event'), compact('likes'), compact('like'));
             }
         }
         else
         {
-            return view('event', compact('event'));
+            return view('event', compact('event'), compact('likes'), compact('like'));
         }
     }
 
@@ -238,6 +253,14 @@ class EventsController extends Controller
 
 
         return view('home', compact('events'),compact('articles'));
+    }
+
+    public function giveLike(){
+
+    }
+
+    public function removeLike(){
+
     }
 
 }
