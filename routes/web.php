@@ -83,6 +83,7 @@ Route::group(['prefix'=>'admin','middleware'=>'checkadmin'],function(){
 
 Route::get('events/{id}/export', 'ParticipateController@export');
 Route::get('report', 'ReportController@showForm');
+Route::post('report', 'ReportController@postReport');
 
 
 

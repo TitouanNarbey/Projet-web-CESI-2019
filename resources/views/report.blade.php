@@ -11,6 +11,7 @@
 
 <div class="container contact-form mt-5 mb-5">
     <form method="post">
+        @csrf
         <h3>Besoin de signaler quelque chose ?</h3>
         <div class="row">
             <div class="col-md-6">
