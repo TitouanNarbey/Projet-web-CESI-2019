@@ -18,18 +18,6 @@ class CartsController extends Controller
         if(Auth::user() !== null)
         {
             $temp_id_user = Auth::user()->id;
-
-
-
-            //creation of cart if needed
-            if($haveCart == 0)
-            {
-                $cartData = Order::create(['paid'=>'0', 'delivered'=>'0', 'id_users'=>$temp_id_user]);
-                $haveCart = $cart->id;
-            }
-
-            $cartData = Order::find($haveCart);
-            ////////////////////////
             
             /////     Cart     /////
             //cherche cart
@@ -43,8 +31,6 @@ class CartsController extends Controller
                 { $haveCart = $order->id; }
             }
 
-<<<<<<< HEAD
-=======
             //creation of cart if needed
             if($haveCart == 0)
             {
@@ -54,7 +40,6 @@ class CartsController extends Controller
 
             $cartData = Order::find($haveCart);
             ////////////////////////
->>>>>>> dfcb5a45c685a23a4e14894ec5c0503f4bc7f87f
 
 
             //calculate total
