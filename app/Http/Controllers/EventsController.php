@@ -177,7 +177,7 @@ class EventsController extends Controller
             }
             else
             {
-                return view('event', compact('event'))->with('like',$like)->with('likes',$likes);
+                return view('event', compact('event'))->with('likes',$likes);
             }
         }
         else
