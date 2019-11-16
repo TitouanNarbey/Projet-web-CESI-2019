@@ -47,6 +47,7 @@
 						<div class="row d-flex justify-content-between px-4" id="tax">
 							<b><p class="mb-1 text-left">Total</p></b>
 							<h6 class="mb-1 text-right"><b>{{$total}} €</b></h6>
+							
 						</div>
 						<form class="valideComande" action="/valideComande" method="post">
 							@csrf
@@ -54,7 +55,9 @@
 								<span id="checkout">Payer</span>
 								<input type="hidden" name="id_order" value="{{$cartData->id}}" />
 							</button>
+
 						</form>
+
 					</div>
 				</div>
 			</div>
