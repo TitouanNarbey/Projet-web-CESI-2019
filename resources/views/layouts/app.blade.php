@@ -126,8 +126,10 @@
               <a href="/events">Les événements</a>
             </li>
             <li>
-              <a href="/legal">Mentions légales et CGUs</a>
+              <a href="/legal">Mentions légales</a>
             </li>
+            <li>
+              <a href="/legal/CGV">CGVs</a>
           </ul>
   
         </div>
