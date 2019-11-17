@@ -39,7 +39,7 @@
 							</div>
 							<div class="form-group col-md-6">
 								<label class="form-control-label">CVV</label>
-								<input type="text" id="cvv" name="cvv" placeholder="***">
+								<input type="text" id="cvv" name="cvv" placeholder="***" class="form-control @error('inputName') is-invalid @enderror">
 							</div>
 						</div>
 					</div>
@@ -61,6 +61,8 @@
 							@csrf
 							<button class="btn btn-sm btn-danger" type="submit">
 								<span id="checkout">TestPaypal</span>
+								<input type="hidden" name="amount" value="{{$total}}"/>
+								<input type="hidden" name="id_order" value="{{$cartData->id}}" />
 							</button>
 
 						</form>
