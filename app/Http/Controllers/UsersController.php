@@ -28,8 +28,9 @@ class UsersController extends Controller
             if(Auth::user()->id_roles == 2)
             {
                 $reports = Report::all();
+                $todeliver = Order()::where('paid', '1')->where('delivered', '0')->get();
 
-                return view('profile',compact('user'))->with('reports', $reports);
+                return view('profile',compact('user'))->with('reports', $reports)->with('todeliver', $todeliver);
             }
             else
             {
