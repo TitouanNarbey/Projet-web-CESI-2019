@@ -92,14 +92,13 @@ class CartsController extends Controller
     }
     public function valideComande()
     {
-
-        request()->validate(
-            [ 'exp'=>'required',
-'cname'=>'required',
-'cnum'=>'required',
-'cvv'=>'required',
-
-            ]);
+        // don't work now, wait for real payment method
+        /*request()->validate([
+            'exp'=>'required',
+            'cname'=>'required',
+            'cnum'=>'required',
+            'cvv'=>'required'
+        ]);*/
 
 
 
