@@ -13,7 +13,7 @@ class FillDataImages extends Migration
      */
     public function up()
     {
-        $obj = App\Image::create(['path'=>'assets/img/public/aafflla.png', 'alt'=>'yhwrx']);
+        $obj = App\Image::create(['path'=>'/assets/img/profil_default.png', 'alt'=>'photo profil par defaut']);
         $obj = App\Image::create(['path'=>'assets/img/public/aaffllz.png', 'alt'=>'hwx']);
         $obj = App\Image::create(['path'=>'assets/img/public/aafflle.png', 'alt'=>'wnd ']);
         $obj = App\Image::create(['path'=>'assets/img/public/aaffllr.png', 'alt'=>'nwx,fj']);
@@ -268,21 +268,21 @@ class FillDataImages extends Migration
         $obj = App\Image::create(['path'=>'assets/img/public/aattaafflla.png', 'alt'=>'yhwrx']);
         $obj = App\Image::create(['path'=>'assets/img/public/aattaaffllz.png', 'alt'=>'hwx']);
         $obj = App\Image::create(['path'=>'assets/img/public/aattaafflle.png', 'alt'=>'wnd ']);
-        $obj = App\Image::create(['path'=>'assets/img/public/aattaaffllr.png', 'alt'=>'nwx,fj']);
-        $obj = App\Image::create(['path'=>'assets/img/public/aattaaffllt.png', 'alt'=>'sj sbtd']);
-        $obj = App\Image::create(['path'=>'assets/img/public/aattaaffa.png', 'alt'=>'sryj,n']);
-        $obj = App\Image::create(['path'=>'assets/img/public/aattaaffz.png', 'alt'=>'tnduj   jt,n']);
-        $obj = App\Image::create(['path'=>'assets/img/public/aattaaffe.png', 'alt'=>'yxeutcyvik']);
-        $obj = App\Image::create(['path'=>'assets/img/public/aattaaffr.png', 'alt'=>'xjutcr']);
-        $obj = App\Image::create(['path'=>'assets/img/public/aattaajjt.png', 'alt'=>'jcnfuk']);
-        $obj = App\Image::create(['path'=>'assets/img/public/aattaajjy.png', 'alt'=>'x,jxyj']);
-        $obj = App\Image::create(['path'=>'assets/img/public/aattaajju.jpg', 'alt'=>'x,hykxy']);
+        $obj = App\Image::create(['path'=>'/assets/img/events/jeux_de_role.png', 'alt'=>'jeux de rôles']);
+        $obj = App\Image::create(['path'=>'/assets/img/events/cinema.jpg', 'alt'=>'cinéma']);
+        $obj = App\Image::create(['path'=>'/assets/img/events/football.jpg', 'alt'=>'foot']);
+        $obj = App\Image::create(['path'=>'/assets/img/events/jardinage.jpg', 'alt'=>'jardinage']);
+        $obj = App\Image::create(['path'=>'/assets/img/events/rugby.jpg', 'alt'=>'rugby']);
+        $obj = App\Image::create(['path'=>'/assets/img/events/patinoire.jpg', 'alt'=>'patinoire']);
+        $obj = App\Image::create(['path'=>'/assets/img/events/sortie_ski.jpg', 'alt'=>'sortie ski']);
+        $obj = App\Image::create(['path'=>'/assets/img/events/creation_borne_arcade.jpg', 'alt'=>'fablab bornes arcades']);
+        $obj = App\Image::create(['path'=>'/assets/img/events/atelier_couture.jpg', 'alt'=>'atelier couture']);
         $obj = App\Image::create(['path'=>'assets/img/public/aattaajji.jpg', 'alt'=>'kxy,y,j']);
-        $obj = App\Image::create(['path'=>'assets/img/public/aattaajjo.jpg', 'alt'=>'Lorem']);
-        $obj = App\Image::create(['path'=>'assets/img/public/aattaajjp.jpg', 'alt'=>'tbey']);
-        $obj = App\Image::create(['path'=>'assets/img/public/aattaajjq.jpg', 'alt'=>'</body>']);
-        $obj = App\Image::create(['path'=>'assets/img/public/aattaajjs.jpg', 'alt'=>'vwyx']);
-        $obj = App\Image::create(['path'=>'assets/img/public/aattaajjd.jpg', 'alt'=>'jxcn']);
+        $obj = App\Image::create(['path'=>'/assets/img/events/battle_dev.jpg', 'alt'=>'battle dev']);
+        $obj = App\Image::create(['path'=>'/assets/img/events/nuit_info.jpg', 'alt'=>'nuit de l info']);
+        $obj = App\Image::create(['path'=>'/assets/img/events/mario_kart_wii.jpg', 'alt'=>'mario kart wii']);
+        $obj = App\Image::create(['path'=>'/assets/img/events/theatre.jpg', 'alt'=>'théâtre']);
+        $obj = App\Image::create(['path'=>'/assets/img/events/ping_pong.jpg', 'alt'=>'ping pong']);
         $obj = App\Image::create(['path'=>'assets/img/public/aattaajjf.jpg', 'alt'=>'ky,c']);
         $obj = App\Image::create(['path'=>'assets/img/public/aattaajjlla.jpg', 'alt'=>'jwxhc']);
         $obj = App\Image::create(['path'=>'assets/img/public/aattaajjllz.jpg', 'alt'=>'kxjg']);
