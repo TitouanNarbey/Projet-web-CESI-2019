@@ -84,6 +84,9 @@
                     <a href="/downloadAllImages"><button class="btn btn-info my-2 my-sm-0"><i class="fas fa-download"></i> Télécharger toutes les images</button></a>
                     <a href="/report"><button class="btn btn-danger my-2 my-sm-0"><i class="fas fa-flag"></i> Signaler</button></a>
                 @endif
+                @if(Auth::user()->id_roles == 2)
+                    <a href="/admin/"><button class="btn btn-danger my-2 my-sm-0"><i class="fas fa-tools"></i> Zone d'administration</button></a>
+                @endif
             {{-- form end --}}                
             </div>
         </div>
