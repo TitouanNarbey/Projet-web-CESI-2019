@@ -18,6 +18,21 @@
     @endforeach
 @endif
 
+{{-- Display all the command to deliver --}}
+@if(isset($todeliver))
+    @foreach($todeliver as $deliver)
+            <form class="statusBarToDeliver pb-1 mb-1" method="post" action="setDeliverOrder">
+            @csrf
+            <h4 class="pt-2 ml-2">Une commande a été passé !</h4>
+            @foreach($deliver->comanded as $comand)
+                <p class="ml-2">   - {{$comand->quantity}}x {{$comand->article->name}}</p>
+            @endforeach
+            <button type="submit" class="btn btn-light">Commande livrée</button>
+			<input type="hidden" name="id_order" value="{{$deliver->id}}" />
+        </form>
+    @endforeach
+@endif
+
 <div class="container">
     <div class="row">
         <div class="col-lg-1 col-md-4 col-sm-12 col-xs-12"></div>
