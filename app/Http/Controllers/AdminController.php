@@ -67,7 +67,7 @@ class AdminController extends Controller
             $category = $bddcategory->id;
         }
 
-        $obj = Article::create(['name'=>$title, 'description'=>$text, 'id_category'=>$category, 'id_images'=>'1', 'id_campus'=>'22', 'stock'=>$stock, 'price'=>$price]);
+        $obj = Article::create(['name'=>$title, 'description'=>$text, 'id_category'=>$category, 'id_images'=>'3', 'id_campus'=>'22', 'stock'=>$stock, 'price'=>$price]);
     
         return redirect('/admin/shop')->with('messageGreen', 'Article ajouté');
     }
