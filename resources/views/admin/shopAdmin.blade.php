@@ -6,22 +6,29 @@
 		<h1>Administration de la boutique</h1>
 		<button class="btn btn-success "> Ajouter un article</button>
 		<div class=" dropdown mt-2">
-			<button onclick="showDropdownPrice()" class=" btn btn-cesi">Trier par prix</button>
-			<div id="price" class="dropdown-content">
-				<a href="#about">
-					<button class="btn btn-cesi btn-block">Croissant</button>
-				<a href="#about"><button class="btn btn-cesi btn-block">Décroissant</button>
-			</div>
-		</div>
-		<div class=" dropdown ">
-			<button onclick="showDropdownCategory()" class=" btn btn-cesi">Catégorie</button>
-			<div id="category" class="dropdown-content">
-				@foreach($categories as $category)
-					<a href="#about"><button class="btn btn-cesi btn-block"> {{$category->name}}</button></a>
-				@endforeach
-			</div>
-		</div>
-	</div>
+      <button onclick="showDropdownPrice()" class=" btn btn-cesi">Trier par prix</button>
+      <div id="price" class="dropdown-content">
+        <form class="example" action="#">
+      @csrf
+      <input class ="btn btn-cesi btn-block mt-1" type="submit" name="croissant" value="Croissant">
+  </form>
+          <form class="example" action="#">
+      @csrf
+      <input class ="btn btn-cesi btn-block mt-1" type="submit" name="decroissant" value="Décroissant">
+  </form>
+        </div>
+        <div class=" dropdown ">
+          <button onclick="showDropdownCategory()" class=" btn btn-cesi">Catégorie</button>
+          <div id="category" class="dropdown-content">
+            @foreach($categories as $category)
+            <form class="example" action="#">
+      @csrf
+      <input class ="btn btn-cesi btn-block mt-1" type="submit" name="category" value="{{$category->name}}"> 
+      <input type="hidden" name="id_category" value="{{$category->id}}" />
+  </form>  @endforeach</div>
+          </div>
+        </div>
+    </div>
 	<!-- Affichage de la liste des articles -->
 	<div class="row mx-auto">
 		@foreach($shop as $article)
@@ -39,7 +46,6 @@
 						<form action="/admin/deleteArticle" method="post">
 							@csrf
 							<input type="hidden" name="id_article" value="{{$article->id}}" />
-							{{--<input class ="btn btn-danger mt-1 mb-1" type="submit" value="Ne plus participer">--}}
 							<button type="submit" class="btn btn-danger btn-block">Supprimer l'article</button>
 						</form>
 					</div>
