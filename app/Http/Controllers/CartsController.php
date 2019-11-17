@@ -10,8 +10,14 @@ use Session;
 use URL;
 use Auth;
 
+/*
+*Controller of the shopping cart
+*/
 class CartsController extends Controller
 {
+    /*
+    * show the shopping cart of the user
+    */
     public function showCart()
     {
 
@@ -20,7 +26,7 @@ class CartsController extends Controller
             $temp_id_user = Auth::user()->id;
             
             /////     Cart     /////
-            //cherche cart
+            //look up cart
             $haveCart = 0;
 
             $orders = Order::where('id_users', '=', $temp_id_user)->get();
@@ -31,7 +37,7 @@ class CartsController extends Controller
                 { $haveCart = $order->id; }
             }
 
-            //creation of cart if needed
+            //creation of the cart if needed
             if($haveCart == 0)
             {
                 $cartData = Order::create(['paid'=>'0', 'delivered'=>'0', 'id_users'=>$temp_id_user]);
@@ -42,7 +48,7 @@ class CartsController extends Controller
             ////////////////////////
 
 
-            //calculate total
+            //calculate total price
             $total = 0;
             foreach($cartData->comanded as $comand)
             {
@@ -57,6 +63,9 @@ class CartsController extends Controller
         }
     }
 
+    /*
+    *change the quantity of an item in the shopping cart
+    */
     public function changequantity()
     {
         $id_order = request('id_order');
@@ -79,6 +88,9 @@ class CartsController extends Controller
         return redirect()->action('CartsController@showCart');
     }
     
+    /*
+    *delete an item in the shopping cart
+    */
     public function deleteComande()
     {
         $id_order = request('id_order');
@@ -90,6 +102,10 @@ class CartsController extends Controller
         return redirect()->action('CartsController@showCart')->with('messageGreen', 'Article supprimé');
 
     }
+
+    /*
+    *pay the articles
+    */
     public function valideComande()
     {
         // don't work now, wait for real payment method
@@ -126,6 +142,9 @@ class CartsController extends Controller
 		}
     }
 
+    /*
+    *show the payment methods
+    */
     public function showCheckout()
     {
         if(Auth::user() !== null)
@@ -133,7 +152,7 @@ class CartsController extends Controller
             $temp_id_user = Auth::user()->id;
 
             /////     Cart     /////
-            //cherche cart
+            //look up cart
             $haveCart = 0;
 
             $orders = Order::where('id_users', '=', $temp_id_user)->get();
@@ -155,7 +174,7 @@ class CartsController extends Controller
             ////////////////////////
 
 
-            //calculate total
+            //calculate total price
             $total = 0;
             foreach($cartData->comanded as $comand)
             {

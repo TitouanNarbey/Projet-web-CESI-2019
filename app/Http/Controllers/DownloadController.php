@@ -7,15 +7,21 @@ use App\Image;
 use ZipArchive;
 use Auth;
 
+/*
+*Controller of the dowloading of all the images
+*/
 class DownloadController extends Controller
 {
+	/*
+	*download all the images
+	*/
 	public function downloadAllImages(){
 
 		if(Auth::user() !== null)
         {
             if(Auth::user()->id_roles == 3)
             {
-				$files = array(); /*Image array*/
+				$files = array();
 
 				$images = Image::all();
 
@@ -26,27 +32,27 @@ class DownloadController extends Controller
 						array_push($files, '.'.$image->path);
 					}
 				}
-			
-				# create new zip opbject
+				
+				//create new zip opbject
 				$zip = new ZipArchive();
 			
-				# create a temp file & open it
+				//create a temp file & open it
 				$tmp_file = tempnam('/tmp/','');
 				$zip->open($tmp_file, ZipArchive::CREATE);
 
-				# loop through each file
+				//loop through each file
 				foreach($files as $file)
 				{
-					# download file
+					//download file
 					$download_file = file_get_contents($file);
-					#add it to the zip
+					//add it to the zip
 					$zip->addFromString(basename($file),$download_file);
 				}
 
-				# close zip
+				//close zip
 				$zip->close();
 
-				# send the file to the browser as a download
+				//send the file to the browser as a download
 				header('Content-disposition: attachment; filename=BDE-CESI-Lyon_AllImages.zip');
 				header('Content-type: application/zip');
 				readfile($tmp_file);
