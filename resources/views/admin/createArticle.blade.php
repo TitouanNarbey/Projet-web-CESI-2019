@@ -9,7 +9,7 @@
 					<h1>Ajouter un article</h1>
 				</div>
 			</div>
-			<form class="form-container rounded" action="/register" method="POST">
+			<form class="form-container rounded" action="/admin/new-article" method="post">
 				@csrf
 				<br>
 				<div class="form-row">
