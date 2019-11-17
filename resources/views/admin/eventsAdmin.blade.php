@@ -41,13 +41,16 @@
           </div>
           <div class="card-footer">
             <div class="text-right eventCardFooter">
-              <a href="#about">
-                <button class="btn btn-cesi btn-block"> Modérer l'article</button>
-                <a href="#about"><button class="btn btn-danger btn-block mt-2"> Supprimer l'article</button></div>
-              </div>
-            </a>
+              <a href="events/{{$event->id}}"><button class="btn btn-cesi btn-block"> Modérer l'article</button></a>
+				<form action="/admin/deleteEvent" method="post" class="mt-1">
+					@csrf
+					<input type="hidden" name="id_event" value="{{$event->id}}" />
+					<button type="submit" class="btn btn-danger btn-block mt-2">Supprimer l'article</button>
+				</form>
+            </div>
           </div>
-        </div>
+		</div>
+    </div>
         @endforeach
       </div>
     </div>
