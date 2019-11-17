@@ -44,7 +44,7 @@ class DownloadController extends Controller
 				foreach($files as $file)
 				{
 					//download file
-					$download_file = file_get_contents($file);
+					$download_file = file_get_contents(''.$file);
 					//add it to the zip
 					$zip->addFromString(basename($file),$download_file);
 				}
