@@ -37,7 +37,7 @@ class DownloadController extends Controller
 				$zip = new ZipArchive();
 			
 				//create a temp file & open it
-				$tmp_file = tempnam('/tmp/','');
+				$tmp_file = tempnam('.','');
 				$zip->open($tmp_file, ZipArchive::CREATE);
 
 				//loop through each file
