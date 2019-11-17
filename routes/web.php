@@ -80,9 +80,11 @@ Route::group(['prefix'=>'admin','middleware'=>'checkadmin'],function(){
     Route::get('shop/{id}', 'AdminController@articleAdmin');
     Route::get('events/{id}', 'AdminController@eventAdmin');
     Route::get('new-article', 'AdminController@createArticle');
+    Route::get('new-event', 'AdminController@createEvent');
+    Route::post('new-article', 'AdminController@postCreateArticle');
+    Route::post('new-event', 'AdminController@postCreateEvent');
     Route::post('deleteArticle', 'AdminController@deleteArticle');
     Route::post('deleteEvent', 'AdminController@deleteEvent');
-    Route::get('new-event', 'AdminController@createEvent');
 });
 
 Route::get('events/{id}/export', 'ParticipateController@export');
