@@ -27,7 +27,7 @@
   <button class="navbar-toggler navbar-dark " type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="navbar-brand ml-3 "><a class="navbar-brand" href="\"><img src="{{asset('assets/img/logo.png')}}" class="img-responsive" alt="LogoCesiLyon" width="75"></a></div>
+  <div class="navbar-brand ml-3 "><a class="navbar-brand" href="/"><img src="{{asset('assets/img/logo.png')}}" class="img-responsive" alt="LogoCesiLyon" width="75"></a></div>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
@@ -49,14 +49,14 @@
   @if(Auth::user() === null)
 <div class="topnav">
     <div class="login-container">
-      <a href="/register"><button class="btn btn-danger my-2 my-sm-0">S'inscrire</button></a>
-      <a href="/login"><button class="btn btn-outline-primary my-2 my-sm-0">Se connecter</button></a>
+      <a href="/register" class ="btn btn-danger my-2 my-sm-0">S'inscrire</a>
+      <a href="/login" class="btn btn-outline-primary my-2 my-sm-0">Se connecter</a>
     </div>
 </div>
 @else
 <div class="topnav">
   <div class="login-container">
-    <a href="/profile"><button class="btn btn-danger my-2 my-sm-0"> <i class="fas fa-user"></i> Mon compte</button></a>
+    <a href="/profile" class="btn btn-danger my-2 my-sm-0"><i class="fas fa-user"></i> Mon compte</a>
   </div>
 </div>
 @endif
@@ -66,7 +66,7 @@
   <div class="statusBarCookies pb-1">
     <h4 class="pt-2 ml-2">Utilisation des Cookies</h4>
     <p class="ml-2">En utilisant ce site, vous acceptez notre utilisation de cookies afin que vous puissiez accéder à nos services. Nous ne revendrons pas vos données à des tiers, et n'effectuerons pas d'étude statistique. Les cookies sont utilisés uniquement pour le fonctionnement du site.</p>
-    <a class="ml-2" href="/acceptCookies"><button class="btn btn-primary text-white" p-2>Accepter</button></a>
+    <a class="ml-2 btn btn-primary text-white" href="/acceptCookies">Accepter</a>
     <a class="ml-2" href="/legal">En savoir plus</a>
   </div>
   @endif
@@ -148,7 +148,7 @@
         <div class="col-md-3 mb-md-0 mb-3">
   
           <!-- Links -->
-          <h5 class="text-uppercase"><br></h5>
+          <br>
   
           <ul class="list-unstyled">
             <li>
@@ -182,7 +182,5 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="{{ asset('assets/vendor/bootstrap-4.3.1-dist/js/bootstrap.bundle.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/js/filter.js') }}"></script>
-
-@yield('script')
-
+<script type="text/javascript" src="{{ asset('assets/js/user.js') }}"></script>
 </html>

@@ -1,6 +1,6 @@
 @extends('layouts.app')
-@section('title',"Titre de la page")
-@section('meta-description',"Descritpion de la page")
+@section('title',"Signalement")
+@section('meta-description',"Page pour signaler des contenus jugés comme offensants ou displacés.")
 @section('content')
 
 
@@ -9,6 +9,8 @@
     <p>Nous sommes désolés d’apprendre que vous rencontrez un problème sur notre site et nous souhaitons vous aider.</p>
     <p>Si vous souhaitez signaler un contenu qui va à l’encontre de l'image du CESI (par exemple : nudité, propos haineux, violence), remplissez le formulaire ci-dessous et nous nous efforcerons de régler votre problème le plus rapidement possible.</p>
 </div>
+
+{{-- Form start --}}
 
 <div class="container contact-form mt-5 mb-5">
     <form method="post">
@@ -37,5 +39,6 @@
             </div>
         </div>
     </form>
+{{-- Form end --}}
 </div>
 @endsection
