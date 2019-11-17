@@ -187,3 +187,34 @@ form.example::after {
 }
 
 
+html, body {
+  height: 100%;
+}
+.container {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -200px; 
+}
+.container:after {
+  content: "";
+  display: block;
+}
+footer, .container:after {
+  height: 200px; 
+}
+
+@media only screen and (max-width: 768px){
+
+.container {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -450px; 
+}
+.container:after {
+  content: "";
+  display: block;
+}
+footer, .container:after {
+  height: 450px; 
+}
+}
