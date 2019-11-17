@@ -18,13 +18,16 @@
     <link href="{{ asset('assets/css/navbar.css') }}" rel="stylesheet">
   </head>
     <body>
-        <nav class="navbar navbar-expand-lg">
-          {{-- Logo --}}
-  <div class="navbar-brand navbar-brand-left"><a class="navbar-brand" href="\"><img src="{{asset('assets/img/logo.png')}}" class="img-responsive" alt="LogoCesiLyon" width="75"></a></div>
+        
 
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+<nav class="navbar navbar-expand-lg ">
+ 
+  <button class="navbar-toggler navbar-dark " type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="navbar-brand ml-3 "><a class="navbar-brand" href="\"><img src="{{asset('assets/img/logo.png')}}" class="img-responsive" alt="LogoCesiLyon" width="75"></a></div>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
       <li class="nav-item active">
         <a class="nav-link" href="/"><div class="colortext"><i class="fa fa-fw fa-home"></i> Accueil</div> <span class="sr-only">(current)</span></a>
       </li>
@@ -41,7 +44,7 @@
             </li>
     </ul>
   </div>
-@if(Auth::user() === null)
+  @if(Auth::user() === null)
 <div class="topnav">
     <div class="login-container">
       <a href="/register"><button class="btn btn-danger my-2 my-sm-0">S'inscrire</button></a>
@@ -55,7 +58,6 @@
   </div>
 </div>
 @endif
-
 </nav>
 
   @if(Session::get('AcceptCookies') != 1)
@@ -176,7 +178,7 @@
     </body>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="{{ asset('assets/vendor/bootstrap-4.3.1-dist/js/bootstrap.js') }}"></script>
+<script src="{{ asset('assets/vendor/bootstrap-4.3.1-dist/js/bootstrap.bundle.js') }}"></script>
 <script src="https://kit.fontawesome.com/f20d59caba.js" crossorigin="anonymous"></script>
 <script type="text/javascript" src="{{ asset('assets/js/filter.js') }}"></script>
 

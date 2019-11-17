@@ -4,7 +4,7 @@
 	<!-- Fonctions de modération -->
 	<div class="description text-center">
 		<h1>Administration de la boutique</h1>
-		<button class="btn btn-success "> Ajouter un article</button>
+		<a href="/admin/new-article"><button class="btn btn-success"> Ajouter un article</button></a>
 		<div class=" dropdown mt-2">
       <button onclick="showDropdownPrice()" class=" btn btn-cesi">Trier par prix</button>
       <div id="price" class="dropdown-content">
