@@ -85,6 +85,7 @@
                     <a href="/report"><button class="btn btn-danger my-2 my-sm-0"><i class="fas fa-flag"></i> Signaler</button></a>
                 @endif
                 @if(Auth::user()->id_roles == 2)
+                    <a href="/admin/useradmin"><button class="btn btn-warning my-2 my-sm-0"><i class="fas fa-users-cog"></i> Gérer les utilisateurs</button></a>
                     <a href="/admin/"><button class="btn btn-danger my-2 my-sm-0"><i class="fas fa-tools"></i> Zone d'administration</button></a>
                 @endif
             {{-- form end --}}                
