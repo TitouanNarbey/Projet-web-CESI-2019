@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'EventsController@homeEventArticle');
-Route::get('home', 'EventsController@homeEventArticle');
+Route::get('home', 'EventsController@homeEventArticle')->name('home');
 
 //Route de Test
 Route::get('blade', function () {
@@ -29,8 +29,8 @@ Route::get('useradmin', 'UseradminController@useradmin');
 Route::get('/useradmin/read-data', 'UseradminController@readData')->name('useradmin.action');
 
 // Login
-Route::get('login', 'UsersController@showlogin')->name('login');
-Route::post('login', 'UsersController@postlogin')->name('login');
+Route::get('login', 'UsersController@showlogin');
+Route::post('login', 'UsersController@postlogin');
 
 // Profile
 Route::get('profile', 'UsersController@profile');
@@ -40,11 +40,12 @@ Route::get('cart', 'CartsController@showCart');
 Route::post('changequantity', 'CartsController@changequantity');
 Route::post('deleteComande', 'CartsController@deleteComande');
 Route::post('valideComande', 'CartsController@valideComande');
+
 Route::post('paypal', 'PaymentController@payWithpaypal');
 
 Route::get('checkout', 'CartsController@showCheckout');
 
-Route::get('legal', 'LegalsController@showLegalNotices');
+Route::get('legal', 'LegalsController@showLegalNotices')->name('legal');
 
 Route::get('legal/cookies', function () {
     return view('legalcookies');

@@ -92,6 +92,18 @@ class CartsController extends Controller
     }
     public function valideComande()
     {
+
+        request()->validate(
+            [ 'exp'=>'required',
+'cname'=>'required',
+'cnum'=>'required',
+'cvv'=>'required',
+
+            ]);
+
+
+
+            
 		$id_order = request('id_order');
 		$obj = Order::find($id_order);
 
