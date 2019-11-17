@@ -6,7 +6,7 @@
     <div class="col-xl-6 mt-5 text-center">
       <!-- Lien vers la gestion de la boutique -->
       <div class="card">
-        <a href="admin/shop" class="nounderline">
+        <a href="/admin/shop" class="nounderline">
           <div class="card-body text-center">
             <img src="asset('assets/img/img_shop.png')" class="img-fluid float-center " alt="Image">
           </div>
@@ -21,7 +21,7 @@
     <div class="col-xl-6 mt-5 text-center">
       <!-- Lien vers la gestion des évenements -->
       <div class="card">
-        <a href="admin/events" class="nounderline">
+        <a href="/admin/events" class="nounderline">
           <div class="card-body text-center">
             <img src="asset('assets/img/img_shop.png')" class="img-fluid float-center " alt="Image">
           </div>
