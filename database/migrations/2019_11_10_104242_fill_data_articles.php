@@ -15,8 +15,8 @@ class FillDataArticles extends Migration
     {
         $obj = App\Article::create(['name'=>'Tasse bambou', 'description'=>'Une tasse écolo', 'id_category'=>'3', 'id_images'=>'200', 'id_campus'=>'22', 'stock'=>'150', 'price'=>'10']);
         $obj = App\Article::create(['name'=>'Stylo CESI Bleu', 'description'=>'Un simple stylo noir', 'id_category'=>'3', 'id_images'=>'201', 'id_campus'=>'22', 'stock'=>'45', 'price'=>'1.5']);
-        $obj = App\Article::create(['name'=>'Stylo CESI Blanc', 'description'=>'Un simple stylo noir', 'id_category'=>'3', 'id_images'=>'203', 'id_campus'=>'22', 'stock'=>'64', 'price'=>'2.50']);
-        $obj = App\Article::create(['name'=>'Stylo CESI Rouge', 'description'=>'Un simple stylo noir', 'id_category'=>'3', 'id_images'=>'202', 'id_campus'=>'22', 'stock'=>'27', 'price'=>'2']);
+        $obj = App\Article::create(['name'=>'Stylo CESI Blanc', 'description'=>'Un simple stylo noir', 'id_category'=>'3', 'id_images'=>'202', 'id_campus'=>'22', 'stock'=>'64', 'price'=>'2.50']);
+        $obj = App\Article::create(['name'=>'Stylo CESI Rouge', 'description'=>'Un simple stylo noir', 'id_category'=>'3', 'id_images'=>'203', 'id_campus'=>'22', 'stock'=>'27', 'price'=>'2']);
         $obj = App\Article::create(['name'=>'Sweat BDE-Lyon', 'description'=>'Le sweat officiel du BDE Lyon', 'id_category'=>'12', 'id_images'=>'204', 'id_campus'=>'22', 'stock'=>'150', 'price'=>'35']);
         $obj = App\Article::create(['name'=>'Sweat BDE-Paris', 'description'=>'Le sweat officiel du BDE Paris', 'id_category'=>'12', 'id_images'=>'205', 'id_campus'=>'15', 'stock'=>'150', 'price'=>'35']);
         $obj = App\Article::create(['name'=>'Sweat BDE-Rouen', 'description'=>'Le sweat officiel du BDE Rouen', 'id_category'=>'12', 'id_images'=>'206', 'id_campus'=>'22', 'stock'=>'147', 'price'=>'35']);
