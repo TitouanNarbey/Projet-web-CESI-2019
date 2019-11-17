@@ -22,10 +22,10 @@ class CheckAdmin
             return redirect('/');
         }
 
-        $user = Auth::user()->id;//$user = User::find(1);
+        $user = Auth::user()->id;
         $cur_user = User::find($user);
         if($cur_user->id_roles<>2){
-            return redirect('/');
+            return redirect('/')->with('messageRed', 'Vous n\'avez pas le droit d\'accéder à cette page.');;
         }
            return $next($request);
     }
