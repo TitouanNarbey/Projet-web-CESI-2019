@@ -81,6 +81,7 @@ Route::group(['prefix'=>'admin','middleware'=>'checkadmin'],function(){
     Route::get('events/{id}', 'AdminController@eventAdmin');
     Route::get('new-article', 'AdminController@createArticle');
     Route::post('deleteArticle', 'AdminController@deleteArticle');
+    Route::post('deleteEvent', 'AdminController@deleteEvent');
     Route::get('new-event', 'AdminController@createEvent');
 });
 
