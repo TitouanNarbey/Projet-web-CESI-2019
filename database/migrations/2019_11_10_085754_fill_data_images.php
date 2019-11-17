@@ -14,8 +14,8 @@ class FillDataImages extends Migration
     public function up()
     {
         $obj = App\Image::create(['path'=>'/assets/img/profil_default.png', 'alt'=>'photo profil par defaut']);
-        $obj = App\Image::create(['path'=>'assets/img/public/aaffllz.png', 'alt'=>'hwx']);
-        $obj = App\Image::create(['path'=>'assets/img/public/aafflle.png', 'alt'=>'wnd ']);
+        $obj = App\Image::create(['path'=>'/assets/img/events/chargement.jpg', 'alt'=>'photo event par defaut']);
+        $obj = App\Image::create(['path'=>'/assets/img/articles/chargement.jpg', 'alt'=>'photo article par defaut']);
         $obj = App\Image::create(['path'=>'assets/img/public/aaffllr.png', 'alt'=>'nwx,fj']);
         $obj = App\Image::create(['path'=>'assets/img/public/aaffllt.png', 'alt'=>'sj sbtd']);
         $obj = App\Image::create(['path'=>'assets/img/public/aaffa.png', 'alt'=>'sryj,n']);

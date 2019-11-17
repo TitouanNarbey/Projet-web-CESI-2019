@@ -32,7 +32,7 @@
 				</div>
 				<br>
 				<br>
-				<button type="submit" class="btn btn-cesi btn-block text-white">Ajouter l'évenement</button>
+				<button type="submit" class="btn btn-cesi btn-block text-white">Ajouter l'article</button>
 			</form>
 		{{-- form end --}}
 		</div>
