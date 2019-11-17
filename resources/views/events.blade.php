@@ -101,7 +101,7 @@ Ajouter un bouton de signalement en récupérent $_SESSION et en regardant le r�
 							</div>
 							<div class="card-footer">
 								<div class="text-right eventCardFooter">
-									 Création : {{$event->
+									 Date : {{$event->
 									start_date}}
 								</div>
 							</div>

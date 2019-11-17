@@ -40,7 +40,7 @@
 							<div class="eventCardDescription">{{$event->event->description}}  </div>
 						</div>
 						<div class="card-footer">
-							<div class="text-right eventCardFooter">Création : {{$event->event->start_date}}</div>
+							<div class="text-right eventCardFooter">Date : {{$event->event->start_date}}</div>
 						</div>
 					</a>
 				</div>
