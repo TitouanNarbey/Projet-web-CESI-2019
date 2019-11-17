@@ -52,7 +52,6 @@ class AdminController extends Controller
         return back()->with('messageGreen', 'Article supprimé');
     }
 
-<<<<<<< HEAD
     public function triAdminArticle()
     {
        
@@ -79,8 +78,8 @@ class AdminController extends Controller
 
 
         return view('admin/shopAdmin',compact('shop'),compact('categories'));
-        
-=======
+    }
+
     public function deleteEvent()
     {
         $id_event = request('id_event');
@@ -88,6 +87,5 @@ class AdminController extends Controller
         $obj = Event::find($id_event);
         $obj->delete();
         return back()->with('messageGreen', 'Événement supprimé');
->>>>>>> 27f6e12897d4017d554d1bf1aa0f2f04a2816a66
     }
 }
