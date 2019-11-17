@@ -1,4 +1,3 @@
-<!-- Faire fonctionner tous les boutons présents -->
 @extends('layouts.app')
 @section('title',"Boutique - Administration")
 @section('meta-description',"Page d'administration de la boutique")

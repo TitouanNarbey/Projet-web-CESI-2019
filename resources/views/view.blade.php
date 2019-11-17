@@ -1,4 +1,3 @@
-<!-- Print and download list of particpant to an event -->
 <?php 
   $file_name = 'Liste des inscrits.csv';
   header("Content-Disposition: attachment; filename=$file_name");

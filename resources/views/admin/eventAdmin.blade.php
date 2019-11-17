@@ -37,7 +37,7 @@
             </div>
             <!-- Download a list of event participate -->
             <h2>Télécharger la liste des participants</h2>
-            <a href="/events/{{$event->id}}/export"><button type="button" class="btn btn-cesi  mt-1 mb-3 "><i class="fas fa-download"></i> Récupérer la liste </button></a>
+            <a href="/events/{{$event->id}}/export " class="btn btn-cesi  mt-1 mb-3"><i class="fas fa-download"></i> Récupérer la liste </a>
         </div>
     </div>
     <!--Comments-->

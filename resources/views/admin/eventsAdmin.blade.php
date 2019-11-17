@@ -7,7 +7,7 @@
         <div class="description text-center">
             <!-- Add a new event -->
             <h1>Administration des Evénements</h1>
-            <a href="/admin/new-event"><button class="btn btn-success ">Ajouter un évenement</button></a>
+            <a href="/admin/new-event" class="btn btn-success">Ajouter un évenement</a>
             <div class=" dropdown mt-2">
                 <!-- Filters -->
                 <button onclick="showDropdownDate()" class=" btn btn-cesi">Date</button>
@@ -57,7 +57,7 @@
                 </div>
             @endforeach
         </div>
-    </div>           
+    </div>
 @endsection
 
 
