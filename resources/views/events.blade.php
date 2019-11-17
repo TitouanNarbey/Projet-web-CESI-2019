@@ -89,7 +89,7 @@ Ajouter un bouton de signalement en récupérent $_SESSION et en regardant le r�
 							<div class="headerCardEvent">
 								<img src="{{$event->image->path}}" class="img-fluid sizeBanner" alt="{{$event->image->alt}}" witdh=100%>
 							</div>
-							<div class="card-body"><br>
+							<div class="card-body"><br><br>
 								<h3>
 									{{$event->
 									name}}

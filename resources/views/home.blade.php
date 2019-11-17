@@ -61,7 +61,7 @@
 			@foreach($articles as $article)
 				<div class="col-xl-3 mt-5">
 					<div class="card">
-						<a href="events/{{$article->article->id}}" class="nounderline">
+						<a href="shop/{{$article->article->id}}" class="nounderline">
 							<div class="headerCardEvent">
 								<img src="{{$article->article->image->path}}" class="img-fluid sizeBanner" alt="{{$article->article->image->alt}}">
 							</div>
