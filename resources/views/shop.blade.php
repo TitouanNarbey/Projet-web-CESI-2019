@@ -13,28 +13,7 @@ Réparer le carousel-->
 <br>
 <br>
 <div class="container col-11">
-  <!-- Carousel -->
-  <div id="demo" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ul class="carousel-indicators">
-      <li data-target="#demo" data-slide-to="0" class="active"></li>
-      <li data-target="#demo" data-slide-to="1"></li>
-      <li data-target="#demo" data-slide-to="2"></li>
-    </ul>
-    <!-- The slideshow -->
-    <div class="carousel-inner ">
-      <div class="carousel-item active text-center">
-        <img src="{{asset('assets/img/img_1.png')}}" alt="Los Angeles" >
-      </div>
-      <div class="carousel-item text-center">
-        <img src="{{asset('assets/img/img_3.png')}}" alt="Chicago">
-      </div>
-      <div class="carousel-item text-center">
-        <img src="{{asset('assets/img/img_2.png')}}" alt="New York">
-      </div>
-    </div>
-  </div>
-  <!--Recherch Section -->
+  <!--Research Section -->
   <div class="description text-center mt-5">
     <h2>Retrouve tes goodies préférées aux couleurs du CESI et de ton BDE</h2>
     <form class="example" action="#">
@@ -66,6 +45,8 @@ Réparer le carousel-->
             @endforeach
         </div>
       </div>
+      </div>
+    </div>
       <!-- Display articles according to the research -->
       <div class="row mx-auto">
         @foreach($shop as $article)
@@ -98,6 +79,6 @@ Réparer le carousel-->
         @endforeach
       </div>
     </div>
-  </div>
+  
 </div>
 @endsection
