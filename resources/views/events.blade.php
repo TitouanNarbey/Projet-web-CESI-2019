@@ -21,14 +21,14 @@ Ajouter un bouton de signalement en récupérent $_SESSION et en regardant le r�
 		</ul>
 		<!-- The slideshow -->
 		<div class="carousel-inner">
-			<div class="carousel-item active">
-				<img src="{{asset('assets/img/img_1.png')}}" alt="Los Angeles" >
+			<div class="carousel-item active text-center">
+				<img src="{{asset('assets/img/img_1.png')}}" alt="Los Angeles" witdh=100%  >
 			</div>
-			<div class="carousel-item">
-				<img src="{{asset('assets/img/img_3.png')}}" alt="Chicago">
+			<div class="carousel-item text-center">
+				<img src="{{asset('assets/img/img_3.png')}}" alt="Chicago" witdh=100%>
 			</div>
-			<div class="carousel-item">
-				<img src="{{asset('assets/img/img_2.png')}}" alt="New York">
+			<div class="carousel-item text-center">
+				<img src="{{asset('assets/img/img_2.png')}}" alt="New York" witdh=100%>
 			</div>
 		</div>
 	</div>
@@ -52,7 +52,7 @@ Ajouter un bouton de signalement en récupérent $_SESSION et en regardant le r�
     	@csrf
       <input class ="btn btn-cesi btn-block mt-1" type="submit" name="decroissant" value="Décroissant">
   </form>
-</div>
+
        
         <button onclick="showDropdownFrequency()" class=" btn btn-cesi">Fréquence</button>
       <div id="frequency" class="dropdown-content">
@@ -78,9 +78,7 @@ Ajouter un bouton de signalement en récupérent $_SESSION et en regardant le r�
   </form>
         </div>
  </div>
-    </div>
 		<!-- Affichage des différentes événements -->
-		<div class="container col-11">
 			<div class="row mx-auto">
 				@foreach($events as $event)
 				<div class="col-xl-3 mt-5">
@@ -104,7 +102,7 @@ Ajouter un bouton de signalement en récupérent $_SESSION et en regardant le r�
 									 Date : {{$event->
 									start_date}}
 								</div>
-							</div>
+						</div>
 						</a>
 					</div>
 				</div>
@@ -112,4 +110,5 @@ Ajouter un bouton de signalement en récupérent $_SESSION et en regardant le r�
 			</div>
 		</div>
 	</div>
+</div>
 @endsection

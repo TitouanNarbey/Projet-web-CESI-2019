@@ -1,6 +1,6 @@
 @extends('layouts.app')@section('content')
 <div class="container col-11">
-	<h1>{{$event->name}}</h1>
+	<center><h1>{{$event->name}}</h1></center>
 	<div id="demo" class="carousel slide" data-ride="carousel">
 		<!-- The slideshow -->
 		<div class="carousel-inner">
@@ -116,7 +116,7 @@
 @endif
 
 {{-- comments --}}
-@foreach($event->posts->reverse() as $post)
+@foreach($event->posts->sortByDesc('id') as $post)
     <div class="media mt-2"><img class="d-flex rounded-circle avatar z-depth-1-half mr-3" src="{{$post->user->image->path}}" alt="Avatar {{$post->user->first_name}} {{$post->user->last_name}}">
         <div class="media-body">
             <h5 class="mt-0 font-weight-bold blue-text">{{$post->user->first_name}} {{$post->user->last_name}}</h5>
