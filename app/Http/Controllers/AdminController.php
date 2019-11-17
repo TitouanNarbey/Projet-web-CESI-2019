@@ -40,6 +40,45 @@ class AdminController extends Controller
     {
     	return view('admin/createArticle');
     }
+
+    public function postCreateArticle()
+    {
+
+        request()->validate
+            ([
+                'title'=>'required',
+                'text'=>'required',
+                'price'=>'required',
+                'start_date'=>'required',
+            ]);
+
+        $title = request()->title;
+        $text = request()->text;
+        $price = request()->price;
+        $old_start_date = request()->start_date;
+        $start_date = date("Y-m-d", strtotime($old_start_date));
+        $old_end_date = request()->end_date;
+        $end_date = date("Y-m-d", strtotime($old_end_date));
+
+        if($end_date === '1970-01-01')
+        {
+            $end_date = null;
+        }
+
+        if(request()->recurrent === null)
+        {
+            $recurrent = 0;
+        }
+        else
+        {
+            $recurrent = 1;
+        }
+
+        $obj = Event::create(['name'=>$title, 'description'=>$text, 'start_date'=>$start_date, 'end_date'=>$end_date, 'price'=>$price, 'recurrent'=>$recurrent, 'validate'=>'1', 'id_images'=>2, 'id_users'=>Auth::user()->id]);
+        
+        return redirect('/admin/events')->with('messageGreen', 'Evenement ajouté');
+    }
+
     public function createEvent()
     {
     	return view('admin/createEvent');
@@ -47,7 +86,6 @@ class AdminController extends Controller
 
     public function postCreateEvent()
     {
-
         request()->validate
             ([
                 'title'=>'required',
