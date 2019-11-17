@@ -79,6 +79,7 @@ Ajouter un bouton de signalement en récupérent $_SESSION et en regardant le r�
   </form>
         </div>
  </div>
+ </div>
 		<!-- Affichage des différentes événements -->
 			<div class="row mx-auto">
 				@foreach($events as $event)
@@ -109,7 +110,6 @@ Ajouter un bouton de signalement en récupérent $_SESSION et en regardant le r�
 				</div>
 				@endforeach
 			</div>
-		</div>
 	</div>
 </div>
 @endsection
