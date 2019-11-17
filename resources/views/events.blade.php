@@ -32,7 +32,6 @@ Ajouter un bouton de signalement en récupérent $_SESSION et en regardant le r�
 			</div>
 		</div>
 	</div>
-</div>
 
 	<div class="description text-center mt-5">
     <h2>Viens t'amuser le jeudi après-midi !!!</h2>
@@ -90,7 +89,7 @@ Ajouter un bouton de signalement en récupérent $_SESSION et en regardant le r�
 							<div class="headerCardEvent">
 								<img src="{{$event->image->path}}" class="img-fluid sizeBanner" alt="{{$event->image->alt}}" witdh=100%>
 							</div>
-							<div class="card-body"><br>
+							<div class="card-body"><br><br>
 								<h3>
 									{{$event->
 									name}}
@@ -102,7 +101,7 @@ Ajouter un bouton de signalement en récupérent $_SESSION et en regardant le r�
 							</div>
 							<div class="card-footer">
 								<div class="text-right eventCardFooter">
-									 Création : {{$event->
+									 Date : {{$event->
 									start_date}}
 								</div>
 							</div>
@@ -112,4 +111,5 @@ Ajouter un bouton de signalement en récupérent $_SESSION et en regardant le r�
 				@endforeach
 			</div>
 		</div>
+	</div>
 @endsection
