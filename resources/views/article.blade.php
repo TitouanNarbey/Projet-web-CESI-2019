@@ -11,7 +11,7 @@
                     <!-- Image -->
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="{{$article->image->path}}" alt="{{$article->image->alt}}" class="img-fluid sizeBanner">
+                            <img src="{{$article->image->path}}" alt="{{$article->image->alt}}" class="img-fluid sizeBanner2">
                         </div>
                     </div>
                 </div>
