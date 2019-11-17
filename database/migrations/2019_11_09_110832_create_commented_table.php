@@ -18,8 +18,8 @@ class CreateCommentedTable extends Migration
             $table->unsignedBigInteger('id_users');
             $table->foreign('id_users')->references('id')->on('users');
 
-            $table->unsignedBigInteger('id_illustrateeventsmulti');
-            $table->foreign('id_illustrateeventsmulti')->references('id')->on('illustrateeventsmulti');
+            $table->unsignedBigInteger('id_illustrateeventsmulti')->onDelete('cascade');
+            $table->foreign('id_illustrateeventsmulti')->references('id')->on('illustrateeventsmulti')->onDelete('cascade');
 
             $table->string('text', 2047);
         });

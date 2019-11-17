@@ -16,10 +16,10 @@ class CreateLikedTable extends Migration
         Schema::create('liked', function (Blueprint $table) {
 
             $table->unsignedBigInteger('id_posts');
-            $table->foreign('id_posts')->references('id')->on('posts');
+            $table->foreign('id_posts')->references('id')->on('posts')->onDelete('cascade');
 
             $table->unsignedBigInteger('id_users');
-            $table->foreign('id_users')->references('id')->on('users');
+            $table->foreign('id_users')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

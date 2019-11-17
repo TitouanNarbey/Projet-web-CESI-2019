@@ -19,7 +19,7 @@ class CreateOrdersTable extends Migration
             $table->boolean('delivered');
 
             $table->unsignedBigInteger('id_users');
-            $table->foreign('id_users')->references('id')->on('users');
+            $table->foreign('id_users')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

@@ -24,10 +24,10 @@ class CreateEventsTable extends Migration
             $table->boolean('validate');
 
             $table->unsignedBigInteger('id_images');
-            $table->foreign('id_images')->references('id')->on('images');
+            $table->foreign('id_images')->references('id')->on('images')->onDelete('cascade');
 
             $table->unsignedBigInteger('id_users');
-            $table->foreign('id_users')->references('id')->on('users');
+            $table->foreign('id_users')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

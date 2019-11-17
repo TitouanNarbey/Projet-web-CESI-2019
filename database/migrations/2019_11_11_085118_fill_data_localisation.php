@@ -15,7 +15,7 @@ class FillDataLocalisation extends Migration
     {
         $obj = App\ConnexionLocalisation::create(['id_events'=>'1', 'id_campus'=>'22']);
         $obj = App\ConnexionLocalisation::create(['id_events'=>'2', 'id_campus'=>'22']);
-        $obj = App\ConnexionLocalisation::create(['id_events'=>'3', 'id_campus'=>'3']);
+        $obj = App\ConnexionLocalisation::create(['id_events'=>'3', 'id_campus'=>'22']);
         $obj = App\ConnexionLocalisation::create(['id_events'=>'4', 'id_campus'=>'22']);
         $obj = App\ConnexionLocalisation::create(['id_events'=>'5', 'id_campus'=>'22']);
         $obj = App\ConnexionLocalisation::create(['id_events'=>'6', 'id_campus'=>'22']);
@@ -23,8 +23,8 @@ class FillDataLocalisation extends Migration
         $obj = App\ConnexionLocalisation::create(['id_events'=>'7', 'id_campus'=>'22']);
         $obj = App\ConnexionLocalisation::create(['id_events'=>'8', 'id_campus'=>'3']);
         $obj = App\ConnexionLocalisation::create(['id_events'=>'8', 'id_campus'=>'22']);
-        $obj = App\ConnexionLocalisation::create(['id_events'=>'9', 'id_campus'=>'3']);
-        $obj = App\ConnexionLocalisation::create(['id_events'=>'10', 'id_campus'=>'3']);
+        $obj = App\ConnexionLocalisation::create(['id_events'=>'9', 'id_campus'=>'22']);
+        $obj = App\ConnexionLocalisation::create(['id_events'=>'10', 'id_campus'=>'22']);
         $obj = App\ConnexionLocalisation::create(['id_events'=>'10', 'id_campus'=>'22']);
         $obj = App\ConnexionLocalisation::create(['id_events'=>'11', 'id_campus'=>'22']);
         $obj = App\ConnexionLocalisation::create(['id_events'=>'12', 'id_campus'=>'22']);

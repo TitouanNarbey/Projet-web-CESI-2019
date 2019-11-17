@@ -13,6 +13,7 @@ use App\Post;
 use App\EventOfTheMonth;
 use Auth;
 use App\BestArticle;
+use App\ConnexionVoted;
 
 
 class EventsController extends Controller
@@ -143,11 +144,16 @@ class EventsController extends Controller
 
         $event = Event::find($id);
 
+        
+        $likes = ConnexionVoted::where('id_events', $id)->count();
+
         if(Auth::user() !== null)
         {
             if(Auth::user()->id_roles != 3)
             {
                 $participate = ConnexionParticipate::where('id_events', $id)->where('id_users', Auth::user()->id)->get();
+                $liked = ConnexionVoted::where('id_events', $id)->where('id_users', Auth::user()->id)->get();
+
                 $sub = 0;
                 if(isset($participate[0]))
                 {
@@ -157,16 +163,26 @@ class EventsController extends Controller
                 {
                     $sub = 0;
                 }
-                return view('event', compact('event'), compact('sub'));
+
+                if(isset($liked[0]))
+                {
+                    $like = 1;
+                }
+                else
+                {
+                    $like = 0;
+                }
+
+                return view('event', compact('event'))->with('sub',$sub)->with('like',$like)->with('likes',$likes);
             }
             else
             {
-                return view('event', compact('event'));
+                return view('event', compact('event'))->with('likes',$likes);
             }
         }
         else
         {
-            return view('event', compact('event'));
+                return view('event', compact('event'))->with('likes',$likes);
         }
     }
 
@@ -217,7 +233,7 @@ class EventsController extends Controller
         $obj = Illustrateeventsmulti::create(['id_images'=>$objImage->id, 'id_events'=>$id, 'id_users'=>Auth::user()->id]);
 
         return back()
-            ->with('Votre image a bien été ajouté.')
+            ->with('messageGreen', 'Votre image a bien été ajouté.')
             ->with('image',$imageName);
     }
 
@@ -238,6 +254,41 @@ class EventsController extends Controller
 
 
         return view('home', compact('events'),compact('articles'));
+    }
+
+    public function giveLike(){
+
+        $id = request('event_id');
+
+        if(Auth::user() !== null)
+        {
+            if(Auth::user()->id_roles != 3)
+            {
+                $liked = ConnexionVoted::where('id_events', $id)->where('id_users', Auth::user()->id)->get();
+
+                if(!isset($liked[0]))
+                {
+                    $obj = ConnexionVoted::create(['id_events'=>$id, 'id_users'=>Auth::user()->id]);
+                }
+            }
+        }
+        return redirect('/events/'.$id);
+    }
+
+    public function removeLike(){
+
+        $event_id = request('event_id');
+
+        if(Auth::user() !== null)
+        {
+            if(Auth::user()->id_roles != 3)
+            {
+                $liked = ConnexionVoted::where('id_events', $event_id)->where('id_users', Auth::user()->id);
+
+                $liked->delete();
+            }
+        }
+        return redirect('/events/'.$event_id);
     }
 
 }

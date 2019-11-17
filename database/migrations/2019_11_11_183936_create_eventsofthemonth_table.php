@@ -15,7 +15,7 @@ class CreateEventsofthemonthTable extends Migration
     {
         Schema::create('eventsofthemonth', function (Blueprint $table) {
             $table->unsignedBigInteger('id_events');
-            $table->foreign('id_events')->references('id')->on('events');
+            $table->foreign('id_events')->references('id')->on('events')->onDelete('cascade');;
         });
     }
 

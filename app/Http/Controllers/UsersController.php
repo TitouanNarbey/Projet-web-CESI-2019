@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Hash;
 use Session;
 use App\User;
 use App\Campus;
+use App\Report;
 use Auth;
 
 class UsersController extends Controller
@@ -17,7 +18,17 @@ class UsersController extends Controller
         {
             $id = Auth::user()->id;
             $user = User::find($id);
-            return view('profile',compact('user'));
+
+            if(Auth::user()->id_roles == 2)
+            {
+                $reports = Report::all();
+
+                return view('profile',compact('user'))->with('reports', $reports);
+            }
+            else
+            {
+                return view('profile',compact('user'));
+            }
         }
         else
         {

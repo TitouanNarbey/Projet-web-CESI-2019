@@ -16,10 +16,10 @@ class CreateIllustratearticlesmultiTable extends Migration
         Schema::create('illustratearticlesmulti', function (Blueprint $table) {
 
             $table->unsignedBigInteger('id_images');
-            $table->foreign('id_images')->references('id')->on('images');
+            $table->foreign('id_images')->references('id')->on('images')->onDelete('cascade');
 
             $table->unsignedBigInteger('id_articles');
-            $table->foreign('id_articles')->references('id')->on('articles');
+            $table->foreign('id_articles')->references('id')->on('articles')->onDelete('cascade');
         });
     }
 

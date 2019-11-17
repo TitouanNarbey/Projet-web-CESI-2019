@@ -17,6 +17,8 @@
 </div>
 
 <!-- Fiche de l'article -->
+
+
 <div class="text-center mt-2 mb-2">
 	<h2>Organisée par {{$event->creator->last_name}} {{$event->creator->first_name}} le {{$event->start_date}}</h2>
 	<div class="description ">
@@ -35,6 +37,32 @@
 			<br>
         </div>
     </div>
+
+@if(isset($like))
+    @if($like == 1)
+        <form method="post" action="/removeLike">
+            @csrf
+            <button type="submit" class="btn btn-danger"> {{$likes}} <i class="fas fa-heart"></i></button>
+            <input type="hidden" name="event_id" value="{{$event->id}}" />
+        </form>
+    @else
+        <form method="post" action="/giveLike">
+            @csrf
+            <button type="submit" class="btn btn-danger"> {{$likes}} <i class="far fa-heart"></i></button>
+            <input type="hidden" name="event_id" value="{{$event->id}}" />
+        </form>
+    @endif
+@else
+    <button type="button" class="btn btn-danger"> {{$likes}} <i class="far fa-heart"></i> </button>
+@endif
+
+@if(Auth::user() !== null)
+    @if(Auth::user()->id_roles == 2)
+
+    <a href="/events/{{$event->id}}/export"><button class="btn btn-cesi">Exporter la liste des participants</button></a>
+                    
+                @endif
+                @endif
         
     @if(isset($sub))
         @if($event->start_date > date("Y-m-d"))
