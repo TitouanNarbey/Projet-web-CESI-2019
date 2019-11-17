@@ -32,7 +32,6 @@ Ajouter un bouton de signalement en récupérent $_SESSION et en regardant le r�
 			</div>
 		</div>
 	</div>
-</div>
 
 	<div class="description text-center mt-5">
     <h2>Viens t'amuser le jeudi après-midi !!!</h2>
@@ -112,4 +111,5 @@ Ajouter un bouton de signalement en récupérent $_SESSION et en regardant le r�
 				@endforeach
 			</div>
 		</div>
+	</div>
 @endsection

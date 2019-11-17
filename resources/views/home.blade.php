@@ -35,7 +35,7 @@
 						<div class="headerCardEvent">
 							<img src="{{$event->event->image->path}}" class="img-fluid sizeBanner" alt="{{$event->event->image->alt}}">
 						</div>
-						<div class="card-body">
+						<div class="card-body"><br>
 							<h3>{{$event->event->name}}</h3>
 							<div class="eventCardDescription">{{$event->event->description}}  </div>
 						</div>
@@ -65,7 +65,7 @@
 							<div class="headerCardEvent">
 								<img src="{{$article->article->image->path}}" class="img-fluid sizeBanner" alt="{{$article->article->image->alt}}">
 							</div>
-							<div class="card-body mt-5">
+							<div class="card-body mt-5"><br>
 								<h3>{{$article->article->name}}</h3>
 								<div class="eventCardDescription">{{$article->article->description}}</div>
 							</div>

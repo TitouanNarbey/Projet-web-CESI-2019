@@ -37,7 +37,7 @@
 				<div class="headerCardEvent">
 					<img src="{{$article->image->path}}" class="img-fluid sizeBanner" alt="{{$article->image->alt}}">
 				</div>
-				<div class="card-body">
+				<div class="card-body"><br><br>
 					<h3>{{$article->name}}</h3>
 					<div class="eventCardDescription">{{$article->description}}</div>
 				</div>
