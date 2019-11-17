@@ -22,13 +22,13 @@ class CreateUsersTable extends Migration
             $table->timestamps();
 
             $table->unsignedBigInteger('id_campus');
-            $table->foreign('id_campus')->references('id')->on('campus');
+            $table->foreign('id_campus')->references('id')->on('campus')->onDelete('cascade');
 
             $table->unsignedBigInteger('id_roles');
-            $table->foreign('id_roles')->references('id')->on('roles');
+            $table->foreign('id_roles')->references('id')->on('roles')->onDelete('cascade');
 
             $table->unsignedBigInteger('id_images');
-            $table->foreign('id_images')->references('id')->on('images');
+            $table->foreign('id_images')->references('id')->on('images')->onDelete('cascade');
         });
     }
 

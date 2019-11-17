@@ -19,13 +19,13 @@ class CreateArticlesTable extends Migration
             $table->string('description', 2047);
 
             $table->unsignedBigInteger('id_category');
-            $table->foreign('id_category')->references('id')->on('category');
+            $table->foreign('id_category')->references('id')->on('category')->onDelete('cascade');
 
             $table->unsignedBigInteger('id_images');
-            $table->foreign('id_images')->references('id')->on('images');
+            $table->foreign('id_images')->references('id')->on('images')->onDelete('cascade');
 
             $table->unsignedBigInteger('id_campus');
-            $table->foreign('id_campus')->references('id')->on('campus');
+            $table->foreign('id_campus')->references('id')->on('campus')->onDelete('cascade');
 
             $table->integer('stock');
             $table->float('price', 11, 2);

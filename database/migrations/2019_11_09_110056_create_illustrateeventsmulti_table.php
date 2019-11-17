@@ -17,13 +17,13 @@ class CreateIllustrateeventsmultiTable extends Migration
             $table->bigIncrements('id');
 
             $table->unsignedBigInteger('id_images');
-            $table->foreign('id_images')->references('id')->on('images');
+            $table->foreign('id_images')->references('id')->on('images')->onDelete('cascade');
 
             $table->unsignedBigInteger('id_events');
-            $table->foreign('id_events')->references('id')->on('events');
+            $table->foreign('id_events')->references('id')->on('events')->onDelete('cascade');
 
             $table->unsignedBigInteger('id_users');
-            $table->foreign('id_users')->references('id')->on('users');
+            $table->foreign('id_users')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

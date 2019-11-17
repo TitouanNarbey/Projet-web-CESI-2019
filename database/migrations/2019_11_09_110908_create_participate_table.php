@@ -16,10 +16,10 @@ class CreateParticipateTable extends Migration
         Schema::create('participate', function (Blueprint $table) {
 
             $table->unsignedBigInteger('id_events');
-            $table->foreign('id_events')->references('id')->on('events');
+            $table->foreign('id_events')->references('id')->on('events')->onDelete('cascade');
 
             $table->unsignedBigInteger('id_users');
-            $table->foreign('id_users')->references('id')->on('users');
+            $table->foreign('id_users')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

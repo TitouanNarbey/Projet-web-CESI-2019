@@ -16,10 +16,10 @@ class CreateLocalisationTable extends Migration
         Schema::create('localisation', function (Blueprint $table) {
 
             $table->unsignedBigInteger('id_events');
-            $table->foreign('id_events')->references('id')->on('events');
+            $table->foreign('id_events')->references('id')->on('events')->onDelete('cascade');
 
             $table->unsignedBigInteger('id_campus');
-            $table->foreign('id_campus')->references('id')->on('campus');
+            $table->foreign('id_campus')->references('id')->on('campus')->onDelete('cascade');
         });
     }
 
