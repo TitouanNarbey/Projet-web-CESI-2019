@@ -16,9 +16,9 @@ class AdminController extends Controller
     }
     public function shopAdmin()
     {
-        $shop = Article::all();
+       /* $shop = Article::all();
         $categories = Category::all();
-    	return view('admin/shopAdmin',compact('shop'))->with('categories', $categories);
+    	return view('admin/shopAdmin',compact('shop'))->with('categories', $categories);*/
     }
    /* public function articleAdmin()
     {
@@ -50,5 +50,34 @@ class AdminController extends Controller
         $obj = Article::find($id_article);
         $obj->delete();
         return back()->with('messageGreen', 'Article supprimé');
+    }
+
+    public function triAdminArticle()
+    {
+       
+       
+        if ( isset($_GET['decroissant'])) {
+            $shop = Article::where('id', '<>', 0)->orderBy('price','DESC')->get();
+        }
+        else {
+        }
+        if ( isset($_GET['croissant'])) {
+            $shop = Article::where('id', '<>', 0)->orderBy('price','ASC')->get();
+        }
+        else {
+        }
+        if ( isset($_GET['id_category'])) {
+            
+            $categories = Category::all();
+            $shop = Article::where('id_category', '=', $_GET['id_category'])->get();
+        }
+        else {
+                    $categories = Category::all();
+
+        }
+
+
+        return view('admin/shopAdmin',compact('shop'),compact('categories'));
+        
     }
 }
