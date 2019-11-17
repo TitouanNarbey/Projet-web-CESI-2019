@@ -51,4 +51,13 @@ class AdminController extends Controller
         $obj->delete();
         return back()->with('messageGreen', 'Article supprimé');
     }
+
+    public function deleteEvent()
+    {
+        $id_event = request('id_event');
+
+        $obj = Event::find($id_event);
+        $obj->delete();
+        return back()->with('messageGreen', 'Événement supprimé');
+    }
 }

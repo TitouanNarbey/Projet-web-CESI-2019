@@ -22,23 +22,26 @@
 					<div class="col-xl-3 mt-5">
 						<div class="card">
 							<a href="events/{{$event->id}}" class="nounderline">
-							<div class="headerCardEvent">
-								<img src="{{$event->image->path}}" class="img-fluid sizeBanner" alt="{{$event->image->alt}}">
-							</div>
-							<div class="card-body">
-								<h3>{{$event->name}}</h3>
-								<div class="eventCardDescription">
-									{{$event->description}} 
-								</div>	
-							</div>
-							<div class="card-footer">
-								<div class="text-right eventCardFooter">
-									<a href="#about">
-										<button class="btn btn-cesi btn-block"> Modérer l'article</button>
-									<a href="#about">
-										<button class="btn btn-danger btn-block mt-2"> Supprimer l'article</button>
+								<div class="headerCardEvent">
+									<img src="{{$event->image->path}}" class="img-fluid sizeBanner" alt="{{$event->image->alt}}">
 								</div>
-							</div>
+								<div class="card-body">
+									<h3>{{$event->name}}</h3>
+									<div class="eventCardDescription">
+										{{$event->description}} 
+									</div>	
+								</div>
+								<div class="card-footer">
+									<div class="text-right eventCardFooter">
+										<a href="#about">
+											<button class="btn btn-cesi btn-block"> Modérer l'évenement</button>
+										<form action="/admin/deleteEvent" method="post" class="mt-1">
+											@csrf
+											<input type="hidden" name="id_event" value="{{$event->id}}" />
+											<button type="submit" class="btn btn-danger btn-block">Supprimer l'article</button>
+										</form>
+									</div>
+								</div>
 							</a>
 						</div>
 					</div>

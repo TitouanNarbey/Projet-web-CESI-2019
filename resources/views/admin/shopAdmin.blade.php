@@ -39,7 +39,6 @@
 						<form action="/admin/deleteArticle" method="post">
 							@csrf
 							<input type="hidden" name="id_article" value="{{$article->id}}" />
-							{{--<input class ="btn btn-danger mt-1 mb-1" type="submit" value="Ne plus participer">--}}
 							<button type="submit" class="btn btn-danger btn-block">Supprimer l'article</button>
 						</form>
 					</div>
