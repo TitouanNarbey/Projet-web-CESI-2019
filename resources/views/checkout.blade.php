@@ -57,14 +57,14 @@
 							</button>
 
 						</form>
+						<br>
 						<form class="paypal" action="/paypal" method="post">
 							@csrf
-							<button class="btn btn-sm btn-danger" type="submit">
-								<span id="checkout">TestPaypal</span>
+							<button class="btn btn-sm btn-primary" type="submit">
+								<span id="checkout"><i class="fab fa-paypal"></i></span>
 								<input type="hidden" name="amount" value="{{$total}}"/>
 								<input type="hidden" name="id_order" value="{{$cartData->id}}" />
 							</button>
-
 						</form>
 					</div>
 				</div>

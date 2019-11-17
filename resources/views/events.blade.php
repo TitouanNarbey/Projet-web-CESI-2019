@@ -32,7 +32,6 @@ Ajouter un bouton de signalement en récupérent $_SESSION et en regardant le r�
 			</div>
 		</div>
 	</div>
-</div>
 
 	<div class="description text-center mt-5">
     <h2>Viens t'amuser le jeudi après-midi !!!</h2>
@@ -53,7 +52,7 @@ Ajouter un bouton de signalement en récupérent $_SESSION et en regardant le r�
     	@csrf
       <input class ="btn btn-cesi btn-block mt-1" type="submit" name="decroissant" value="Décroissant">
   </form>
-</div>
+
        
         <button onclick="showDropdownFrequency()" class=" btn btn-cesi">Fréquence</button>
       <div id="frequency" class="dropdown-content">
@@ -79,9 +78,7 @@ Ajouter un bouton de signalement en récupérent $_SESSION et en regardant le r�
   </form>
         </div>
  </div>
-    </div>
 		<!-- Affichage des différentes événements -->
-		<div class="container col-11">
 			<div class="row mx-auto">
 				@foreach($events as $event)
 				<div class="col-xl-3 mt-5">
@@ -90,7 +87,7 @@ Ajouter un bouton de signalement en récupérent $_SESSION et en regardant le r�
 							<div class="headerCardEvent">
 								<img src="{{$event->image->path}}" class="img-fluid sizeBanner" alt="{{$event->image->alt}}" witdh=100%>
 							</div>
-							<div class="card-body"><br>
+							<div class="card-body"><br><br>
 								<h3>
 									{{$event->
 									name}}
@@ -102,14 +99,16 @@ Ajouter un bouton de signalement en récupérent $_SESSION et en regardant le r�
 							</div>
 							<div class="card-footer">
 								<div class="text-right eventCardFooter">
-									 Création : {{$event->
+									 Date : {{$event->
 									start_date}}
 								</div>
-							</div>
+						</div>
 						</a>
 					</div>
 				</div>
 				@endforeach
 			</div>
 		</div>
+	</div>
+</div>
 @endsection

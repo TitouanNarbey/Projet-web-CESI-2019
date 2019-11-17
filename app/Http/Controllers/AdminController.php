@@ -51,34 +51,25 @@ class AdminController extends Controller
             'title'=>'required',
             'text'=>'required',
             'price'=>'required',
-            'start_date'=>'required',
+            'stock'=>'required',
         ]);
 
         $title = request()->title;
         $text = request()->text;
         $price = request()->price;
-        $old_start_date = request()->start_date;
-        $start_date = date("Y-m-d", strtotime($old_start_date));
-        $old_end_date = request()->end_date;
-        $end_date = date("Y-m-d", strtotime($old_end_date));
+        $stock = request()->stock;
+        $category = request()->category;
+        $custom_category = request()->custom_category;
 
-        if($end_date === '1970-01-01')
+        if($custom_category !== null)
         {
-            $end_date = null;
+            $bddcategory = Category::create(['name'=>$custom_category]);
+            $category = $bddcategory->id;
         }
 
-        if(request()->recurrent === null)
-        {
-            $recurrent = 0;
-        }
-        else
-        {
-            $recurrent = 1;
-        }
-
-        $obj = Event::create(['name'=>$title, 'description'=>$text, 'start_date'=>$start_date, 'end_date'=>$end_date, 'price'=>$price, 'recurrent'=>$recurrent, 'validate'=>'1', 'id_images'=>2, 'id_users'=>Auth::user()->id]);
-        
-        return redirect('/admin/events')->with('messageGreen', 'Evenement ajouté');
+        $obj = Article::create(['name'=>$title, 'description'=>$text, 'id_category'=>$category, 'id_images'=>'1', 'id_campus'=>'22', 'stock'=>$stock, 'price'=>$price]);
+    
+        return redirect('/admin/shop')->with('messageGreen', 'Article ajouté');
     }
 
     public function createEvent()

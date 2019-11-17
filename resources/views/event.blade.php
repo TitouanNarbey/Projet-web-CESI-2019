@@ -1,11 +1,12 @@
 @extends('layouts.app')@section('content')
 <div class="container col-11">
-	<h1>{{$event->name}}</h1>
+	<center><h1>{{$event->name}}</h1></center>
 	<div id="demo" class="carousel slide" data-ride="carousel">
 		<!-- The slideshow -->
 		<div class="carousel-inner">
 			<div class="carousel-item active">
-				<img src="{{$event->image->path}}" alt="Photo de l'événement {{$event->id}}">
+				<img src="{{$event->image->path}}" alt="Photo de l'événement {{$event->id}}"
+                class="img-fluid sizeBanner2">
 			</div>
 			@foreach($event->Illustrateeventsmulti as $picture)
 			    <div class="carousel-item">

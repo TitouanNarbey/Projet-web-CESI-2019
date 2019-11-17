@@ -21,13 +21,13 @@ Réparer le carousel-->
     <!-- The slideshow -->
     <div class="carousel-inner ">
       <div class="carousel-item active">
-        <img src="{{asset('assets/img/img_1.png')}}" alt="Los Angeles" >
+        <img src="assets/img/img_1.png" alt="Los Angeles" >
       </div>
       <div class="carousel-item">
-        <img src="{{asset('assets/img/img_3.png')}}" alt="Chicago">
+        <img src="assets/img/img_3.png" alt="Chicago">
       </div>
       <div class="carousel-item">
-        <img src="{{asset('assets/img/img_2.png')}}" alt="New York">
+        <img src="assets/img/img_2.png" alt="New York">
       </div>
     </div>
   </div>
@@ -43,53 +43,58 @@ Réparer le carousel-->
       <button onclick="showDropdownPrice()" class=" btn btn-cesi">Trier par prix</button>
       <div id="price" class="dropdown-content">
         <form class="example" action="#">
-      @csrf
-      <input class ="btn btn-cesi btn-block mt-1" type="submit" name="croissant" value="Croissant">
-  </form>
+          @csrf
+          <input class ="btn btn-cesi btn-block mt-1" type="submit" name="croissant" value="Croissant">
+        </form>
+        <form class="example" action="#">
+          @csrf
+          <input class ="btn btn-cesi btn-block mt-1" type="submit" name="decroissant" value="Décroissant">
+        </form>
+      </div>
+      <div class=" dropdown ">
+        <button onclick="showDropdownCategory()" class=" btn btn-cesi">Catégorie</button>
+        <div id="category" class="dropdown-content">
+          @foreach($categories as $category)
           <form class="example" action="#">
-      @csrf
-      <input class ="btn btn-cesi btn-block mt-1" type="submit" name="decroissant" value="Décroissant">
-  </form>
-        </div>
-        <div class=" dropdown ">
-          <button onclick="showDropdownCategory()" class=" btn btn-cesi">Catégorie</button>
-          <div id="category" class="dropdown-content">
-            @foreach($categories as $category)
-            <form class="example" action="#">
-      @csrf
-      <input class ="btn btn-cesi btn-block mt-1" type="submit" name="category" value="{{$category->name}}"> 
-      <input type="hidden" name="id_category" value="{{$category->id}}" />
-  </form>  @endforeach</div>
-          </div>
-        </div>
-        <!-- Affichage des articles correspondants aux critères de recherches -->
-        <div class="row mx-auto">
-            @foreach($shop as $article)
-          <div class="col-xl-3 mt-5">
-            <div class="card {{$article->category}}">
-              <a href="shop/{{$article->id}}" class="nounderline">
-                <div class="headerCardEvent">
-                  <img src="{{$article->image->path}}" class="img-fluid sizeBanner" alt="{{$article->image->alt}}" witdh=100%>
-                </div>
-                <div class="card-body"><br>
-                  <h3>
-                    {{$article->
-                    name}}
-                  </h3>
-                  <div class="eventCardDescription">
-                    {{$article->description}}
-                  </div>
-                </div>
-                <div class="card-footer">
-                  <div class="text-right eventCardFooter">
-                    <h2><span class="badge badge-dark ">{{$article->price}} €</span></h2>
-                    <h2><span class="badge badge-dark ">{{$article->stock}} en stock</span></h2>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-          @endforeach
+            @csrf
+            <input class ="btn btn-cesi btn-block mt-1" type="submit" name="category" value="{{$category->name}}">
+            <input type="hidden" name="id_category" value="{{$category->id}}" />
+          </form>
+            @endforeach
         </div>
       </div>
+      <!-- Affichage des articles correspondants aux critères de recherches -->
+      <div class="row mx-auto">
+        @foreach($shop as $article)
+        <div class="col-xl-3 mt-5">
+          <div class="card {{$article->category}}">
+            <a href="shop/{{$article->id}}" class="nounderline">
+              <div class="headerCardEvent">
+                <img src="{{$article->image->path}}" class="img-fluid sizeBanner" alt="{{$article->image->alt}}">
+              </div>
+              <div class="card-body">
+                <br>
+                <h3>
+                  {{$article->
+                  name}}
+                </h3>
+                <div class="eventCardDescription">
+                  {{$article->
+                  description}}
+                </div>
+              </div>
+              <div class="card-footer">
+                <div class="text-right eventCardFooter">
+                  <h2><span class="badge badge-dark ">{{$article->price}} €</span></h2>
+                  <h2><span class="badge badge-dark ">{{$article->stock}} en stock</span></h2>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        @endforeach
+      </div>
+    </div>
+  </div>
+</div>
 @endsection
