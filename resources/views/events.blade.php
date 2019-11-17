@@ -21,14 +21,14 @@ Ajouter un bouton de signalement en récupérent $_SESSION et en regardant le r�
 		</ul>
 		<!-- The slideshow -->
 		<div class="carousel-inner">
-			<div class="carousel-item active">
-				<img src="{{asset('assets/img/img_1.png')}}" alt="Los Angeles" >
+			<div class="carousel-item active text-center">
+				<img src="{{asset('assets/img/img_1.png')}}" alt="Los Angeles" witdh=100%  >
 			</div>
-			<div class="carousel-item">
-				<img src="{{asset('assets/img/img_3.png')}}" alt="Chicago">
+			<div class="carousel-item text-center">
+				<img src="{{asset('assets/img/img_3.png')}}" alt="Chicago" witdh=100%>
 			</div>
-			<div class="carousel-item">
-				<img src="{{asset('assets/img/img_2.png')}}" alt="New York">
+			<div class="carousel-item text-center">
+				<img src="{{asset('assets/img/img_2.png')}}" alt="New York" witdh=100%>
 			</div>
 		</div>
 	</div>
