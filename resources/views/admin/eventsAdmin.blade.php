@@ -22,7 +22,6 @@
                     </form>
                 </div>
             </div>
-<<<<<<< HEAD
         </div>
         <!-- Show all events -->
         <div class="row mx-auto">
@@ -59,26 +58,6 @@
             @endforeach
         </div>
     </div>           
-=======
-          </div>
-          <div class="card-footer">
-            <div class="text-right eventCardFooter">
-              <a href="events/{{$event->id}}"><button class="btn btn-cesi btn-block"> Modérer l'événement</button></a>
-				<form action="/admin/deleteEvent" method="post" class="mt-1">
-					@csrf
-					<input type="hidden" name="id_event" value="{{$event->id}}" />
-					<button type="submit" class="btn btn-danger btn-block mt-2">Supprimer l'événement</button>
-				</form>
-            </div>
-          </div>
-		</div>
-    </div>
-        @endforeach
-      </div>
-    </div>
-  </div>
-</div>
->>>>>>> 242ead626cae1c6b06ffe448a896baf6ed941dc8
 @endsection
 
 
