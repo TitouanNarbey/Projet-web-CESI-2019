@@ -14,20 +14,21 @@
 				<br>
 				<div class="form-row">
 					<label>Titre de l'article</label>
-					<input type="text" name="link" class="form-control mb-2" placeholder="ex : Tasse " value="" />
+					<input type="title" name="title" class="form-control mb-2" placeholder="ex : Tasse " value="" />
 					<label>Description de l'article</label>
 					<textarea name="text" class="form-control reportSize mb-2" placeholder="Décrivez votre article"></textarea>
 					<label>Prix (en €)</label>
-					<input type="number" name="link" class="form-control mb-2" value="" />
+					<input type="number" name="price" class="form-control mb-2" value="" />
 					<label>Stock</label>
-					<input type="text" name="link" class="form-control mb-2" placeholder="Quantité" value="" />
-					<label>Catégorie</label>
-					{{-- <select id="inputCenter" class="form-control mb-2">
-						@foreach($campuss as $campus)
-							<option value="{{$campus->id}}">{{$campus->name}}</option>
+					<input type="number" name="stock" class="form-control mb-2" placeholder="Quantité" value="1" min="0" />
+					<label class="mt-3">Catégorie</label>
+					<select id="inputCenter" class="form-control" name="category">
+						@foreach($categories as $category)
+							<option value="{{$category->id}}">{{$category->name}}</option>
 						@endforeach
-						<label>Ajouter une image</label>
-					</select> --}}
+					</select>
+					<p>Ou</p>
+					<input type="text" name="custom_category" class="form-control" placeholder="ex : Sport " value="" />
 				</div>
 				<br>
 				<br>

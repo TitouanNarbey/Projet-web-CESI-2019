@@ -38,19 +38,20 @@ class AdminController extends Controller
     }
     public function createArticle()
     {
-    	return view('admin/createArticle');
+        $categories = Category::all();
+    	return view('admin/createArticle')->with('categories', $categories);
     }
 
     public function postCreateArticle()
     {
 
         request()->validate
-            ([
-                'title'=>'required',
-                'text'=>'required',
-                'price'=>'required',
-                'start_date'=>'required',
-            ]);
+        ([
+            'title'=>'required',
+            'text'=>'required',
+            'price'=>'required',
+            'start_date'=>'required',
+        ]);
 
         $title = request()->title;
         $text = request()->text;
@@ -87,12 +88,12 @@ class AdminController extends Controller
     public function postCreateEvent()
     {
         request()->validate
-            ([
-                'title'=>'required',
-                'text'=>'required',
-                'price'=>'required',
-                'start_date'=>'required',
-            ]);
+        ([
+            'title'=>'required',
+            'text'=>'required',
+            'price'=>'required',
+            'start_date'=>'required',
+        ]);
 
         $title = request()->title;
         $text = request()->text;
