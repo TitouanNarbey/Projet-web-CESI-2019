@@ -16,8 +16,8 @@
 		<div class=" dropdown ">
 			<button onclick="showDropdownCategory()" class=" btn btn-cesi">Catégorie</button>
 			<div id="category" class="dropdown-content">
-				@foreach($shop as $article)
-					<a href="#about"><button class="btn btn-cesi btn-block"> {{$article->category->name}}</button></a>
+				@foreach($categories as $category)
+					<a href="#about"><button class="btn btn-cesi btn-block"> {{$category->name}}</button></a>
 				@endforeach
 			</div>
 		</div>
