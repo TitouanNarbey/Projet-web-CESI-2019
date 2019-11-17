@@ -15,7 +15,7 @@ class CreateBestarticlesTable extends Migration
     {
         Schema::create('bestarticles', function (Blueprint $table) {
             $table->unsignedBigInteger('id_articles');
-            $table->foreign('id_articles')->references('id')->on('articles');
+            $table->foreign('id_articles')->references('id')->on('articles')->onDelete('cascade');;
         });
     }
 
