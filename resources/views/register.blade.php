@@ -1,26 +1,26 @@
 @extends('layouts.app')
-@section('title',"Titre de la page")
-@section('meta-description',"Descritpion de la page")
+@section('title',"Enregistrement")
+@section('meta-description',"Page pour s'enregistrer avant de procéder à la connexion, pour tous les nouveaux utilisateurs.")
 @section('content')
 <div class="bg3">
 <div class="container">
-    <div class="row">
-      <div class="col-md-2 col-sm-12 col-xs-12"></div>
-      <div class="col-md-8 col-sm-12 col-xs-12">    
-        {{-- title --}}      
-        <div class="col-md-12 col-sm-12 col-xs-12" align="center">
+  <div class="row">
+    <div class="col-md-2 col-sm-12 col-xs-12"></div>
+    <div class="col-md-8 col-sm-12 col-xs-12">    
+      {{-- title --}}      
+      <div class="col-md-12 col-sm-12 col-xs-12">
           <div class="title-container rounded">
             <h1>Inscription</h1>
           </div>
-        </div>
+      </div>
         {{-- form start --}}  
         {{-- Name --}}      
-        <form class="form-container rounded" action="/register" method="POST">
-          @csrf
-          <div class="parts">
-              <a href="{{action('UsersController@showlogin')}}"> Déjà inscrit ?</a>
-          </div>
-          <br>
+      <form class="form-container rounded" action="/register" method="POST">
+        @csrf
+        <div class="parts">
+            <a href="{{action('UsersController@showlogin')}}"> Déjà inscrit ?</a>
+        </div>
+        <br>
           <div class="form-row">
             <div class="name-container">
               <div class="col-md-10 col-sm-12 col-xs-12">
@@ -46,6 +46,7 @@
               </div>
             </div>
           </div>
+
           {{-- Zone --}}          
           <div class="form-group">
             <div class="col-md-6 col-sm-8 col-xs-12">
@@ -81,6 +82,8 @@
             </div>
           </div>
           <br>
+
+          {{-- Checkbox to accept legalmentions --}}
           <div class="form-group">
             <div class="form-check">
               <input class="form-check-input" type="checkbox" id="checkbox" name="inputCheckbox">

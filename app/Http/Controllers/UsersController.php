@@ -10,8 +10,14 @@ use App\Campus;
 use App\Report;
 use Auth;
 
+/*
+*Controller of all the features related to the user
+*/
 class UsersController extends Controller
 {
+    /*
+    *show the profile of the user
+    */
     public function profile()
     {
         if(Auth::user() !== null)
@@ -22,8 +28,9 @@ class UsersController extends Controller
             if(Auth::user()->id_roles == 2)
             {
                 $reports = Report::all();
+                $todeliver = Order()::where('paid', '1')->where('delivered', '0')->get();
 
-                return view('profile',compact('user'))->with('reports', $reports);
+                return view('profile',compact('user'))->with('reports', $reports)->with('todeliver', $todeliver);
             }
             else
             {
@@ -36,12 +43,18 @@ class UsersController extends Controller
         }
     }
 
+    /*
+    *show the register form
+    */
     public function register()
     {
         $campuss = Campus::all();
         return view('register',compact('campuss'));	
     }
 
+    /*
+    *register the new user in the database
+    */
     public function postregister()
     {
         request()->validate
@@ -63,7 +76,8 @@ class UsersController extends Controller
         $confirmpassword = request('inputConfirmPassword');
         $checkbox = request('inputCheckbox');
 
-        if ($checkbox) //Verify if it was agreed
+        //Verify if the user agreed to the legal conditions
+        if ($checkbox) 
         {   if(preg_match('`[A-Z]`',$password) && preg_match('`[0-9]`',$password)) //Verification to check if there's at least an uppercase and a number
             {
                 if($password===$confirmpassword)
@@ -97,11 +111,17 @@ class UsersController extends Controller
         }
     }
 
+    /*
+    *show the login form
+    */
     public function showlogin()
     {
         return view('login');	
     }
 
+    /*
+    *allow the user to login through the Node.js API
+    */
     public function postlogin()
     {
         request()->validate
@@ -113,10 +133,10 @@ class UsersController extends Controller
         $email = request('inputEmail');
         $password = request('inputPassword');
 
-        //return view('login');
         $urlToRequest = 'http://localhost:3000/api/login/';
         $urlToRequest .= $email;
 
+        //add a token in the header which will be used as a verification in the API
         $context = stream_context_create(array(
             'http' => array(
                 'header' => "Authorization: 9cb986477ea6b412e1571fa18fafd210830399d8762fa87448440950221df1c6",
@@ -126,19 +146,9 @@ class UsersController extends Controller
         $json = file_get_contents($urlToRequest, false, $context);
         $parse = json_decode($json, true);
 
-
+        //verification of the email and the password
         if($parse["reqError"] == '' && Hash::check($password, $parse["user"][0]["password"]))
         {
-            //Session::push('user.token', $parse["token"][0]);
-            /*Session::put('id', $parse["user"][0]["id"]);
-            Session::put('last_name', $parse["user"][0]["last_name"]);
-            Session::put('first_name', $parse["user"][0]["first_name"]);
-            Session::put('email', $parse["user"][0]["email"]);
-            Session::put('id_campus', $parse["user"][0]["id_campus"]);
-            Session::put('id_roles', $parse["user"][0]["id_roles"]);
-            Session::put('id_images', $parse["user"][0]["id_images"]);
-            Session::put('token', $parse["token"]);*/
-
             $user= User::find($parse["user"][0]["id"]);
 
             Auth::login($user);
@@ -151,6 +161,9 @@ class UsersController extends Controller
         }
     }
 
+    /*
+    *diconnect the user
+    */
     public function disconnect()
     {
         if(Auth::user() !== null)
@@ -164,13 +177,12 @@ class UsersController extends Controller
         }
     }
 
+    /*
+    *accept the cookies
+    */
     public function acceptCookies()
     {
         Session::put('AcceptCookies', 1);
         return back();
     }
-
 }
-
-
-
