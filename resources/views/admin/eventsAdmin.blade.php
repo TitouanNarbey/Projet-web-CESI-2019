@@ -3,7 +3,7 @@
 	<!-- Fonctions de modération -->
 	<div class="description text-center">
 		<h1>Administration des Evénements</h1>
-		<button class="btn btn-success "> Ajouter un évenement</button>
+		<a href="/admin/new-event"><button class="btn btn-success "> Ajouter un évenement</button></a>
 		<div class=" dropdown mt-2">
 			<button onclick="showDropdownDate()" class=" btn btn-cesi">Date</button>
       <div id="date" class="dropdown-content">
