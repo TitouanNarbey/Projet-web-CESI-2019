@@ -7,6 +7,7 @@ use App\Article;
 use App\Event;
 use App\Image;
 use App\Category;
+use App\Post;
 use Auth;
 
 
@@ -201,5 +202,13 @@ class AdminController extends Controller
         }
        
         return view('admin/eventsAdmin',compact('events'));    
+    }
+
+    public function deleteComment() 
+    {
+        $id = request('id_post');
+        $post = Post::find($id);
+        $post->delete();
+        return back()->with('messageGreen', 'Commentaire supprimé');
     }
 }

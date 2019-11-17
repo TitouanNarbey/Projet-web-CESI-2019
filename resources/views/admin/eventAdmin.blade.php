@@ -72,28 +72,20 @@
 </div>
 
 
-<!-- Espace commentaire version modérateur -->
+<!--Comments-->
+@foreach($event->posts->sortByDesc('id') as $post)
+  <div class="media mt-2"><img class="d-flex rounded-circle avatar z-depth-1-half mr-3" src="{{$post->user->image->path}}" alt="Avatar {{$post->user->first_name}} {{$post->user->last_name}}">
+    <div class="media-body">
+        <h5 class="mt-0 font-weight-bold blue-text">{{$post->user->first_name}} {{$post->user->last_name}}</h5>
+    {{$post->text}}
+    </div>
+    <form action="/admin/deleteComment" method="post">
+      @csrf
+      <input type="hidden" name="id_post" value="{{$post->id}}"/>
+      <button type="submit" class="btn btn-danger float-right mt-1 "><i class="fa fa-trash"></i></button>
+    </form>
+  </div>
+@endforeach
 
-<div class="media mt-2">
-  <img class="d-flex rounded-circle avatar z-depth-1-half mr-3" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.jpg"alt="Avatar">
-  <div class="media-body">
-    <h5 class="mt-0 font-weight-bold blue-text">
-      Anna Smith
-    </h5>
-    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purusodio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputatefringilla. Donec lacinia congue felis in faucibus.
-    <button type="button" class="btn btn-danger float-right mt-1 "> Supprimer le commentaire</button>
-  </div>
-</div>
-<div class="media mt-2">
-  <img class="d-flex rounded-circle avatar z-depth-1-half mr-3" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-10.jpg"alt="Avatar">
-  <div class="media-body">
-    <h5 class="mt-0 font-weight-bold blue-text">
-      Caroline Horwitz
-    </h5>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis odit minima eaque dignissimos recusandaeofficiis commodi nulla est, tempore atque voluptas non quod maxime, iusto, debitis aliquid? Iure ipsum,itaque.
-    <button type="button" class="btn btn-danger float-right mt-1 "> Supprimer le commentaire</button>
-  </div>
-</div>
-</div>
 @endsection
 

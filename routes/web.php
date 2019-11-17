@@ -86,6 +86,7 @@ Route::group(['prefix'=>'admin','middleware'=>'checkadmin'],function(){
     Route::post('new-event', 'AdminController@postCreateEvent');
     Route::post('deleteArticle', 'AdminController@deleteArticle');
     Route::post('deleteEvent', 'AdminController@deleteEvent');
+    Route::post('deleteComment', 'AdminController@deleteComment');
 });
 
 Route::get('events/{id}/export', 'ParticipateController@export');
