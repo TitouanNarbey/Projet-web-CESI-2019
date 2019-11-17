@@ -5,13 +5,17 @@
 		<h1>Administration des Evénements</h1>
 		<button class="btn btn-success "> Ajouter un évenement</button>
 		<div class=" dropdown mt-2">
-			<button onclick="showDropdownPrice()" class=" btn btn-cesi">Trier par Date</button>
-			<div id="price" class="dropdown-content">
-				<a href="#about">
-					<button class="btn btn-cesi btn-block">Passés</button>
-				<a href="#about">
-					<button class="btn btn-cesi btn-block">A venir</button>
-			</div>
+			<button onclick="showDropdownDate()" class=" btn btn-cesi">Date</button>
+      <div id="date" class="dropdown-content">
+        <form class="example" action="#">
+    	@csrf
+      <input class ="btn btn-cesi btn-block mt-1" type="submit" name="old" value="Passés">
+    </form>
+          <form class="example" action="#">
+    	@csrf
+      <input class ="btn btn-cesi btn-block mt-1" type="submit" name="soon" value="à venir">
+  </form>
+        </div>
 		</div>
 	</div>
 	<!-- Affichage de la liste des évenements -->

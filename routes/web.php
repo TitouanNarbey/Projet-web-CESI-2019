@@ -76,7 +76,7 @@ Route::group(['prefix'=>'admin','middleware'=>'checkadmin'],function(){
     Route::get('/', 'AdminController@dashboard');
     Route::get('shop', 'AdminController@triAdminArticle');
 
-    Route::get('events', 'AdminController@eventsAdmin');
+    Route::get('events', 'AdminController@triAdminEvent');
     Route::get('shop/{id}', 'AdminController@articleAdmin');
     Route::get('events/{id}', 'AdminController@eventAdmin');
     Route::get('new-article', 'AdminController@createArticle');

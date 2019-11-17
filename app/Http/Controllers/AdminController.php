@@ -85,4 +85,51 @@ class AdminController extends Controller
         $obj->delete();
         return back()->with('messageGreen', 'Événement supprimé');
     }
+
+    public function triAdminEvent()
+    {
+        if ( !isset($_GET['search'])) {
+            $events = Event::all();
+        }
+        else {
+            $var = "%".$_GET['search']."%";
+            $events = Event::where('name', 'like', $var)->get();
+        }
+        if ( isset($_GET['recurrent'])) {
+            $events = Event::where('recurrent', '=', 1)->get();
+        }
+        else {
+        }
+        if ( isset($_GET['unique'])) {
+            $events = Event::where('recurrent', '<>', 1)->get();
+        }
+        else {
+        }
+        if ( isset($_GET['decroissant'])) {
+            $events = Event::where('id', '<>', 0)->orderBy('price','DESC')->get();
+        }
+        else {
+        }
+        if ( isset($_GET['croissant'])) {
+            $events = Event::where('id', '<>', 0)->orderBy('price','ASC')->get();
+        }
+        else {
+        }
+        if ( isset($_GET['old'])) {
+
+            $events = Event::where('start_date', '<',date("Y-m-d"))->get();
+
+        }
+        else {
+        }
+        if ( isset($_GET['soon'])) {
+
+            $month_soon = date("m")+1;
+            $events = Event::where('start_date', '>',date("Y-$month_soon-01"))->get();
+        }
+        else {
+        }
+       
+        return view('admin/eventsAdmin',compact('events'));    
+    }
 }
