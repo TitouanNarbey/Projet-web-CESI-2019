@@ -109,7 +109,7 @@ class AdminController extends Controller
             $recurrent = 1;
         }
 
-        $obj = Event::create(['name'=>$title, 'description'=>$text, 'start_date'=>$start_date, 'end_date'=>$end_date, 'price'=>$price, 'recurrent'=>$recurrent, 'validate'=>'1', 'id_images'=>2, 'id_users'=>Auth::user()->id]);
+        $obj = Event::create(['name'=>$title, 'description'=>$text, 'start_date'=>$start_date, 'end_date'=>$end_date, 'price'=>$price, 'recurrent'=>$recurrent, 'validate'=>'1', 'id_images'=>'3', 'id_users'=>Auth::user()->id]);
         
         return redirect('/admin/events')->with('messageGreen', 'Evenement ajouté');
     }

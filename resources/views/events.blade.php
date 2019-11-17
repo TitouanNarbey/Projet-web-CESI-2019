@@ -52,6 +52,7 @@ Ajouter un bouton de signalement en récupérent $_SESSION et en regardant le r�
     	@csrf
       <input class ="btn btn-cesi btn-block mt-1" type="submit" name="decroissant" value="Décroissant">
   </form>
+</div>
 
        
         <button onclick="showDropdownFrequency()" class=" btn btn-cesi">Fréquence</button>
@@ -77,6 +78,7 @@ Ajouter un bouton de signalement en récupérent $_SESSION et en regardant le r�
       <input class ="btn btn-cesi btn-block mt-1" type="submit" name="soon" value="à venir">
   </form>
         </div>
+ </div>
  </div>
 		<!-- Affichage des différentes événements -->
 			<div class="row mx-auto">
@@ -108,7 +110,6 @@ Ajouter un bouton de signalement en récupérent $_SESSION et en regardant le r�
 				</div>
 				@endforeach
 			</div>
-		</div>
 	</div>
 </div>
 @endsection
