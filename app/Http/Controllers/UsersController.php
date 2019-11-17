@@ -111,13 +111,19 @@ class UsersController extends Controller
         ]);
 
         $email = request('inputEmail');
-        $password = request('inputPassword');	
+        $password = request('inputPassword');
 
         //return view('login');
-        $urlToRequest = "http://localhost:3000/api/login/";
+        $urlToRequest = 'http://localhost:3000/api/login/';
         $urlToRequest .= $email;
 
-        $json = file_get_contents($urlToRequest);
+        $context = stream_context_create(array(
+            'http' => array(
+                'header' => "Authorization: 9cb986477ea6b412e1571fa18fafd210830399d8762fa87448440950221df1c6",
+            ),
+        ));
+
+        $json = file_get_contents($urlToRequest, false, $context);
         $parse = json_decode($json, true);
 
 
