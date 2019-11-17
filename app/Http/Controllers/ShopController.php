@@ -10,8 +10,14 @@ use App\Category;
 use Session;
 use Auth;
 
+/*
+*Controller of the shop
+*/
 class ShopController extends Controller
 {
+    /*
+    *Returning of one view with different parameters
+    */
     public function shops()
     {
        
@@ -26,22 +32,14 @@ class ShopController extends Controller
         if ( isset($_GET['recurrent'])) {
             $shop = Article::where('recurrent', '=', 1)->get();
         }
-        else {
-        }
         if ( isset($_GET['unique'])) {
             $shop = Article::where('recurrent', '<>', 1)->get();
-        }
-        else {
         }
         if ( isset($_GET['decroissant'])) {
             $shop = Article::where('id', '<>', 0)->orderBy('price','DESC')->get();
         }
-        else {
-        }
         if ( isset($_GET['croissant'])) {
             $shop = Article::where('id', '<>', 0)->orderBy('price','ASC')->get();
-        }
-        else {
         }
         if ( isset($_GET['id_category'])) {
             
@@ -49,21 +47,24 @@ class ShopController extends Controller
             $shop = Article::where('id_category', '=', $_GET['id_category'])->get();
         }
         else {
-                    $categories = Category::all();
-
+            $categories = Category::all();
         }
 
-
-        return view('shop',compact('shop'),compact('categories'));
-    	
+        return view('shop',compact('shop'),compact('categories'));  	
     }
 
+    /*
+    *view of an item
+    */
     public function shop($id){
 
     	$article = Article::find($id);
     	return view('article',compact('article'), compact('id'));
     }
 
+    /*
+    *add an item in the shopping cart
+    */
     public function addToCard($id){
         
         if(Auth::user() !== null)
@@ -77,14 +78,14 @@ class ShopController extends Controller
             /////     Cart     /////
             $haveCart = 0;
 
-            //creation of cart if needed
+            //creation of a cart if needed
             foreach($orders as $order)
             {
                 if(!$order->paid)
                 { $haveCart = $order->id; }
             }
 
-            //cherche cart
+            //look up cart
             if($haveCart == 0)
             {
                 $cart = Order::create(['paid'=>'0', 'delivered'=>'0', 'id_users'=>$temp_id_user]);
@@ -103,6 +104,7 @@ class ShopController extends Controller
                 }
             }
     
+            //add the article and show the validation pop-up
             if($dejaArticle == null)
             {
                 $dejaArticle = Comanded::create(['id_orders'=>$cart->id, 'id_articles'=>$id, 'quantity'=>$quantity]);
@@ -110,16 +112,12 @@ class ShopController extends Controller
             }
             else
             {
-                return redirect('cart')->with('messageRed', 'Article déja dans le panier. Vous pouvez modifier la quantité.');
+                return redirect('cart')->with('messageRed', 'Article déjà dans le panier. Vous pouvez modifier la quantité.');
             }
         }
         else
         {
             return redirect('shop/'.$id)->with('messageRed', 'Veuillez vous connecter pour ajouter un produit à votre panier.');
-        }
-
-        
+        }   
     }
-    
-    
 }
