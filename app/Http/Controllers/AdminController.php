@@ -54,30 +54,27 @@ class AdminController extends Controller
 
     public function triAdminArticle()
     {
-       
-       
-        if ( isset($_GET['decroissant'])) {
+        $shop = Article::all();
+        $categories = Category::all();
+        
+        if ( isset($_GET['decroissant']))
+        {
             $shop = Article::where('id', '<>', 0)->orderBy('price','DESC')->get();
-        }
-        else {
         }
         if ( isset($_GET['croissant'])) {
             $shop = Article::where('id', '<>', 0)->orderBy('price','ASC')->get();
         }
-        else {
-        }
-        if ( isset($_GET['id_category'])) {
-            
+        if ( isset($_GET['id_category']))
+        {
             $categories = Category::all();
             $shop = Article::where('id_category', '=', $_GET['id_category'])->get();
         }
-        else {
-                    $categories = Category::all();
-
+        else
+        {
+            $categories = Category::all();
         }
 
-
-        return view('admin/shopAdmin',compact('shop'),compact('categories'));
+        return view('admin/shopAdmin',compact('shop'))->with('categories', $categories);;
     }
 
     public function deleteEvent()
