@@ -101,6 +101,11 @@
           <!-- Content -->
           <h5 class="text-uppercase">BDE Cesi Lyon</h5>
           <p>19 Avenue Guy de Collongue - 04.72.18.89.89
+            <br>
+
+             • <a href="https://www.facebook.com/BDECesiLyon/"><i class="fab fa-facebook-f"></i></a>      •    
+        <a href="https://twitter.com/Bdecesilyon"><i class="fab fa-twitter"></i></a>  • 
+        <a href="https://discord.gg/GeMteh7"><i class="fab fa-discord"></i></a>   • 
               
           </p>
   
@@ -144,6 +149,9 @@
           <ul class="list-unstyled">
             <li>
               <a href="https://www.cesi.fr/">Cesi.fr</a>
+              <br>
+              © 2019 Copyright:
+      <a href="/"> Bureau Des Etudiants du Cesi Lyon</a>
             </li>
 
           </ul>
@@ -157,19 +165,9 @@
     </div>
     <!-- Footer Links -->
   
-    <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">
-        • 
-        <a href="https://www.facebook.com/BDECesiLyon/"><i class="fab fa-facebook-f"></i></a>      •    
-        <a href="https://twitter.com/Bdecesilyon"><i class="fab fa-twitter"></i></a>  • 
-        <a href="https://discord.gg/GeMteh7"><i class="fab fa-discord"></i></a>   • 
-        <br>
-        <br>
-      © 2019 Copyright:
-      <a href="/"> Bureau Des Etudiants du Cesi Lyon</a>
-    </div>
+   
     
-    <!-- Copyright -->
+   
   
   </footer>
   <!-- Footer -->

@@ -75,13 +75,17 @@ Route::get('temp', function () {
 
 Route::group(['prefix'=>'admin','middleware'=>'checkadmin'],function(){
     Route::get('/', 'AdminController@dashboard');
-    Route::get('shop', 'AdminController@shopAdmin');
-    Route::get('events', 'AdminController@eventsAdmin');
+    Route::get('shop', 'AdminController@triAdminArticle');
+
+    Route::get('events', 'AdminController@triAdminEvent');
     Route::get('shop/{id}', 'AdminController@articleAdmin');
     Route::get('events/{id}', 'AdminController@eventAdmin');
     Route::get('new-article', 'AdminController@createArticle');
-    Route::post('deleteArticle', 'AdminController@deleteArticle');
     Route::get('new-event', 'AdminController@createEvent');
+    Route::post('new-article', 'AdminController@postCreateArticle');
+    Route::post('new-event', 'AdminController@postCreateEvent');
+    Route::post('deleteArticle', 'AdminController@deleteArticle');
+    Route::post('deleteEvent', 'AdminController@deleteEvent');
 });
 
 Route::get('events/{id}/export', 'ParticipateController@export');
