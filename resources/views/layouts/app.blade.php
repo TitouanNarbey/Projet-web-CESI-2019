@@ -72,7 +72,7 @@
       {{session()->get('messageCesi')}}
   </div>
   @endif
-
+        
         @section('content')
         @show
 
