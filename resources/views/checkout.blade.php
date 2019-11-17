@@ -57,7 +57,13 @@
 							</button>
 
 						</form>
+						<form class="paypal" action="/paypal" method="post">
+							@csrf
+							<button class="btn btn-sm btn-danger" type="submit">
+								<span id="checkout">TestPaypal</span>
+							</button>
 
+						</form>
 					</div>
 				</div>
 			</div>
