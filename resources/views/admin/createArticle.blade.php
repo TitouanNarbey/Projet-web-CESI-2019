@@ -28,11 +28,6 @@
 						@endforeach
 						<label>Ajouter une image</label>
 					</select> --}}
-					<form action="" method="POST" enctype="multipart/form-data">
-						@csrf
-						<input type="file" name="image" class="form-control float-center">
-						<button type="submit" class="btn btn-cesi">Ajouter l'image</button>
-					</form>
 				</div>
 				<br>
 				<br>
