@@ -22,7 +22,7 @@
     background-color:RGB(043, 074, 123);
     color:white;
     text-align:center; 
-    font-style:courier;
+    
 }
 
 .name-container
@@ -33,8 +33,7 @@
 
 .profile-container
 {
-    border:4px solid;
-    padding:10px 60px; 
+    border:4px solid; 
     margin-top:10vh;
     margin-bottom:1vh;
 }
