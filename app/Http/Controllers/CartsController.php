@@ -92,18 +92,14 @@ class CartsController extends Controller
     }
     public function valideComande()
     {
+        // don't work now, wait for real payment method
+        /*request()->validate([
+            'exp'=>'required',
+            'cname'=>'required',
+            'cnum'=>'required',
+            'cvv'=>'required'
+        ]);*/
 
-        request()->validate(
-            [ 'exp'=>'required',
-'cname'=>'required',
-'cnum'=>'required',
-'cvv'=>'required',
-
-            ]);
-
-
-
-            
 		$id_order = request('id_order');
 		$obj = Order::find($id_order);
 
@@ -120,6 +116,11 @@ class CartsController extends Controller
 		}
 		else
 		{
+            foreach($obj->comanded as $comand)
+            {
+                $article = $comand->article;
+                $article->update(['stock' => ($article->stock - $comand->quantity)]);
+            }
 			$obj->update(['paid' => 1]);
         	return redirect('/home')->with('messageGreen', 'Paiement validé');
 		}
