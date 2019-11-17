@@ -188,4 +188,37 @@ class CartsController extends Controller
             return redirect('/home')->with('messageRed', 'Veuillez vous connecter pour accéder à votre panier.');
         }
     }
+
+    /**
+	 * function to set to delivered an order
+	 */
+	public function setDeliverOrder()
+	{
+		// restraint access
+		if(Auth::user() !== null)
+		{
+			if(Auth::user()->id_roles == 2)
+			{
+				// get post data
+				$id_order = request('id_order');
+
+				// delete
+				$obj = Order::find($id_order);
+				$obj->update(['delivered'=>'1']);
+
+				// success
+				return redirect('/profile')->with('messageGreen', 'Commande livrée.');
+			}
+			else
+			{
+				// reject
+				return redirect('/home')->with('messageRed', 'Vous n\'avez pas le droit d\'accéder à cette page.');
+			}
+		}
+		else
+		{
+			// reject
+			return redirect('/home')->with('messageRed', 'Vous n\'avez pas le droit d\'accéder à cette page.');
+		}
+	}
 }

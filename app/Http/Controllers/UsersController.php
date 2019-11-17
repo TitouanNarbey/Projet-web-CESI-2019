@@ -8,6 +8,7 @@ use Session;
 use App\User;
 use App\Campus;
 use App\Report;
+use App\Order;
 use Auth;
 
 /*
@@ -28,7 +29,7 @@ class UsersController extends Controller
             if(Auth::user()->id_roles == 2)
             {
                 $reports = Report::all();
-                $todeliver = Order()::where('paid', '1')->where('delivered', '0')->get();
+                $todeliver = Order::where('paid', '1')->where('delivered', '0')->get();
 
                 return view('profile',compact('user'))->with('reports', $reports)->with('todeliver', $todeliver);
             }
@@ -49,7 +50,7 @@ class UsersController extends Controller
     public function register()
     {
         $campuss = Campus::all();
-        return view('register',compact('campuss'));	
+        return view('register',compact('campuss'));
     }
 
     /*

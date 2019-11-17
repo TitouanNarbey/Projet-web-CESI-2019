@@ -1,7 +1,8 @@
 @extends('layouts.app')
-@section('title',"Titre de la page")
-@section('meta-description',"Descritpion de la page")
+@section('title',"Paye ta commande")
+@section('meta-description',"Paye ta commande grâce à PayPal au BDE Cesi Lyon")
 @section('content')
+<!--Creation of the checkout area-->
 <div class="container px-4 py-5 mx-auto">
 	<table class="table table-striped">
 		<thead class="text-left">
@@ -11,6 +12,7 @@
 				<th scope="col">Prix</th>
 			</tr>
 		</thead>
+		<!--Import of sales products-->
 		<tbody>
 		@foreach($cartData->comanded as $comand)
 			<tr>
@@ -21,6 +23,7 @@
 		@endforeach
 		</tbody>
 	</table>
+	<!--Checkout Informations-->
 	<div class="row justify-content-center">
 		<div class="col-lg-12">
 			<div class="card">
@@ -49,9 +52,8 @@
 					</div>
 					<div class="col-lg-4 mt-2">
 						<div class="row d-flex justify-content-between px-4" id="tax">
-							<b><p class="mb-1 text-left">Total</p></b>
+							<p class="mb-1 text-left">Total</p>
 							<h6 class="mb-1 text-right"><b>{{$total}} €</b></h6>
-							
 						</div>
 						<form class="valideComande" action="/valideComande" method="post">
 							@csrf
@@ -59,13 +61,13 @@
 								<span id="checkout">Payer</span>
 								<input type="hidden" name="id_order" value="{{$cartData->id}}" />
 							</button>
-
 						</form>
 						<br>
+						<!--Link with the API PayPal-->
 						<form class="paypal" action="/paypal" method="post">
 							@csrf
 							<button class="btn btn-sm btn-primary" type="submit">
-								<span id="checkout"><i class="fab fa-paypal"></i></span>
+								<i class="fab fa-paypal"></i>
 								<input type="hidden" name="amount" value="{{$total}}"/>
 								<input type="hidden" name="id_order" value="{{$cartData->id}}" />
 							</button>

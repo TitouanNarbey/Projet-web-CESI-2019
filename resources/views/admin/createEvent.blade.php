@@ -1,6 +1,6 @@
 @extends('layouts.app')
-@section('title',"Titre de la page")
-@section('meta-description',"Descritpion de la page")
+@section('title',"Ajouter un événement")
+@section('meta-description',"Page permettant d'ajouter un événement")
 @section('content')
 
 <div class="container">
@@ -8,11 +8,12 @@
 		<div class="col-md-2 col-sm-12 col-xs-12"></div>
 		<div class="col-md-8 col-sm-12 col-xs-12">
 			{{-- title --}}
-			<div class="col-md-12 col-sm-12 col-xs-12" align="center">
+			<div class="col-md-12 col-sm-12 col-xs-12 text-center">
 				<div class="title-container rounded">
 					<h1>Ajouter un nouvel évenement</h1>
 				</div>
 			</div>
+			<!-- Form for add an event -->
 			<form class="form-container rounded" action="/admin/new-event" method="post">
 				@csrf
 				<br>

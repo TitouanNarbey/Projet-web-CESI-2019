@@ -1,67 +1,51 @@
 @extends('layouts.app')
 
-@section('title',"Titre de la page")
-@section('meta-description',"Descritpion de la page")
+@section('title',"Liste des utilisateurs - Administration")
+@section('meta-description',"Affiche la liste des personnes inscrites sur le site")
 @section('content')
-@include('updateuser')
-<div class="container">
+@include ('updateuser')
 
-    {{-- Searching bar --}}
-    <div class="row">
-    {{-- <h3 align="center">Live search in laravel usin AJAX</h3>
-    <br> --}}
-    <div class="col-lg-12 col-md-8 col-md-offset-2">
-    <div class="panel panel-default">
-        
-         <div class="panel heading">
-            <br> 
-            <button class="btn btn-ino btn-primary btn-xs pull-right" id="read-data">Charger les données.</button>
-            <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel heading">
+                        <br> 
+                        <!-- Show data -->
+                        <button class="btn btn-ino btn-primary btn-xs pull-right" id="read-data">Charger les données</button>
+                        <br>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-striped table-bordered table-condensed">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nom</th>
+                                    <th>Prénom</th>
+                                    <th>E-mail</th>
+                                    <th>Date de création</th>
+                                    <th>Campus</th>   
+                                    <th>Rôle</th>   
+                                    <th>Gérer l'utilisateur</th>   
+                                </tr>
+                            </thead>
+                            <tbody id="user-info"></tbody>
+                        </table>
+                    </div> 
+                </div>
+            </div>
         </div>
-       
-        <div class="panel-body">
-           
-                
-
-                <table class="table table-striped table-bordered table-condensed">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Nom</th>
-                            <th>Prénom</th>
-                            <th>E-mail</th>
-                            <th>Date de création</th>
-                            <th>Campus</th>   
-                            <th>Rôle</th>   
-                            <th>Gérer l'utilisateur</th>   
-                        </tr>
-                    </thead>
-                    <tbody id="user-info">
-
-                    </tbody>
-                </table>
-                
-        {{-- </div> --}}
     </div>
-    </div>
-</div>
-</div>
-</div>
 @endsection
+
 
 @section('script')
 <script type="text/javascript">
-
 //Fonction lancé si le bouton "read-data" est cliqué
-
 $('#read-data').on('click', function(){
     $.get("{{ URL::to('/admin/useradmin/read-data') }}", function(data){
-
 //Empty table is it was already full
-
         $('#user-info').empty().html(data);
-
-
 //Put data in the table
         // $.each(data,function(i,value){
         //     var tr =$("<tr/>");
@@ -84,11 +68,7 @@ $('#read-data').on('click', function(){
         // });
     })
 })
-
-
-
 //--------------------------------------edit User
-
 $('body').delegate('#user-info .edit_data','click',function(e){
     var id = this.id;
     $.get("{{URL::to('/admin/useradmin/edit')}}",{id:id},function(data){
@@ -99,9 +79,7 @@ $('body').delegate('#user-info .edit_data','click',function(e){
         return id;
     });
 })
-
 //--------------------------------- update user
-
 $('#frm-update').on('submit',function(e){
     
     e.preventDefault();
@@ -113,6 +91,5 @@ $('#frm-update').on('submit',function(e){
         console.log(data)
     });
 })
-
 </script>
 @endsection 

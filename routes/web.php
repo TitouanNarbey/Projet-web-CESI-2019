@@ -83,3 +83,4 @@ Route::get('events/{id}/export', 'ParticipateController@export');
 Route::get('report', 'ReportController@showForm');
 Route::post('report', 'ReportController@postReport');
 Route::post('deleteReport', 'ReportController@deleteReport');
+Route::post('setDeliverOrder', 'CartsController@setDeliverOrder');
