@@ -12,7 +12,7 @@
               </button>
             </div>
             {{-- End header --}}
-            <form action="{{URL::to('/useradmin/update')}}" method="POST" id="frm-update">
+            <form action="{{URL::to('/admin/useradmin/update')}}" method="POST" id="frm-update">
               @csrf
                 <div class="modal-body">
                     <div class="col-4-md">

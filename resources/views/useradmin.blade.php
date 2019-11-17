@@ -54,7 +54,7 @@
 //Fonction lancé si le bouton "read-data" est cliqué
 
 $('#read-data').on('click', function(){
-    $.get("{{ URL::to('useradmin/read-data') }}", function(data){
+    $.get("{{ URL::to('/admin/useradmin/read-data') }}", function(data){
 
 //Empty table is it was already full
 
@@ -90,7 +90,7 @@ $('#read-data').on('click', function(){
 
 $('body').delegate('#user-info .edit_data','click',function(e){
     var id = this.id;
-    $.get("{{URL::to('useradmin/edit')}}",{id:id},function(data){
+    $.get("{{URL::to('/admin/useradmin/edit')}}",{id:id},function(data){
         $('#frm-update').find('#role_id').val(data.id_roles);
         $('#frm-update').find('#id').val(data.id);
         $('#user-update').modal('show');
