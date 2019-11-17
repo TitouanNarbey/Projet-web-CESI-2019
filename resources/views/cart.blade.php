@@ -24,7 +24,7 @@
 						comanded as $comand)
 						<tr>
 							<td>
-								<img src="{{$comand->article->image->path}}" alt="{{$comand->article->image->alt}}" />
+								<img class="img-fluid sizeBanner" src="{{$comand->article->image->path}}" alt="{{$comand->article->image->alt}}" />
 							</td>
 							<td>
 								{{$comand->

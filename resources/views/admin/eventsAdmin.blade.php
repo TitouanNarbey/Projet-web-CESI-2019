@@ -25,7 +25,7 @@
                   <div class="headerCardEvent">
                     <img src="{{$event->image->path}}" class="img-fluid sizeBanner" alt="{{$event->image->alt}}">
                   </div>
-                  <div class="card-body">
+                  <div class="card-body"><br><br>
                     <h3>
                       {{$event->
                       name}}
@@ -58,5 +58,6 @@
               </ul>
             </nav>
           </div>
+        </div>
 @endsection
 

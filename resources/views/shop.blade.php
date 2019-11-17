@@ -21,13 +21,13 @@ Réparer le carousel-->
     <!-- The slideshow -->
     <div class="carousel-inner ">
       <div class="carousel-item active">
-        <img src="{{asset('assets/img/img_1.png')}}" alt="Los Angeles" >
+        <img src="assets/img/img_1.png" alt="Los Angeles" >
       </div>
       <div class="carousel-item">
-        <img src="{{asset('assets/img/img_3.png')}}" alt="Chicago">
+        <img src="assets/img/img_3.png" alt="Chicago">
       </div>
       <div class="carousel-item">
-        <img src="{{asset('assets/img/img_2.png')}}" alt="New York">
+        <img src="assets/img/img_2.png" alt="New York">
       </div>
     </div>
   </div>
@@ -92,4 +92,5 @@ Réparer le carousel-->
           @endforeach
         </div>
       </div>
+    </div>
 @endsection
