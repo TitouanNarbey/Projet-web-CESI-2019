@@ -1,6 +1,6 @@
 @extends('layouts.app')@section('content')
 <div class="container col-11">
-	<h1>{{$event->name}}</h1>
+	<center><h1>{{$event->name}}</h1></center>
 	<div id="demo" class="carousel slide" data-ride="carousel">
 		<!-- The slideshow -->
 		<div class="carousel-inner">

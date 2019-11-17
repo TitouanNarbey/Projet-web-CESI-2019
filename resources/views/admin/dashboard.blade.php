@@ -8,8 +8,7 @@
       <div class="card">
         <a href="/admin/shop" class="nounderline">
           <div class="card-body text-center">
-            <img src="assets/img/img_shop.png" class="img-fluid sizeBanner" alt="Image">
-            <img src="{{asset('assets/img/img_shop.png')}}" class="img-fluid float-center " alt="Image">
+            <img src="{{asset('assets/img/img_shop.png')}}" class="img-fluid sizeBanner" alt="Image">
           </div>
           <div class="card-footer">
             <div class="text-center eventCardFooter">
@@ -24,8 +23,7 @@
       <div class="card">
         <a href="/admin/events" class="nounderline">
           <div class="card-body text-center">
-            <img src="assets/img/img_event.png" class="img-fluid sizeBanner" alt="Image">
-            <img src="{{asset('assets/img/background-3.jpg')}}" class="img-fluid float-center " alt="Image">
+            <img src="{{asset('assets/img/background-3.jpg')}}" class="img-fluid sizeBanner" alt="Image">
           </div>
           <div class="card-footer">
             <div class="text-center eventCardFooter">
