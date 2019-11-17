@@ -9,6 +9,13 @@
 	width : auto;
   margin: auto;
 }
+.sizeBanner2 {
+  height: 700px;
+  width : auto;
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 .eventCardDescription{
 
