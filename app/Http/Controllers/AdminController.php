@@ -42,4 +42,25 @@ class AdminController extends Controller
     {
     	return view('admin/createEvent');
     }
+
+    public function deleteArticle()
+    {
+        $id_article = request('id_article');
+
+        $obj = Article::find($id_article);
+
+        // delete link to images
+        foreach($obj->illustratearticlesmulti as $linkImagesMulti)
+        {
+            $linkImagesMulti->delete();
+        }
+        // delete link to comand
+        foreach($obj->comanded as $comand)
+        {
+            $comand->delete();
+        }
+
+        $obj->delete();
+        return back()->with('messageGreen', 'Article supprimé');
+    }
 }
