@@ -7,8 +7,8 @@ Réparer le carousel-->
 
 
 @extends('layouts.app')
-@section('title',"Titre de la page")
-@section('meta-description',"Descritpion de la page")
+@section('title',"Boutique")
+@section('meta-description',"Boutique du BDE pour acheter différents goodies.")
 @section('content')
 <br>
 <br>
@@ -24,17 +24,17 @@ Réparer le carousel-->
     <!-- The slideshow -->
     <div class="carousel-inner ">
       <div class="carousel-item active text-center">
-        <img src="{{asset('assets/img/img_1.png')}}" alt="Los Angeles" witdh=100%  >
+        <img src="{{asset('assets/img/img_1.png')}}" alt="Los Angeles" >
       </div>
       <div class="carousel-item text-center">
-        <img src="{{asset('assets/img/img_3.png')}}" alt="Chicago" witdh=100%>
+        <img src="{{asset('assets/img/img_3.png')}}" alt="Chicago">
       </div>
       <div class="carousel-item text-center">
-        <img src="{{asset('assets/img/img_2.png')}}" alt="New York" witdh=100%>
+        <img src="{{asset('assets/img/img_2.png')}}" alt="New York">
       </div>
     </div>
   </div>
-  <!--Section recherche -->
+  <!--Recherch Section -->
   <div class="description text-center mt-5">
     <h2>Retrouve tes goodies préférées aux couleurs du CESI et de ton BDE</h2>
     <form class="example" action="#">
@@ -66,7 +66,7 @@ Réparer le carousel-->
             @endforeach
         </div>
       </div>
-      <!-- Affichage des articles correspondants aux critères de recherches -->
+      <!-- Display articles according to the research -->
       <div class="row mx-auto">
         @foreach($shop as $article)
         <div class="col-xl-3 mt-5">

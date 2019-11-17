@@ -1,11 +1,13 @@
 @extends('layouts.app')
-@section('title',"Titre de la page")
-@section('meta-description',"Descritpion de la page")
+@section('title',"Mon profil")
+@section('meta-description',"Profil de l'utilisateur, avec ses informations personnelles.")
 @section('content')
 
+
+{{-- Display all the reports --}}
 @if(isset($reports))
     @foreach($reports as $report)
-        <form class="statusBarReport pb-1 mb-1" method="post" action="deleteReport">
+            <form class="statusBarReport pb-1 mb-1" method="post" action="deleteReport">
             @csrf
             <h4 class="pt-2 ml-2">{{$report->type}} a été signalé !</h4>
             <p class="ml-2">{{$report->text}}</p>
@@ -17,33 +19,33 @@
 @endif
 
 <div class="container">
-        <div class="row">
-            <div class="col-lg-1 col-md-4 col-sm-12 col-xs-12"></div>
-            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
-                {{-- form start --}}                
-                <form class="form-container rounded">
-                    @csrf
-                   {{-- title --}}                
-                    <div class="col-md-12 col-sm-12 col-xs-12" align="center">
-                        <div class="titleprofile-container rounded">
-                            <p>
-                                Profile
-                            </p>
-                        </div>
+    <div class="row">
+        <div class="col-lg-1 col-md-4 col-sm-12 col-xs-12"></div>
+        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+            {{-- form start --}}                
+            <form class="form-container rounded">
+                @csrf
+                {{-- title --}}                
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="titleprofile-container rounded">
+                        <p>
+                            Profile
+                        </p>
                     </div>
+                </div>
                     {{-- Name --}}      
                     <div class="col-lg-12 order-lg-12 text-center">              
                         <div class="form-row">
                             <div class="name-container">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <label for="inputName"></label>
+                                    <label></label>
                                     <div class="profileformname"><p>{{$user->last_name}}</p></div>
                                 </div>
                             </div>
                             {{-- Firstname --}}                                
                             <div class="name-container">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                   <label for="inputFirstname"></label>
+                                   <label></label>
                                    <div class="profileformname"><p>{{$user->first_name}}</p></div>
                                 </div>
                             </div>
@@ -63,23 +65,25 @@
                     
                     {{-- Zone --}}                
                     <div class="col-lg-12 order-lg-11 text-center">              
-                    <div class="form-group">
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <label for="inputCenter"><div class="profileform">Centre</div></label>
-                            <h4>{{$user->campus->name}}</h4>
+                        <div class="form-group">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <label>Centre</label>
+                                <h4>{{$user->campus->name}}</h4>
+                            </div>
                         </div>
                     </div>
-                </div>
                     {{-- Mail --}}       
                     <div class="col-lg-12 order-lg-12 text-center">                       
-                    <div class="form-group">
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <label for="inputEmail"><div class="profileform">Mail</div></label>
-                            <h4>{{$user->email}}</h4>
+                        <div class="form-group">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <label class="profileform">Mail</label>
+                                <h4>{{$user->email}}</h4>
+                            </div>
                         </div>
                     </div>
-                </div>
                 </form>
+
+                {{-- Differents buttons with differents uses according to their names --}}
                 <a href="/disconnect"><button class="btn btn-danger my-2 my-sm-0"><i class="fas fa-user-slash"></i> Déconnexion</button></a>
                 @if(Auth::user()->id_roles == 3)
                     <a href="/downloadAllImages"><button class="btn btn-info my-2 my-sm-0"><i class="fas fa-download"></i> Télécharger toutes les images</button></a>
