@@ -4,7 +4,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>BDE CESI Lyon - @yield('title')</title>
+    <title>@yield('title', 'BDE CESI Lyon')</title>
+    <meta name="description" content="@yield('meta-description', 'une page du site BDE CESI Lyon')" />
     <link rel="shortcut icon" href="{{asset('assets/img/logo.png')}}">
     
     <!-- Fonts -->

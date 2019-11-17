@@ -6,7 +6,10 @@ Ajouter un bouton de signalement en récupérent $_SESSION et en regardant le r�
 
 
 
-@extends('layouts.app')@section('content')
+@extends('layouts.app')
+@section('title',"Titre de la page")
+@section('meta-description',"Descritpion de la page")
+@section('content')
 
 <br>
 <br>

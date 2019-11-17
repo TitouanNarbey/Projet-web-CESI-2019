@@ -1,6 +1,9 @@
 <!-- Faire fonctionner les boutons -->
         
-@extends('layouts.app')@section('content')
+@extends('layouts.app')
+@section('title',"Titre de la page")
+@section('meta-description',"Descritpion de la page")
+@section('content')
 <div class="container col-11">
   <div class="row mx-auto ">
     <div class="col-xl-6 mt-5 text-center">

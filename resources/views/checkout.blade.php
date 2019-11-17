@@ -1,4 +1,7 @@
-@extends('layouts.app')@section('content')
+@extends('layouts.app')
+@section('title',"Titre de la page")
+@section('meta-description',"Descritpion de la page")
+@section('content')
 <div class="container px-4 py-5 mx-auto">
 	<table class="table table-striped">
 		<thead class="text-left">
