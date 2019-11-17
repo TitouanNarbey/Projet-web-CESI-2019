@@ -1,4 +1,6 @@
-@extends('layouts.app')@section('content')
+@extends('layouts.app')
+@section('title',"Titre de la page")
+@section('meta-description',"Descritpion de la page")@section('content')
 <br>
 <br>
 {{-- <div class="container mh-30 col-10">

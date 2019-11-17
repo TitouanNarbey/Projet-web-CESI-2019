@@ -1,4 +1,7 @@
-@extends('layouts.app')@section('content')
+@extends('layouts.app')
+@section('title',"Titre de la page")
+@section('meta-description',"Descritpion de la page")
+@section('content')
 <div class="container mb-4">
 	<div class="row">
 		<div class="col-12">

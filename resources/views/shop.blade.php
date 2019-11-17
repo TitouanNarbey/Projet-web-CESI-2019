@@ -6,7 +6,10 @@ Gérer mieux l'affichage des stocks / prix
 Réparer le carousel-->
 
 
-@extends('layouts.app')@section('content')
+@extends('layouts.app')
+@section('title',"Titre de la page")
+@section('meta-description',"Descritpion de la page")
+@section('content')
 <br>
 <br>
 <div class="container col-11">

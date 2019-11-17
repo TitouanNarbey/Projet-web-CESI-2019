@@ -1,5 +1,6 @@
 @extends('layouts.app')
-
+@section('title',"Titre de la page")
+@section('meta-description',"Descritpion de la page")
 @section('content')
 <div class="bg3">
 <div class="container">
