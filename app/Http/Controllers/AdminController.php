@@ -10,205 +10,255 @@ use App\Category;
 use App\Post;
 use Auth;
 
-
+/**
+ * this is the admin controller
+ */
 class AdminController extends Controller
 {
+	/**
+	 * go to admin dashboard
+	 */
 	public function dashboard()
-    {
-    	return view('admin/dashboard');
-    }
-    public function shopAdmin()
-    {
-       /* $shop = Article::all();
-        $categories = Category::all();
-    	return view('admin/shopAdmin',compact('shop'))->with('categories', $categories);*/
-    }
-   /* public function articleAdmin()
-    {
-    	return view('admin/articleAdmin');
-    }*/
-    public function eventsAdmin()
-    {
-        $events = Event::all();
-    	return view('admin/eventsAdmin',compact('events'));
-    }
-    public function eventAdmin($id)
-    {
-        $event = Event::find($id);
-        return view('admin/eventAdmin',compact('event'));
-    }
-    public function createArticle()
-    {
-        $categories = Category::all();
-    	return view('admin/createArticle')->with('categories', $categories);
-    }
+	{
+		return view('admin/dashboard');
+	}
 
-    public function postCreateArticle()
-    {
+	/**
+	 * go to list of events in admin mode
+	 */
+	public function eventsAdmin()
+	{
+		$events = Event::all();
+		return view('admin/eventsAdmin',compact('events'));
+	}
 
-        request()->validate
-        ([
-            'title'=>'required',
-            'text'=>'required',
-            'price'=>'required',
-            'stock'=>'required',
-        ]);
+	/**
+	 * go to view for manage an event in admin mode
+	 */
+	public function eventAdmin($id)
+	{
+		$event = Event::find($id);
+		return view('admin/eventAdmin',compact('event'));
+	}
 
-        $title = request()->title;
-        $text = request()->text;
-        $price = request()->price;
-        $stock = request()->stock;
-        $category = request()->category;
-        $custom_category = request()->custom_category;
+	/**
+	 * create an article
+	 */
+	public function createArticle()
+	{
+		$categories = Category::all();
+		return view('admin/createArticle')->with('categories', $categories);
+	}
 
-        if($custom_category !== null)
-        {
-            $bddcategory = Category::create(['name'=>$custom_category]);
-            $category = $bddcategory->id;
-        }
+	/**
+	 * create article function
+	 */
+	public function postCreateArticle()
+	{
+		// get post
+		request()->validate
+		([
+			'title'=>'required',
+			'text'=>'required',
+			'price'=>'required',
+			'stock'=>'required',
+		]);
 
-        $obj = Article::create(['name'=>$title, 'description'=>$text, 'id_category'=>$category, 'id_images'=>'3', 'id_campus'=>'22', 'stock'=>$stock, 'price'=>$price]);
-    
-        return redirect('/admin/shop')->with('messageGreen', 'Article ajouté');
-    }
+		// define variables
+		$title = request()->title;
+		$text = request()->text;
+		$price = request()->price;
+		$stock = request()->stock;
+		$category = request()->category;
+		$custom_category = request()->custom_category;
 
-    public function createEvent()
-    {
-    	return view('admin/createEvent');
-    }
+		// verify if we need to create a new category
+		if($custom_category !== null)
+		{
+			$bddcategory = Category::create(['name'=>$custom_category]);
+			$category = $bddcategory->id;
+		}
 
-    public function postCreateEvent()
-    {
-        request()->validate
-        ([
-            'title'=>'required',
-            'text'=>'required',
-            'price'=>'required',
-            'start_date'=>'required',
-        ]);
+		// create new article in BDD
+		$obj = Article::create(['name'=>$title, 'description'=>$text, 'id_category'=>$category, 'id_images'=>'3', 'id_campus'=>'22', 'stock'=>$stock, 'price'=>$price]);
 
-        $title = request()->title;
-        $text = request()->text;
-        $price = request()->price;
-        $old_start_date = request()->start_date;
-        $start_date = date("Y-m-d", strtotime($old_start_date));
-        $old_end_date = request()->end_date;
-        $end_date = date("Y-m-d", strtotime($old_end_date));
+		// redirect to admin's shop page
+		return redirect('/admin/shop')->with('messageGreen', 'Article ajouté');
+	}
 
-        if($end_date === '1970-01-01')
-        {
-            $end_date = null;
-        }
+	/**
+	 * go to page to create a new event
+	 */
+	public function createEvent()
+	{
+		return view('admin/createEvent');
+	}
 
-        if(request()->recurrent === null)
-        {
-            $recurrent = 0;
-        }
-        else
-        {
-            $recurrent = 1;
-        }
+	/**
+	 * function create a new event
+	 */
+	public function postCreateEvent()
+	{
+		// get post
+		request()->validate
+		([
+			'title'=>'required',
+			'text'=>'required',
+			'price'=>'required',
+			'start_date'=>'required',
+		]);
 
-        $obj = Event::create(['name'=>$title, 'description'=>$text, 'start_date'=>$start_date, 'end_date'=>$end_date, 'price'=>$price, 'recurrent'=>$recurrent, 'validate'=>'1', 'id_images'=>'3', 'id_users'=>Auth::user()->id]);
-        
-        return redirect('/admin/events')->with('messageGreen', 'Evenement ajouté');
-    }
+		// define variables
+		$title = request()->title;
+		$text = request()->text;
+		$price = request()->price;
+		$old_start_date = request()->start_date;
+		$start_date = date("Y-m-d", strtotime($old_start_date));
+		$old_end_date = request()->end_date;
+		$end_date = date("Y-m-d", strtotime($old_end_date));
 
-    public function deleteArticle()
-    {
-        $id_article = request('id_article');
+		// verify if end_date is post as null
+		if($end_date === '1970-01-01')
+		{
+			$end_date = null;
+		}
 
-        $obj = Article::find($id_article);
-        $obj->delete();
-        return back()->with('messageGreen', 'Article supprimé');
-    }
+		// set recurrent variable to correct value
+		if(request()->recurrent === null)
+		{
+			$recurrent = 0;
+		}
+		else
+		{
+			$recurrent = 1;
+		}
 
-    public function triAdminArticle()
-    {
-        $shop = Article::all();
-        $categories = Category::all();
-        
-        if ( isset($_GET['decroissant']))
-        {
-            $shop = Article::where('id', '<>', 0)->orderBy('price','DESC')->get();
-        }
-        if ( isset($_GET['croissant'])) {
-            $shop = Article::where('id', '<>', 0)->orderBy('price','ASC')->get();
-        }
-        if ( isset($_GET['id_category']))
-        {
-            $categories = Category::all();
-            $shop = Article::where('id_category', '=', $_GET['id_category'])->get();
-        }
-        else
-        {
-            $categories = Category::all();
-        }
+		// create new event in BDD
+		$obj = Event::create(['name'=>$title, 'description'=>$text, 'start_date'=>$start_date, 'end_date'=>$end_date, 'price'=>$price, 'recurrent'=>$recurrent, 'validate'=>'1', 'id_images'=>'3', 'id_users'=>Auth::user()->id]);
 
-        return view('admin/shopAdmin',compact('shop'))->with('categories', $categories);;
-    }
+		// redirect to admin's shop page
+		return redirect('/admin/events')->with('messageGreen', 'Evenement ajouté');
+	}
 
-    public function deleteEvent()
-    {
-        $id_event = request('id_event');
+	/**
+	 * function to delete article
+	 */
+	public function deleteArticle()
+	{
+		$id_article = request('id_article');
 
-        $obj = Event::find($id_event);
-        $obj->delete();
-        return back()->with('messageGreen', 'Événement supprimé');
-    }
+		// delete article
+		$obj = Article::find($id_article);
+		$obj->delete();
 
-    public function triAdminEvent()
-    {
-        if ( !isset($_GET['search'])) {
-            $events = Event::all();
-        }
-        else {
-            $var = "%".$_GET['search']."%";
-            $events = Event::where('name', 'like', $var)->get();
-        }
-        if ( isset($_GET['recurrent'])) {
-            $events = Event::where('recurrent', '=', 1)->get();
-        }
-        else {
-        }
-        if ( isset($_GET['unique'])) {
-            $events = Event::where('recurrent', '<>', 1)->get();
-        }
-        else {
-        }
-        if ( isset($_GET['decroissant'])) {
-            $events = Event::where('id', '<>', 0)->orderBy('price','DESC')->get();
-        }
-        else {
-        }
-        if ( isset($_GET['croissant'])) {
-            $events = Event::where('id', '<>', 0)->orderBy('price','ASC')->get();
-        }
-        else {
-        }
-        if ( isset($_GET['old'])) {
+		return back()->with('messageGreen', 'Article supprimé');
+	}
 
-            $events = Event::where('start_date', '<',date("Y-m-d"))->get();
+	/**
+	 * go to page to display all articles in admin mode with filter
+	 */
+	public function triAdminArticle()
+	{
+		$shop = Article::all();
+		$categories = Category::all();
 
-        }
-        else {
-        }
-        if ( isset($_GET['soon'])) {
+		// filter
+		if ( isset($_GET['decroissant']))
+		{
+			$shop = Article::where('id', '<>', 0)->orderBy('price','DESC')->get();
+		}
+		if ( isset($_GET['croissant'])) {
+			$shop = Article::where('id', '<>', 0)->orderBy('price','ASC')->get();
+		}
+		if ( isset($_GET['id_category']))
+		{
+			$categories = Category::all();
+			$shop = Article::where('id_category', '=', $_GET['id_category'])->get();
+		}
+		else
+		{
+			$categories = Category::all();
+		}
 
-            $month_soon = date("m")+1;
-            $events = Event::where('start_date', '>',date("Y-$month_soon-01"))->get();
-        }
-        else {
-        }
-       
-        return view('admin/eventsAdmin',compact('events'));    
-    }
+		// return view with filter option
+		return view('admin/shopAdmin',compact('shop'))->with('categories', $categories);;
+	}
 
-    public function deleteComment() 
-    {
-        $id = request('id_post');
-        $post = Post::find($id);
-        $post->delete();
-        return back()->with('messageGreen', 'Commentaire supprimé');
-    }
+	/**
+	 * function to delete en event
+	 */
+	public function deleteEvent()
+	{
+		$id_event = request('id_event');
+
+		$obj = Event::find($id_event);
+		$obj->delete();
+		return back()->with('messageGreen', 'Événement supprimé');
+	}
+
+	/**
+	 * go to page to display all events in admin mode with filte
+	 */
+	public function triAdminEvent()
+	{
+		// filter
+		if ( !isset($_GET['search'])) {
+			$events = Event::all();
+		}
+		else {
+			$var = "%".$_GET['search']."%";
+			$events = Event::where('name', 'like', $var)->get();
+		}
+		if ( isset($_GET['recurrent'])) {
+			$events = Event::where('recurrent', '=', 1)->get();
+		}
+		else {
+		}
+		if ( isset($_GET['unique'])) {
+			$events = Event::where('recurrent', '<>', 1)->get();
+		}
+		else {
+		}
+		if ( isset($_GET['decroissant'])) {
+			$events = Event::where('id', '<>', 0)->orderBy('price','DESC')->get();
+		}
+		else {
+		}
+		if ( isset($_GET['croissant'])) {
+			$events = Event::where('id', '<>', 0)->orderBy('price','ASC')->get();
+		}
+		else {
+		}
+		if ( isset($_GET['old'])) {
+
+			$events = Event::where('start_date', '<',date("Y-m-d"))->get();
+
+		}
+		else {
+		}
+		if ( isset($_GET['soon'])) {
+
+			$month_soon = date("m")+1;
+			$events = Event::where('start_date', '>',date("Y-$month_soon-01"))->get();
+		}
+		else {
+		}
+
+		// return view with filter option
+		return view('admin/eventsAdmin',compact('events'));
+	}
+
+	/**
+	 * function to delete comment
+	 */
+	public function deleteComment()
+	{
+		$id = request('id_post');
+
+		// delete
+		$post = Post::find($id);
+		$post->delete();
+
+		return back()->with('messageGreen', 'Commentaire supprimé');
+	}
 }
