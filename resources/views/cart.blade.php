@@ -1,7 +1,8 @@
 @extends('layouts.app')
-@section('title',"Titre de la page")
-@section('meta-description',"Descritpion de la page")
+@section('title',"Ton Panier")
+@section('meta-description',"Ton Panier remplit de Goodies du BDE Cesi Lyon")
 @section('content')
+<!--Creation of the cart area-->
 <div class="container mb-4">
 	<div class="row">
 		<div class="col-12">
@@ -22,6 +23,7 @@
 							<th></th>
 						</tr>
 					</thead>
+					<!--Import of sales products-->
 					<tbody>
 						@foreach($cartData->
 						comanded as $comand)
@@ -35,6 +37,7 @@
 								name}}
 							</td>
 							<td>
+								<!--Possibility to change the quantity-->
 								<form class="comandQuantity" action="/changequantity" method="post">
 									@csrf
 									<input class="form-control" type="number" min="1" onchange='this.form.submit()' name="quantityChanger" value="{{$comand->quantity}}" />
@@ -48,6 +51,7 @@
 								price * $comand->
 								quantity}} €
 							</td>
+							<!--Possibility to delete the order-->
 							<td class="text-right">
 								<form class="deleteComand" action="/deleteComande" method="post">
 									@csrf
@@ -75,13 +79,14 @@
 				</table>
 			</div>
 		</div>
+		<!--Button to pay or continue the shopping-->
 		<div class="col mb-2">
 			<div class="row">
 				<div class="col-sm-12  col-md-6">
-					<a href="shop" target="_self"><button class="btn btn-block btn-light">Continuer la commande</button></a>
+					<a href="shop" target="_self" class="btn btn-block btn-light">Continuer la commande</a>
 				</div>
 				<div class="col-sm-12 col-md-6 text-right">
-					<a href="checkout" target="_self"><button class="btn btn-lg btn-block btn-success text-uppercase">paiement</button></a>
+					<a href="checkout" target="_self" class="btn btn-lg btn-block btn-success text-uppercase">paiement</a>
 				</div>
 			</div>
 		</div>
