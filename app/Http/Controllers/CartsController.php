@@ -100,9 +100,6 @@ class CartsController extends Controller
             'cvv'=>'required'
         ]);*/
 
-
-
-            
 		$id_order = request('id_order');
 		$obj = Order::find($id_order);
 
@@ -119,6 +116,11 @@ class CartsController extends Controller
 		}
 		else
 		{
+            foreach($obj->comanded as $comand)
+            {
+                $article = $comand->article;
+                $article->update(['stock' => ($article->stock - $comand->quantity)]);
+            }
 			$obj->update(['paid' => 1]);
         	return redirect('/home')->with('messageGreen', 'Paiement validé');
 		}
